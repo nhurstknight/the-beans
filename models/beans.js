@@ -8,7 +8,8 @@ const beanSchema = new mongoose.Schema({
   origin: { type: String, required: true },
   roast: { type: String, required: true },
   tastingNotes: [{ type: String, required: true }],
-  fairTrade: { type: Boolean, required: true }
+  fairTrade: { type: Boolean, required: true },
+  roaster: { type: String, required: true }
 })
 
 
