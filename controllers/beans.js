@@ -1,37 +1,38 @@
 const Beans = require('../models/beans')
+const { notFound } = require('../lib/errorMessage')
 
 
 // * Index GET /beans
-async function beanIndex (_req, res) {
+async function beanIndex (_req, res, next) {
   try {
     const beans = await Beans.find()
-    if (!beans) throw new Error()
+    if (!beans) throw new Error(notFound)
     res.status(200).json(beans)
   } catch (err) {
-    res.status(404).json('Beans not found')
+    next(err)
   }
 }
 
 // * Show single bean GET /beans/id
-async function beanShow (req, res) {
+async function beanShow (req, res, next) {
   try {
     const bean = await Beans.findById(req.params.id)
-    if (!bean) throw new Error()
+    if (!bean) throw new Error(notFound)
     res.status(200).json(bean)
   } catch (err) {
-    res.status(404).json('Bean not found')
+    next(err)
   }
 }
 
 
 // * Create POST /beans
-async function beansCreate(req, res) {
+async function beansCreate(req, res, next) {
   try {
     const newBeans = await Beans.create(req.body)
-    if (!newBeans) throw new Error()
+    if (!newBeans) throw new Error(notFound)
     res.status(201).json(newBeans)
   } catch (err) {
-    res.status(404).json('Beans not found')
+    next(err)
   }
 }
 

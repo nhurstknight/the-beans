@@ -1,14 +1,4 @@
-{ 
-  "name": "La Herrera",
-  "Image": "https://static.wixstatic.com/media/ed954a_0d98f244278a48f880061cc824e98e7f~mv2.jpg/v1/fill/w_500,h_500,al_c,q_85,usm_0.66_1.00_0.01/ed954a_0d98f244278a48f880061cc824e98e7f~mv2.webp",
-  Price: "10.50",
-  weight: "250",
-  origin: "Columbia",
-  roast: "Medium",
-  tastingnotes: "Sweet Liquorice", "Raisins", "Hints of Lime",
-  fairtrade: 'true'
- }
-
+* BEANS *
 { 
   "name": "Ara",
   "image": "https://wholesalecof.s3.eu-west-2.amazonaws.com/coffee-bag-ara.png",
@@ -17,16 +7,35 @@
   "origin": "Sub-Saharan Africa",
   "roast": "Medium",
   "tastingNotes": ["Sweet", "Spicy"],
-  "fairTrade": true
- }
+  "fairTrade": true,
+	"roaster": "Faker 123"
+}
 
- { 
+{ 
   "name": "Kisinga",
-  "Image": "https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg",
+  "image": "https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg",
  	"price": 9.50,
   "weight": 200,
   "origin": "Ethiopia",
   "roast": "Medium",
   "tastingNotes": ["strawberries", "blueberries", "hints of peach"],
-  "fairTrade": true
- }
+  "fairTrade": true,
+	"roaster": "Perception"
+}
+
+ * ROASTERS *
+
+{
+  "name": "Hermanos",
+  "logo": "https://static.wixstatic.com/media/ed954a_db8201c6cb17434296715145e8c7e09a~mv2.jpg/v1/fill/w_304,h_158,al_c,q_80,usm_0.66_1.00_0.01/ed954a_db8201c6cb17434296715145e8c7e09a~mv2.webp",
+  "bio": "Hermanos have a passion for coffee and work directly with coffee farmers to bring the flavour of Columbian coffee directly to you",
+  "hasCoffeeShop": true,
+  "coffeeShopLocation": "Victoria"
+},
+
+{
+  "name": "Perception",
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgwSpbiiW1-q2ZcU5P2-g406YEf3jRL4xCYA&usqp=CAU",
+  "bio": "My journey to coffee started at a very young age. At around six or seven years old I would sneakily sip some of my mother's instant coffee when she wasn't looking. I could say that this was the coffee seed planted inside me, which I would later return to after many years. Fast forward many moons, I got into specialty coffee around six years ago. When I tasted it I was immediately hooked. This wasn't coffee as I had known it before. I had known coffee for its more darker, harsher notes rather than its bright, light, juicy, floral notes.",
+  "hasCoffeeShop": false,
+}
