@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 
 const { dbURI } = require('../config/environment')
 const Beans = require('../models/beans')
+const Roasters = require('../models/roaster')
 const beansData = require('./data/beans')
+const roasterData = require('./data/roasters')
 
 mongoose.connect(
   dbURI,
@@ -19,11 +21,15 @@ mongoose.connect(
 
       const beans = await Beans.create(beansData)
 
+      const roasters = await Roasters.create(roasterData)
+
       console.log(` ☕️ ${beans.length} products created ☕️`)
+
+      console.log(` ☕️ ${roasters.length} roasters created ☕️`)
 
     } catch (err) {
       console.log(err) // Any error? Log it
     }
-    console.log('goodbye')
+    console.log('Goodbye')
     await mongoose.connection.close()
   })
