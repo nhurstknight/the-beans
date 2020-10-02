@@ -2,9 +2,10 @@ const router = require('express').Router()
 const beans = require('../controllers/beans')
 const roasters = require('../controllers/roasters')
 const auth = require('../controllers/auth')
+const secureRoute = require('../lib/secureRoute')
 
 router.route('/beans')
-  .post(beans.create)
+  .post(secureRoute, beans.create) // UnusedFunction on the frontend
   .get(beans.index)
 
 router.route('/beans/:id')
