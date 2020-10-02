@@ -9,6 +9,6 @@ export const getAllRoasters = () => {
   return axios.get(`${baseUrl}/roasters`)
 }
 
-export const getSingleXXX = xxx => {
-  return axios.get(`${baseUrl}/xxx/${xxx}`)
+export const getSingleBeans = beansId => {
+  return axios.get(`${baseUrl}/beans/${beansId}`)
 }
