@@ -10,6 +10,9 @@ import BeansIndex from './components/beans/BeansIndex'
 import RoasterShow from './components/roasters/RoasterShow'
 import RoasterIndex from './components/roasters/RoasterIndex'
 
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+
 class App extends React.Component {
   // async componentDidMount() {
   //   try {
@@ -29,6 +32,8 @@ class App extends React.Component {
           <Route path="/beans" component={BeansIndex}/>
           <Route path="/roasters/:id" component={RoasterShow}/>
           <Route path="/roasters" component={RoasterIndex}/>
+          <Route path="/login" component={Login}/>
+          <Route path="/register" component={Register}/>
         </Switch>
         <Footer />
       </BrowserRouter>
