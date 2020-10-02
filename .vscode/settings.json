@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#e28126cb",
+    "titleBar.activeBackground": "#e28126cb",
+    "titleBar.inactiveBackground": "#e28126cb",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "BACKEND - THE BEANS"
+}

@@ -39,3 +39,284 @@
   "bio": "My journey to coffee started at a very young age. At around six or seven years old I would sneakily sip some of my mother's instant coffee when she wasn't looking. I could say that this was the coffee seed planted inside me, which I would later return to after many years. Fast forward many moons, I got into specialty coffee around six years ago. When I tasted it I was immediately hooked. This wasn't coffee as I had known it before. I had known coffee for its more darker, harsher notes rather than its bright, light, juicy, floral notes.",
   "hasCoffeeShop": false,
 }
+_______________________________________________________________________________________________________________________________________________
+ROASTERS
+
+{
+  name: 'Perception',
+  logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgwSpbiiW1-q2ZcU5P2-g406YEf3jRL4xCYA&usqp=CAU',
+  bio: 'Specialty coffee roasters based in London but ship to the world',
+  hasCoffeeShop: false,
+  coffeeShopLocation: ?
+},
+
+{
+  name: 'Caravan',
+  logo: 'https://cdn.shopify.com/s/files/1/0804/3379/t/24/assets/caravan-landing-logo.svg?v=7984232209820070856',
+  bio: 'CANT FIND BIO',
+  hasCoffeeShop: true,
+  coffeeShopLocation: 'Fitzrovia', 'City', 'Bankside', 'King's Cross', 'Exmouth Market', 'Vardo''
+},
+
+{
+  name: 'Origin',
+  logo: 'https://pbs.twimg.com/profile_images/1301475050000916481/cH8wW-Yg.jpg',
+  bio: 'Our story begins over 15 years ago. Founded in 2004 by Tom Sobey, Origin Coffee is an independently owned speciality coffee roaster that is bound by one central ethos; to source exceptional coffee through a sustainable, triple bottom line approach.',
+  hasCoffeeShop: true,
+  coffeeShopLocation: 'Shoreditch, The British Libary, Southwark'
+},
+
+_______________________________________________________________________________________________________________________________________________
+COFFEE BEANS
+
+  {	
+    name: 'Colombia San Pablo',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '200',
+    origin: 'Narino, Colombia',
+    roast: 'Medium',
+    tastingNotes: ['Tropical Fruits', 'Sugar Sweet', 'Tangy fruit acidity'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+  
+  {	
+    name: 'Colombia Popayan Reserve',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8.50',
+    weight: '200',
+    origin: 'Cauca, Colombia',
+    roast: 'Medium',
+    tastingNotes: ['Apple', 'Blackberry', 'Milk Chocolate'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+
+  {	
+    name: 'Brazil pinot',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8.50',
+    weight: '200',
+    origin: 'Pinot, Brazil',
+    roast: 'Medium',
+    tastingNotes: ['Grapes', 'Light Acidity', 'Milk Chocolate'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+
+  {	
+    name: 'El Salvador (micro lot)',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '200',
+    origin: 'El Salvador',
+    roast: 'Medium',
+    tastingNotes: ['Sweet (Honey)', 'Citrus (Tangerine)', 'Chocolate'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+
+  {	
+    name: 'Ethiopia Adola',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '200',
+    origin: 'Adola, Ethiopia',
+    roast: 'Medium',
+    tastingNotes: ['Blackcurrant', 'Mild Florals', 'Honeycomb'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+
+
+  {	
+    name: 'Uganda Kisinga',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '200',
+    origin: 'Ethiopia',
+    roast: 'Medium',
+    tastingNotes: ['Strawberry', 'Blueberries', 'Hints of Peach'],
+    fairTrade: true,
+    roaster: 'Perception'
+  },
+
+  {	
+    name: 'Boji Kochere',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '13',
+    weight: '250',
+    origin: 'Ethiopia',
+    roast: 'Medium',
+    tastingNotes: ['Fizzy Blue Drink', 'Melon Gummies', 'Milk Tea'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+  {	
+    name: 'El Carmen Sugarcane Decaf',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '250',
+    origin: 'Colombia',
+    roast: 'Medium',
+    tastingNotes: ['Chocolate', 'Caramel', 'Nutty'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+  {	
+    name: 'Peña Colorada',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '12',
+    weight: '250',
+    origin: 'Mexico',
+    roast: 'Medium',
+    tastingNotes: ['Fruit Pastilles', 'Vanilla', 'Blood Orange'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+  {	
+    name: 'Businde Washed',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '11.50',
+    weight: '250',
+    origin: 'Burundi',
+    roast: 'Medium',
+    tastingNotes: ['Vanilla', 'Black Cherry', 'Candy Sweetness'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+  {	
+    name: 'Kiranga PB',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '14',
+    weight: '250',
+    origin: 'Africa',
+    roast: 'Medium',
+    tastingNotes: ['Raspberry', 'Custard', 'Honeysuckle'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+  {	
+    name: 'Resolute',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8',
+    weight: '250',
+    origin: 'Africa',
+    roast: 'Medium',
+    tastingNotes: ['Dark Chocolate', 'Fudge', 'Dark Sugar'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Stronghold',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '14',
+    weight: '250',
+    origin: 'Africa',
+    roast: 'Medium',
+    tastingNotes: ['Raspberry', 'Custard', 'Honeysuckle'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Pathfinder',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8.55',
+    weight: '250',
+    origin: 'Yirgacheffe, Juayua & Mathiri',
+    roast: 'Medium',
+    tastingNotes: ['Raspberry', 'Gala Apple', 'Brown Sugar'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Sam Fermin',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8',
+    weight: '250',
+    origin: 'Tolima',
+    roast: 'Medium',
+    tastingNotes: ['Orange Sherbet', 'Caramel', 'Berries'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Das Almas',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8',
+    weight: '250',
+    origin: 'South of Minas Gerais',
+    roast: 'Medium',
+    tastingNotes: ['Chocolate', 'Roasted Peanut', 'Gala Apple'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Santa Meria Decaf',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9',
+    weight: '250',
+    origin: 'Huila, Tolima',
+    roast: 'Medium',
+    tastingNotes: ['Chocolate', 'Red Apple', 'Assam Tea'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+  {	
+    name: 'Los Altos',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '8',
+    weight: '250',
+    origin: 'Laguna Verde, Jinotega',
+    roast: 'Medium',
+    tastingNotes: ['Roasted Almond', 'Chocolate', 'Brown Sugar'],
+    fairTrade: true,
+    roaster: 'Origin'
+  },
+
+
+
+
+
+
+
+
+
+            //--//--//-- BLEND (WIERD ORIGIN) --//----//--//
+  {	 
+    name: 'Market Blend',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '250',
+    origin: 'Ethiopia',
+    roast: 'Medium',
+    tastingNotes: ['Citrus', 'Floral', 'Nutty'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
+
+              //--//--//-- BLEND (WIERD ORIGIN) --//----//--//
+
+  {	
+    name: 'The Daily',
+    image: 'https://www.polybags.co.uk/shop/images/brown-biopaper-stand-up-pouch_p1568m(1).jpg',
+    price: '9.50',
+    weight: '250',
+    origin: '3',
+    roast: 'Medium',
+    tastingNotes: ['Dark Chocolate', 'Chewy Praline', 'Spices'],
+    fairTrade: true,
+    roaster: 'Caravan'
+  },
