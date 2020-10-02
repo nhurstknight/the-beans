@@ -7,6 +7,7 @@ import Footer from './components/common/footer'
 
 import BeansShow from './components/beans/BeansShow'
 import BeansIndex from './components/beans/BeansIndex'
+import RoasterShow from './components/roasters/RoasterShow'
 import RoasterIndex from './components/roasters/RoasterIndex'
 
 class App extends React.Component {
@@ -26,6 +27,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/beans/:id" component={BeansShow}/>
           <Route path="/beans" component={BeansIndex}/>
+          <Route path="/roasters/:id" component={RoasterShow}/>
           <Route path="/roasters" component={RoasterIndex}/>
         </Switch>
         <Footer />

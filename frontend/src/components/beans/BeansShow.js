@@ -10,9 +10,7 @@ class BeansShow extends React.Component {
 
   async componentDidMount() {
     const beansId = this.props.match.params.id
-    // console.log(this.props.match.params.id)
     const response = await getSingleBeans(beansId)
-    console.log(response)
     this.setState({
       product: response.data
     })
