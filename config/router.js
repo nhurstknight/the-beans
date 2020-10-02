@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const beans = require('../controllers/beans')
 const roasters = require('../controllers/roasters')
+const auth = require('../controllers/auth')
 
 router.route('/beans')
   .post(beans.create)
@@ -16,7 +17,11 @@ router.route('/roasters')
 router.route('/roasters/:id')
   .get(roasters.show)
 
+router.route('/register')
+  .post(auth.register)
 
+router.route('/login')
+  .post(auth.login)
 
   
 
