@@ -1,6 +1,5 @@
 // @import "~bootstrap/scss/bootstrap";
 
-
 .jumbotron {
   margin-bottom: 0em;
 }
@@ -9,12 +8,42 @@
   text-align: center;
 }
 
-.Footer {
-  height: 20vh,;
+.beans-index-main {
+  margin: 50px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.filter-wrapper.container {
+  width:40%;
+  margin: 0, auto;
+  // flex-shrink: 1;
+}
+
+.beans-index-grid {
+  // flex-grow: 2;
+  justify-content: space-between;
+}
+
+.beans-show-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 70px 30px;
+}
+
+.row {
+  justify-content: space-between;
+}
+
+.footer {
+  height: 30vh,;
   background-color: #000;
   color: #fff;
   text-align: center;
 }
+
 ul, li {
   list-style-type: none;
   padding: 0;
@@ -28,3 +57,4 @@ ul, li {
     height: 50px;
     object-fit: scale-down;
   }
+// need to add responsive design for BeansIndex

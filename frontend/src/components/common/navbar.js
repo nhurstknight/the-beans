@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <Nav variant="tabs" defaultActiveKey="/">
+    <Nav justify variant="tabs" defaultActiveKey="/home">
       <Nav.Item>
         <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
