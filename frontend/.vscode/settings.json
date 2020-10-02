@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#5eb8f5f5",
+    "titleBar.activeBackground": "#5eb8f5f5",
+    "titleBar.inactiveBackground": "#5eb8f5f5",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "FRONTEND - The Beans"
+}
