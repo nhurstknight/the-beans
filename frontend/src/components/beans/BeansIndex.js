@@ -20,6 +20,9 @@ class BeansIndex extends React.Component {
     if (!this.state.beans) return <div>Loading...</div>
     return (
       <>
+        <Container fluid className="beans-banner">
+          <h1>Shop with us</h1>
+        </Container>
         <Container className="beans-index-main">
           <Container className="filter-wrapper" xl={2}>
             <Card style={{ width: '12rem' }}>

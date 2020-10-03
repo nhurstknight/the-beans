@@ -10,7 +10,9 @@ class BeansShow extends React.Component {
 
   async componentDidMount() {
     const beansId = this.props.match.params.id
+    // console.log(this.props.match.params.id)
     const response = await getSingleBeans(beansId)
+    console.log(response)
     this.setState({
       product: response.data
     })
@@ -21,6 +23,9 @@ class BeansShow extends React.Component {
     if (!product) return <div>Loading...</div>
     return (
       <>
+        <Container fluid className="beans-banner">
+          <h1>Shop with us</h1>
+        </Container>
         <Container className="beans-show-wrapper">
           <Col xl={6}>
             <Image src={ product.image } fluid />
@@ -35,9 +40,7 @@ class BeansShow extends React.Component {
                 <ListGroup.Item>{ product.roast }</ListGroup.Item>
                 <ListGroup.Item>
                   <ul>{ product.tastingNotes.map(note => (
-                    <li>
-                      { note }
-                    </li>
+                    <li>{ note }</li>
                   )) }
                   </ul>
                 </ListGroup.Item>

@@ -1,12 +1,65 @@
+// $theme-colors: (
+//     "primary": #463f3a
+// );
+
 // @import "~bootstrap/scss/bootstrap";
 
 .jumbotron {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/coffee-bean-hero.jpg');
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
   margin-bottom: 0em;
+  height: 100vh;
+  position: relative;
 }
 
-.hero {
+.hero-text {
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
+
+.hero-text h1 {
+  font-size: 4em;
+}
+.hero-text p {
+  font-size: 2em;
+}
+
+.hero-text button{
+  text-align: center;
+  background-color: #fff;
+  color: rgb(66, 43, 28);
+
+}
+
+.footer {
+  height: 20vh,;
+  color: rgb(66, 43, 28);
+  text-align: center;
+  position: relative;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer a {
+  text-decoration: none; 
+  color: rgb(66, 43, 28);
+}
+
+
 
 .beans-index-main {
   margin: 50px 0px;
@@ -37,18 +90,6 @@
   justify-content: space-between;
 }
 
-.footer {
-  height: 30vh,;
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-}
-
-ul, li {
-  list-style-type: none;
-  padding: 0;
-}
-
 .RoasterImages {
     height: 200px;
     object-fit: scale-down;
@@ -64,4 +105,19 @@ ul, li {
   margin-bottom: 5%;
   // background-color: rgba(206, 75, 14, 0.774);
   // color: black;
+}
+
+.beans-banner {
+  width: 100%;
+  height: 150px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-bean-banner.jpeg');
+  background-size: auto;
+  background-position: bottom;
+  position: relative;
+  text-align: center;
+}
+
+.beans-banner h1 {
+  color: white;
+  padding-top: 45px;
 }
