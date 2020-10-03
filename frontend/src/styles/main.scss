@@ -4,6 +4,19 @@
 
 // @import "~bootstrap/scss/bootstrap";
 
+.navbar-brand, .navbar-light .navbar-nav .nav-link {
+  font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #3b2210;
+}
+
+.fa-shopping-basket {
+  color: #463f3a;
+  
+}
+
 .jumbotron {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/coffee-bean-hero.jpg');
   background-size: cover;
