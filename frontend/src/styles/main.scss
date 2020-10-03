@@ -1,20 +1,27 @@
-// $theme-colors: (
-//     "primary": #463f3a
-// );
+$theme-colors: (
+    "primary": #b2967d
+);
 
-// @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
-.navbar-brand, .navbar-light .navbar-nav .nav-link {
+.navbar-light a.navbar-brand {
+  font-weight: bold;
+  color: #3b2210;
+} 
+
+.navbar-light .navbar-nav .nav-link {
+  color: #3b2210;
   font-weight: bold;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: #3b2210;
+.navbar-light .navbar-nav .nav-link:hover,
+.hero-text .btn:hover{
+  color: #b2967d;
 }
 
-.fa-shopping-basket {
-  color: #463f3a;
-  
+// is there an alternative way to remove imported style?
+.navbar-light .navbar-toggler {
+  border-color: transparent;
 }
 
 .jumbotron {
@@ -28,6 +35,7 @@
 }
 
 .hero-text {
+  width: 90%;
   text-align: center;
   position: absolute;
   top: 50%;
@@ -37,22 +45,22 @@
 }
 
 .hero-text h1 {
-  font-size: 4em;
+  font-size: 5rem;
 }
 .hero-text p {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .hero-text button{
   text-align: center;
   background-color: #fff;
-  color: rgb(66, 43, 28);
+  color: #3b2210;
 
 }
 
 .footer {
   height: 20vh,;
-  color: rgb(66, 43, 28);
+  color: #3b2210;
   text-align: center;
   position: relative;
 }
@@ -69,10 +77,8 @@
 
 .footer a {
   text-decoration: none; 
-  color: rgb(66, 43, 28);
+  color:  #3b2210;
 }
-
-
 
 .beans-index-main {
   margin: 50px 0px;
@@ -99,14 +105,10 @@
   margin: 70px 30px;
 }
 
-.row {
-  justify-content: space-between;
-}
-
 .RoasterImages {
-    height: 200px;
-    object-fit: scale-down;
-    margin: 5%;
+  height: 200px;
+  object-fit: scale-down;
+  margin: 5%;
   }
 
 .roasterCard {
@@ -134,3 +136,46 @@
   color: white;
   padding-top: 45px;
 }
+
+.login-reg-banner {
+  text-align: center;
+}
+
+//consider making the form responsive, 
+.login-reg-wrapper {
+  // background-color: pink;
+  margin-top: 40px;
+}
+
+.login-reg-section {
+  width: 50%;
+  margin: 50px 70px;
+}
+
+.login-reg-section h3 {
+  margin-bottom: 1em;
+}
+
+.loginForm,
+.registerForm {
+  box-sizing: border-box;
+  width: 280px;
+}
+
+.form-label {
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
+  margin-top: 0.3em;
+}
+
+.form-control, 
+.btn {
+  border-radius: 2px;
+}
+
+
+// .placeholder {
+//   font-size: 6px;
+// }
+
+
