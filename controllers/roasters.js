@@ -1,4 +1,5 @@
 const Roasters = require('../models/roaster')
+const Beans = require('../models/beans')
 const { notFound } = require('../lib/errorMessage')
 
 // * Index GET /roasters
@@ -34,9 +35,22 @@ async function roastersCreate(req, res, next) {
   }
 }
 
+// * Index FILTER (ROASTER PRODUCTS) GET /beans/filter
+async function beansFilter (req, res, next) {
+  try {
+    console.log('here')
+    const beans = await Beans.find(req.query)
+    if (!beans) throw new Error(notFound)
+    res.status(200).json(beans)
+  } catch (err) {
+    next(err)
+  }
+}
+
 
 module.exports = {
   index: roasterIndex,
   show: roasterShow,
-  create: roastersCreate
+  create: roastersCreate,
+  filter: beansFilter
 }
