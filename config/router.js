@@ -32,6 +32,7 @@ router.route('/login')
 router.route('/users')
   .get(users.index)
 
+
   
 
 module.exports = router

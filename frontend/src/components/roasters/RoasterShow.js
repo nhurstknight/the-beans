@@ -95,12 +95,12 @@ class RoasterShow extends React.Component {
 export default RoasterShow
 
 
-  // filterProducts => (this.state.beans)) {
-  //   beans.filter(bean => bean.name === this.state.roasterName)
-  //   this.setState({
-  //     roasterBean: bean
-  //   })
-  // }
+// filterProducts => (this.state.beans)) {
+//   beans.filter(bean => bean.name === this.state.roasterName)
+//   this.setState({
+//     roasterBean: bean
+//   })
+// }
 
   
 //  <Carousel>
