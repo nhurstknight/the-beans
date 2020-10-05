@@ -27,6 +27,9 @@ class RoasterIndex extends React.Component {
     if (!this.state.roasters ) return null
     return (
       <>
+        <Container fluid className="beans-banner">
+          <h1>Check out the Roasters</h1>
+        </Container>
         <Container className="roaster-index-main">
           <Container className="filter-wrapper" xl={2}>
             <Card style={{ width: '12rem' }}>

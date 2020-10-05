@@ -35,7 +35,7 @@ class BeansShow extends React.Component {
               <ListGroup variant="flush">
                 <ListGroup.Item>{ product.name }</ListGroup.Item>
                 <ListGroup.Item>{`£${product.price[0]}`}</ListGroup.Item>
-                <ListGroup.Item>{`${product.weight}g`}</ListGroup.Item>
+                <ListGroup.Item>{`${product.weight[0]}g`}</ListGroup.Item>
                 <ListGroup.Item>{ product.origin }</ListGroup.Item>
                 <ListGroup.Item>{ product.roast }</ListGroup.Item>
                 <ListGroup.Item>

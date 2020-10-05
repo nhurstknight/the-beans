@@ -1,4 +1,5 @@
 const Roasters = require('../models/roaster')
+const Beans = require('../models/beans')
 const { notFound } = require('../lib/errorMessage')
 
 // * Index GET /roasters
@@ -33,7 +34,6 @@ async function roastersCreate(req, res, next) {
     next(err)
   }
 }
-
 
 module.exports = {
   index: roasterIndex,
