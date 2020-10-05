@@ -22,10 +22,6 @@ router.route('/roasters')
 router.route('/roasters/:id')
   .get(roasters.show)
 
-//FILTER
-router.route('/beans/filter')
-  .get(beans.index)
-
 // USERS 
 router.route('/register')
   .post(auth.register)

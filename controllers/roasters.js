@@ -35,22 +35,8 @@ async function roastersCreate(req, res, next) {
   }
 }
 
-// * Index FILTER (ROASTER PRODUCTS) GET /beans/filter
-async function beansFilter (req, res, next) {
-  try {
-    console.log('here')
-    const beans = await Beans.find(req.query)
-    if (!beans) throw new Error(notFound)
-    res.status(200).json(beans)
-  } catch (err) {
-    next(err)
-  }
-}
-
-
 module.exports = {
   index: roasterIndex,
   show: roasterShow,
-  create: roastersCreate,
-  filter: beansFilter
+  create: roastersCreate
 }
