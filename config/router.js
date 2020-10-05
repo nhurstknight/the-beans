@@ -14,6 +14,14 @@ router.route('/beans')
 router.route('/beans/:id')
   .get(beans.show)
 
+// * PRODUCTS/BEANS/COMMENTS
+router.route('/beans/:id/comments')
+  .post(secureRoute, beans.commentCreate)
+
+// * PRODUCTS/BEANS/COMMENTS/DELETE
+router.route('/beans/:id/comments/:commentId')
+  .delete(secureRoute, beans.commentDelete)
+
 //BUSINESSES/ROASTERS
 router.route('/roasters')
   .post(roasters.create)
