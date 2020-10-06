@@ -15,10 +15,8 @@ router.route('/beans')
 router.route('/beans/:id')
   .get(beans.show)
 
-<<<<<<< HEAD
 router.route('/beans/filter')
   .get(beans.index)
-=======
 // * PRODUCTS/BEANS/COMMENTS
 router.route('/beans/:id/comments')
   .post(secureRoute, beans.commentCreate)
@@ -26,7 +24,6 @@ router.route('/beans/:id/comments')
 // * PRODUCTS/BEANS/COMMENTS/DELETE
 router.route('/beans/:id/comments/:commentId')
   .delete(secureRoute, beans.commentDelete)
->>>>>>> development
 
 //BUSINESSES/ROASTERS
 router.route('/roasters')
@@ -36,7 +33,6 @@ router.route('/roasters')
 router.route('/roasters/:id')
   .get(roasters.show)
 
-<<<<<<< HEAD
 // BASKET
 router.route('/basket')
   .get(secureRoute, basket.index)
@@ -50,8 +46,6 @@ router.route('/basket/:basketItemId')
 router.route('/basket')
   .delete(secureRoute, basket.delete)
 
-=======
->>>>>>> development
 // USERS 
 router.route('/register')
   .post(auth.register)
@@ -62,12 +56,7 @@ router.route('/login')
 router.route('/users')
   .get(users.index)
 
-<<<<<<< HEAD
 router.route('/users/:id')
   .get(users.show)
-=======
-
-  
->>>>>>> development
 
 module.exports = router

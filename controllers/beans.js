@@ -3,11 +3,7 @@ const { notFound, forbidden } = require('../lib/errorMessage')
 
 
 // * Index GET /beans
-<<<<<<< HEAD
-async function beanIndex(_req, res, next) {
-=======
 async function beanIndex (req, res, next) {
->>>>>>> development
   try {
     const beans = await Beans.find(req.query)
     if (!beans) throw new Error(notFound)
