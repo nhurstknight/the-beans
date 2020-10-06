@@ -3,7 +3,7 @@ const { unauthorized } = require('../lib/errorMessage')
 const { secret } = require('../config/environment')
 const jwt = require('jsonwebtoken')
 
-//Register User  --/-- POST 
+//Register User  --/-- PUT
 async function register(req, res, next) {
   try {
     const user = await User.create(req.body)
@@ -37,8 +37,6 @@ async function login(req, res, next) {
   
 
 }
-
-
 
 
 

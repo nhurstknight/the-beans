@@ -25,9 +25,9 @@ const NavBar = () => {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/beans">Beans</Nav.Link>
           <Nav.Link href="/roasters">Roasters</Nav.Link>
-          <Nav.Link href="/basket">{ basket }</Nav.Link>
           {!isAuthenticated() && <Nav.Link href="/login">Login</Nav.Link> }
           {!isAuthenticated() && <Nav.Link href="/register">Register</Nav.Link> }
+          { isAuthenticated() && <Nav.Link href="/basket">{ basket }</Nav.Link> }
           { isAuthenticated() && <Nav.Link href="/" onClick={handleLogout}>Logout</Nav.Link> }
         </Nav>
       </Navbar.Collapse>
