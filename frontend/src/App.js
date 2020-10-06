@@ -15,6 +15,8 @@ import Basket from './components/shop/basket'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
+import ProfilePage from './components/userprofile/ProfilePage'
+
 class App extends React.Component {
   render() {
     return (
@@ -29,6 +31,7 @@ class App extends React.Component {
           <Route path="/basket" component={Basket}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
+          <Route path="/profile" component={ProfilePage}/>
         </Switch>
         <Footer />
       </BrowserRouter>

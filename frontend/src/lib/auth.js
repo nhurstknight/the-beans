@@ -1,3 +1,6 @@
+export const userID = () => {
+  localStorage.setItem('userID')
+}
 export const setToken = token => {
   localStorage.setItem('token', token)
 }

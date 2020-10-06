@@ -14,7 +14,7 @@ const NavBar = () => {
 
   return (
     <Navbar className="color-nav" expand="lg">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         {/* <img src="/public/beans-icon.png" />
         {' '} */}
         The Beans
@@ -28,6 +28,7 @@ const NavBar = () => {
           {!isAuthenticated() && <Nav.Link href="/login">Login</Nav.Link> }
           {!isAuthenticated() && <Nav.Link href="/register">Register</Nav.Link> }
           { isAuthenticated() && <Nav.Link href="/basket">{ basket }</Nav.Link> }
+          { isAuthenticated() && <Nav.Link href="/profile">Profile Page</Nav.Link> }
           { isAuthenticated() && <Nav.Link href="/" onClick={handleLogout}>Logout</Nav.Link> }
         </Nav>
       </Navbar.Collapse>

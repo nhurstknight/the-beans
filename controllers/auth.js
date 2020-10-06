@@ -25,8 +25,10 @@ async function login(req, res, next) {
       secret,
       { expiresIn: '7 days' }
     )
+    const userID = user._id
     res.status(202).json({
       message: `Welcome back ${user.username}`,
+      userID,
       token
     })
 

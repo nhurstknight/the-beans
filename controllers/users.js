@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const { notFound, forbidden } = require('../lib/errorMessage')
 
 async function getAllUsers(req, res) {
   try {
@@ -19,7 +20,25 @@ async function getSingleUser(req, res) {
   }
 }
 
+
+// async function editAddress(req, res, next) {
+//   try {
+//     const addressToEdit = await User.findById(req.params.id)
+//     console.log(addressToEdit)
+//     if (!addressToEdit) throw new Error(notFound)
+//     if (!addressToEdit.owner.equals(req.currentUser.id)) throw new Error(forbidden)
+//     Object.profileSettings.assign(addressToEdit, req.body)
+//     await addressToEdit.save()
+//     res.status(202).json(addressToEdit)
+//   } catch (err) {
+//     next(err)
+//   }
+// }
+
+
+
 module.exports = {
   index: getAllUsers,
   show: getSingleUser
 }
+// editAddress: editAddress

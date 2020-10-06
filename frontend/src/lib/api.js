@@ -33,12 +33,16 @@ export const getRoasterProducts = ( roasterName ) => {
   return axios.get(`${baseUrl}/beans?roaster=${roasterName}`)
 }
 
-//// AUTHENTICATION ////
+//// AUTHENTICATION // USERS ////
 export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
 export const loginUser = formData => {
   return axios.post(`${baseUrl}/login`, formData)
+}
+
+export const getSingleUser = (userId) => {
+  return axios.post(`${baseUrl}/users${userId}`)
 }
 
 // BASKET

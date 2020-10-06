@@ -53,10 +53,12 @@ router.route('/register')
 router.route('/login')
   .post(auth.login)
 
+// router.route('/users/:id/address')
+//   .put(users.editAddress)
+
 router.route('/users')
   .get(users.index)
   
-
 router.route('/users/:id')
   .get(users.show)
 
