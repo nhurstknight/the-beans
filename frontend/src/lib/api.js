@@ -9,6 +9,9 @@ export const getAllBeans = () => {
 export const getSingleBeans = beansId => {
   return axios.get(`${baseUrl}/beans/${beansId}`)
 }
+export const getRoast = (roastFilter) => {
+  return axios.get(`${baseUrl}/beans?roast=${roastFilter}`)
+}
 
 //// ROASTERS API FUNCTIONS ////
 export const getAllRoasters = () => {

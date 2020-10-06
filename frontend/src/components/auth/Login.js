@@ -29,7 +29,7 @@ class Login extends React.Component {
       const response = await loginUser(this.state.formData)
       console.log(response)
       setToken(response.data.token)
-      this.props.history.push('/characters')
+      this.props.history.push('/beans')
     } catch (err) {
       console.log(err.response)
       this.setState({ errors: err.response.data.errors })
