@@ -4,7 +4,7 @@ import { Container,  Image, Card, Accordion, Button, Carousel, Row } from 'react
 import { getSingleRoaster, getRoasterProducts } from '../../lib/api'
 import BeansCard from '../beans/BeansCard'
 
-class BeansShow extends React.Component {
+class RoasterShow extends React.Component {
   state = {
     roaster: null,
     beans: null,
@@ -15,7 +15,7 @@ class BeansShow extends React.Component {
   async componentDidMount() {
     const roasterId = this.props.match.params.id
     const response = await getSingleRoaster(roasterId)
-    const response1 = await getRoasterProducts()
+    const response1 = await getRoasterProducts(this.state.roasterName)
     this.setState({
       roaster: response.data,
       beans: response1.data,
@@ -23,13 +23,23 @@ class BeansShow extends React.Component {
     })
   }
 
-
-
+  async componentDidUpdate() {
+    const response1 = await getRoasterProducts(this.state.roasterName)
+    this.setState({
+      beans: response1.data
+    })
+  }
+  
+  
+  
   render() {
     const { roaster } = this.state
     if (!roaster) return <div>Loading...</div>
     return (
       <>
+        <Container fluid className="beans-banner">
+          <h1>Check out the Roasters</h1>
+        </Container>
         <Container className="roaster-show-main" >
           <Container xs={6} md={4}>        
             <Card className="roaster-logo-and-bio">
@@ -82,15 +92,15 @@ class BeansShow extends React.Component {
   }
 }
 
-export default BeansShow
+export default RoasterShow
 
 
-  // filterProducts => (this.state.beans)) {
-  //   beans.filter(bean => bean.name === this.state.roasterName)
-  //   this.setState({
-  //     roasterBean: bean
-  //   })
-  // }
+// filterProducts => (this.state.beans)) {
+//   beans.filter(bean => bean.name === this.state.roasterName)
+//   this.setState({
+//     roasterBean: bean
+//   })
+// }
 
   
 //  <Carousel>

@@ -26,8 +26,8 @@ export const getSingleRoaster = roasterId => {
   return axios.get(`${baseUrl}/roasters/${roasterId}`)
 }
 // GET ROASTER PRODUCTS //
-export const getRoasterProducts = () => {
-  return axios.get(`${baseUrl}/beans`)
+export const getRoasterProducts = ( roasterName ) => {
+  return axios.get(`${baseUrl}/beans?roaster=${roasterName}`)
 }
 
 //// AUTHENTICATION ////

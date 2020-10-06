@@ -1,12 +1,14 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Container, Row, Card, ListGroup, ListGroupItem, Form } from 'react-bootstrap'
 import { getAllBeans } from '../../lib/api'
 
 import BeansCard from './BeansCard'
 
 class BeansIndex extends React.Component {
   state = {
-    beans: null
+    beans: null,
+    filteredBeans: null,
+    sliderValue: 20
   }
 
   async componentDidMount() {
@@ -15,6 +17,24 @@ class BeansIndex extends React.Component {
       beans: response.data
     })
   }
+
+  handleChange(e){
+    const sliderValue = {}
+    sliderValue[e.target.name] = e.target.value
+    this.setState(sliderValue)
+    const newFilter = this.state.beans.filter(product => product.price < this.state.sliderValue)
+    this.setState({
+      beans: newFilter
+    })
+  }
+
+  // async componentDidUpdate() {
+  //   const newFilter = this.state.beans.filter(product => product.price[0] > this.state.sliderValue)
+  //   this.setState({
+  //     beans: newFilter
+  //   })
+  // }
+  
 
   render() {
     if (!this.state.beans) return <div>Loading...</div>
@@ -30,7 +50,19 @@ class BeansIndex extends React.Component {
                 <Card.Title>Filter</Card.Title>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroupItem>Price</ListGroupItem>
+                <Form>
+                  <Form.Group controlId="formBasicRange">
+                    <Form.Label>Price: £{this.state.sliderValue}</Form.Label>
+                    <Form.Control type="range"
+                      min="0"
+                      max="20"
+                      name="sliderValue"
+                      value={this.state.sliderValue}
+                      onChange={(e) => {
+                        this.handleChange(e)
+                      }}/>
+                  </Form.Group>
+                </Form>
                 <ListGroupItem>Roaster name</ListGroupItem>
                 <ListGroupItem>Roast</ListGroupItem>
               </ListGroup>
