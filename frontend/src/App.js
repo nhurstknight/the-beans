@@ -11,7 +11,7 @@ import BeansIndex from './components/beans/BeansIndex'
 import RoasterShow from './components/roasters/RoasterShow'
 import RoasterIndex from './components/roasters/RoasterIndex'
 
-import Basket from './components/shop/basket'
+import Basket from './components/shop/Basket'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 

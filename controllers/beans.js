@@ -3,7 +3,7 @@ const { notFound } = require('../lib/errorMessage')
 
 
 // * Index GET /beans
-async function beanIndex (_req, res, next) {
+async function beanIndex(_req, res, next) {
   try {
     const beans = await Beans.find()
     if (!beans) throw new Error(notFound)
@@ -14,7 +14,7 @@ async function beanIndex (_req, res, next) {
 }
 
 // * Show single bean GET /beans/id
-async function beanShow (req, res, next) {
+async function beanShow(req, res, next) {
   try {
     const bean = await Beans.findById(req.params.id)
     if (!bean) throw new Error(notFound)

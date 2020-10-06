@@ -1,16 +1,21 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+
+const basketItemSchema = new mongoose.Schema({
+  product: { type: mongoose.Schema.ObjectId, ref: 'Beans', required: true },
+  quantity: { type: Number, default: 1, min: 1 }
+})
+
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, maxlength: 50, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   profileImage: { type: String, required: false },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  basket: [basketItemSchema]
 })
-
-
 
 
 

@@ -9,6 +9,17 @@ async function getAllUsers(req, res) {
   }
 }
 
+async function getSingleUser(req, res) {
+  try {
+    const users = await User.findById(req.params.id)
+    if (!users) throw new Error()
+    res.status(200).json(users)
+  } catch (err) {
+    res.status(404).json({ message: 'Not Found' })
+  }
+}
+
 module.exports = {
-  index: getAllUsers
+  index: getAllUsers,
+  show: getSingleUser
 }
