@@ -16,7 +16,7 @@ async function beanIndex (req, res, next) {
 // * Show single bean GET /beans/id
 async function beanShow(req, res, next) {
   try {
-    const bean = await Beans.findById(req.params.id)
+    const bean = await Beans.findById(req.params.id).populate('owner').populate('comments.owner')
     if (!bean) throw new Error(notFound)
     res.status(200).json(bean)
   } catch (err) {

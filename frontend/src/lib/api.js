@@ -19,6 +19,10 @@ export const getSingleBeans = beansId => {
 export const getRoast = (roastFilter) => {
   return axios.get(`${baseUrl}/beans?roast=${roastFilter}`)
 }
+export const addCommentToBean = (beansId, formData) => {
+  return axios.post(`${baseUrl}/beans/${beansId}/comments`, formData, withHeaders())
+}
+
 
 // ROASTERS API FUNCTIONS
 export const getAllRoasters = () => {

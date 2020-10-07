@@ -1,16 +1,24 @@
 import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
 
-import { getSingleBeans } from '../../lib/api'
-// import CommentComp from '../comments/CommentComp'
+import { getSingleBeans, addCommentToBean } from '../../lib/api'
+import CommentCard from '../comments/CommentCard'
+import CommentComponent from '../comments/CommentComponent'
 
 class BeansShow extends React.Component {
   state = {
-    product: null
-    // comments: ['']
+    product: null,
+    formData: {
+      text: '',
+      rating: ''
+    }
   }
 
   async componentDidMount() {
+    this.getData()
+  }
+
+  getData = async () => {
     const beansId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(beansId)
@@ -20,8 +28,29 @@ class BeansShow extends React.Component {
     })
   }
 
+  handleChange = event => {
+    const formData = {
+      ...this.state.formData,
+      [event.target.name]: event.target.value
+    }
+    this.setState({ formData })
+  }
+
+  handleSubmit = async event => {
+    event.preventDefault()
+    const beansId = this.props.match.params.id
+    const response = await addCommentToBean(beansId, this.state.formData)
+    console.log(response)
+    const formData = {
+      text: '',
+      rating: ''
+    }
+    this.getData()
+    this.setState({ formData })
+  }
+
   render() {
-    console.log(this.state)
+    console.log(this.state.formData)
     const { product } = this.state
     if (!product) return <div>Loading...</div>
     return (
@@ -50,14 +79,19 @@ class BeansShow extends React.Component {
               </ListGroup>
             </Card>
           </Col>
-          {/* <CommentComp /> */}
         </Container>
-        {/* <Container className="comment-container" fluid xl={16}>
-          <Row xs={4} md={4} xl={4} >
-            { this.state.product.comments.map(comment => (
-              <CommentComp key={ comment._id} { ...comment } /> ))}
-          </Row>
-        </Container> */}
+        <Container className="comment-view-container">
+          <ListGroup.Item> {this.state.product.comments.map(comment => (
+            <CommentCard key={ comment._id }{ ...comment }/>
+          ))} </ListGroup.Item>
+        </Container>
+        <Container className="comment-submit-container">
+          <CommentComponent 
+            value={this.state.formData}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </Container>
       </>
     )
   }

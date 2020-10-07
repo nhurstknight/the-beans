@@ -77,28 +77,28 @@ class Register extends React.Component {
                     </Form.Text>
                   </Form.Group>
 
-                  <Form>
-                    <Form.Row>
-                      <Col> 
-                        <Form.Label>First name</Form.Label>
-                        <Form.Control
-                          type="firstName" 
-                          placeholder="First Name"
-                          name="firstName"
-                          value={firstName}
-                          onChange={this.handleChange}/>
-                      </Col>
-                      <Col>
-                        <Form.Label>Last name</Form.Label>
-                        <Form.Control 
-                          type="lastName" 
-                          placeholder="Last Name"
-                          name="lastName"
-                          value={lastName}
-                          onChange={this.handleChange}/>
-                      </Col>
-                    </Form.Row>
-                  </Form>
+                  
+                  <Form.Row>
+                    <Col> 
+                      <Form.Label>First name</Form.Label>
+                      <Form.Control
+                        type="firstName" 
+                        placeholder="First Name"
+                        name="firstName"
+                        value={firstName}
+                        onChange={this.handleChange}/>
+                    </Col>
+                    <Col>
+                      <Form.Label>Last name</Form.Label>
+                      <Form.Control 
+                        type="lastName" 
+                        placeholder="Last Name"
+                        name="lastName"
+                        value={lastName}
+                        onChange={this.handleChange}/>
+                    </Col>
+                  </Form.Row>
+                
 
                   <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
