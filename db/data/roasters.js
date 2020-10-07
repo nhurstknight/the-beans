@@ -39,5 +39,25 @@ module.exports = [
     bio: '80 Stone Coffee Roasters are a duo who are more than a little obsessed with all things coffee-related.',
     hasCoffeeShop: true,
     coffeeShopLocation: ['Elephant & Castle']
+  },
+  {
+    name: 'Square Mile Coffee Roasters',
+    logo: 'https://ucarecdn.com/f516b62c-618d-4091-be4e-a4b57668ae90/',
+    bio: 'Focused on wholesale, we choose to work with, train and support like-minded businesses wishing to serve our mindfully sourced and skillfully roasted coffee to the best of their ability.',
+    hasCoffeeShop: false
+  },
+  {
+    name: 'Assembly Coffee',
+    logo: 'https://cdn.shopify.com/s/files/1/0193/3393/9299/files/assembly-logo--black_500x.png?v=1561634803',
+    bio: 'Assembly is a London based coffee roasting company, which recognises independent cafes as an invaluable source of insight into the coffee drinkers they serve.',
+    hasCoffeeShop: true,
+    coffeeShopLocation: '244 Ferndale Rd, Ferndale, London SW9 8FR'
+  },
+  {
+    name: 'Ozone Coffee',
+    logo: 'https://resdiary.blob.core.windows.net/uploads/uk/13677/images/19892/Portal/Fullsize/img85370.png',
+    bio: 'We aim to look at sustainability as holistically as possible. It is for this reason that we have crafted "Sustinere" as a way to celebrate the wins, aspirations, relationships and events that make up our sustainable ambitions as one global team.',
+    hasCoffeeShop: true,
+    coffeeShopLocation: 'Emma Street, London, E2 9AP, 11 Leonard street, London, EC2A 4AQ'
   }
 ]

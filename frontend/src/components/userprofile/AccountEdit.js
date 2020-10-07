@@ -41,7 +41,7 @@ class AccountEdit extends React.Component {
   handleSubmit = async event => {
     event.preventDefault()
     try { 
-      const response = await editAccount(this.state.formData && this.state.userId)
+      const response = await editAccount(this.state.formData)
       this.props.history.push('/profile')
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
@@ -112,23 +112,23 @@ class AccountEdit extends React.Component {
                       </Form.Text>
                     </Form.Group>
                   
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="formBasicLastName">
                       <Form.Label>Last Name</Form.Label>
                       <Form.Control 
-                        type="password" 
+                        type="lastName" 
                         placeholder={lastName}
-                        name="password"
+                        name="lastName"
                         value={this.state.formData.lastName}
                         onChange={this.handleChange}
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group controlId="formBasicprofileImage">
                       <Form.Label>Profile Image URL</Form.Label>
                       <Form.Control 
-                        type="profileImg" 
+                        type="profileImage" 
                         placeholder={profileImage}
-                        name="profileImg"
+                        name="profileImage" 
                         value={this.state.formData.profileImage}
                         onChange={this.handleChange}
                       />

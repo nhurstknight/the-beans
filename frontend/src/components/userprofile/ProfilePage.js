@@ -5,8 +5,6 @@ import { getID } from '../../lib/auth'
 import { getSingleUser, getAllBeans } from '../../lib/api'
 import BeansCard from '../beans/BeansCard'
 
-
-
 class ProfilePage extends React.Component {
   state = {
     profileDetails: null,
@@ -15,10 +13,8 @@ class ProfilePage extends React.Component {
 
   async componentDidMount() {
     const userId = getID()
-    console.log(userId)
     const response = await getSingleUser(userId)
     const tempData = await getAllBeans()
-    console.log(response)
     this.setState({
       profileDetails: response.data,
       tempData: tempData.data
