@@ -38,10 +38,21 @@ async function getSingleUser(req, res) {
 async function accountEdit (req, res, next) {
   try {
     const accountToEdit = await User.findById(req.params.id)
-    console.log(accountToEdit)
     // if (!accountToEdit) throw new Error(notFound)
-    // if (!accountToEdit.owner.equals(req.accountToEdit._id)) throw new Error(forbidden)
-    console.log('here')
+    // if (!accountToEdit.owner.equals(req.accountToEdit.id)) throw new Error(forbidden)
+    Object.assign(accountToEdit, req.body)
+    await accountToEdit.save()
+    res.status(202).json(accountToEdit)
+  } catch (err) {
+    next(err)
+  }
+}
+
+async function checkOutEdit (req, res, next) {
+  try {
+    const accountToEdit = await User.findById(req.params.id)
+    // if (!accountToEdit) throw new Error(notFound)
+    // if (!accountToEdit.owner.equals(req.accountToEdit.id)) throw new Error(forbidden)
     Object.assign(accountToEdit, req.body)
     await accountToEdit.save()
     res.status(202).json(accountToEdit)
@@ -54,6 +65,7 @@ async function accountEdit (req, res, next) {
 module.exports = {
   index: getAllUsers,
   show: getSingleUser,
-  update: accountEdit
+  update1: accountEdit,
+  update2: checkOutEdit
 }
 // editAddress: editAddress

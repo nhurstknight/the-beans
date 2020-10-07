@@ -38,6 +38,7 @@ export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
 export const loginUser = formData => {
+  console.log(formData)
   return axios.post(`${baseUrl}/login`, formData)
 }
 export const getSingleUser = ( userId ) => {
@@ -45,7 +46,8 @@ export const getSingleUser = ( userId ) => {
 }
 // EDIT ACCOUNT DETAILS
 export const editAccount = ( userId, formData) => {
-  return axios.put(`${baseUrl}/profile/account/${userId}`, formData)
+  console.log(formData)
+  return axios.put(`${baseUrl}/profile/account/${userId}`, formData, withHeaders())
 }
 // EDIT CHECKOUT DETAILS
 export const editCheckout = ( userId ) => {

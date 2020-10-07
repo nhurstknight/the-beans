@@ -55,14 +55,11 @@ router.route('/login')
 
 //Update User Account Settings
 router.route('/profile/account/:id')
-  .put(users.update)
+  .put(secureRoute, users.update1)
 
 //Update User Checkout Settings
 router.route('/profile/checkout/:id')
-  .put(users.update)
-
-// router.route('/users/:id/address')
-//   .put(users.editAddress)
+  .put(users.update2)
 
 router.route('/users')
   .get(users.index)
