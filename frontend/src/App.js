@@ -16,6 +16,8 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
 import ProfilePage from './components/userprofile/ProfilePage'
+import AccountEdit from './components/userprofile/AccountEdit'
+import CheckoutEdit from './components/userprofile/CheckoutEdit'
 
 class App extends React.Component {
   render() {
@@ -31,6 +33,8 @@ class App extends React.Component {
           <Route path="/basket" component={Basket}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
+          <Route path="/profile/account" component={AccountEdit}/>
+          <Route path="/profile/checkout" component={CheckoutEdit}/>
           <Route path="/profile" component={ProfilePage}/>
         </Switch>
         <Footer />

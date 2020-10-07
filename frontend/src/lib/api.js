@@ -40,9 +40,16 @@ export const registerUser = formData => {
 export const loginUser = formData => {
   return axios.post(`${baseUrl}/login`, formData)
 }
-
-export const getSingleUser = (userId) => {
-  return axios.post(`${baseUrl}/users${userId}`)
+export const getSingleUser = ( userId ) => {
+  return axios.get(`${baseUrl}/users/${userId}`)
+}
+// EDIT ACCOUNT DETAILS
+export const editAccount = ( userId, formData) => {
+  return axios.put(`${baseUrl}/profile/account/${userId}`, formData)
+}
+// EDIT CHECKOUT DETAILS
+export const editCheckout = ( userId ) => {
+  return axios.put(`${baseUrl}/profile/checkout/${userId}`)
 }
 
 // BASKET

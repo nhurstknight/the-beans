@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 
 import { loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
+import { setToken, setUserId } from '../../lib/auth'
 
 
 class Login extends React.Component {
@@ -29,6 +29,7 @@ class Login extends React.Component {
       const response = await loginUser(this.state.formData)
       // console.log(response)
       setToken(response.data.token)
+      setUserId(response.data.userID)
       this.props.history.push('/beans')
     } catch (err) {
       // console.log(err.response)

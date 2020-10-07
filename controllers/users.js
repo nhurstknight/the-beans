@@ -35,10 +35,25 @@ async function getSingleUser(req, res) {
 //   }
 // }
 
+async function accountEdit (req, res, next) {
+  try {
+    const accountToEdit = await User.findById(req.params.id)
+    console.log(accountToEdit)
+    // if (!accountToEdit) throw new Error(notFound)
+    // if (!accountToEdit.owner.equals(req.accountToEdit._id)) throw new Error(forbidden)
+    console.log('here')
+    Object.assign(accountToEdit, req.body)
+    await accountToEdit.save()
+    res.status(202).json(accountToEdit)
+  } catch (err) {
+    next(err)
+  }
+}
 
 
 module.exports = {
   index: getAllUsers,
-  show: getSingleUser
+  show: getSingleUser,
+  update: accountEdit
 }
 // editAddress: editAddress
