@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const beans = require('../controllers/beans')
+const basket = require('../controllers/basket')
 const roasters = require('../controllers/roasters')
 const auth = require('../controllers/auth')
 const users = require('../controllers/users')
@@ -14,6 +15,8 @@ router.route('/beans')
 router.route('/beans/:id')
   .get(beans.show)
 
+router.route('/beans/filter')
+  .get(beans.index)
 // * PRODUCTS/BEANS/COMMENTS
 router.route('/beans/:id/comments')
   .post(secureRoute, beans.commentCreate)
@@ -30,6 +33,19 @@ router.route('/roasters')
 router.route('/roasters/:id')
   .get(roasters.show)
 
+// BASKET
+router.route('/basket')
+  .get(secureRoute, basket.index)
+
+router.route('/basket')
+  .post(secureRoute, basket.create)
+
+router.route('/basket/:basketItemId')
+  .put(secureRoute, basket.update)
+
+router.route('/basket')
+  .delete(secureRoute, basket.delete)
+
 // USERS 
 router.route('/register')
   .post(auth.register)
@@ -37,10 +53,13 @@ router.route('/register')
 router.route('/login')
   .post(auth.login)
 
+// router.route('/users/:id/address')
+//   .put(users.editAddress)
+
 router.route('/users')
   .get(users.index)
-
-
   
+router.route('/users/:id')
+  .get(users.show)
 
 module.exports = router

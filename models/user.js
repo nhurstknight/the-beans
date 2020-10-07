@@ -1,6 +1,21 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 
+
+const basketItemSchema = new mongoose.Schema({
+  product: { type: mongoose.Schema.ObjectId, ref: 'Beans', required: true },
+  quantity: { type: Number, default: 1, min: 1 }
+})
+
+//I've kept them all strings/not required sometimes some people do not have house numbers/
+const profileSettingsSchema = new mongoose.Schema({
+  buildingNumber: { type: String, ref: '' },
+  streetName: { type: String, ref: ''   },
+  city: { type: String, ref: ''   },
+  county: { type: String, ref: ''   },
+  postcode: { type: String, ref: ''   }
+})
+
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, maxlength: 50, required: true },
   firstName: { type: String, required: true },

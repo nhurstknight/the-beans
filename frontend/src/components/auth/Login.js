@@ -27,11 +27,11 @@ class Login extends React.Component {
     event.preventDefault()
     try { 
       const response = await loginUser(this.state.formData)
-      console.log(response)
+      // console.log(response)
       setToken(response.data.token)
-      this.props.history.push('/characters')
+      this.props.history.push('/beans')
     } catch (err) {
-      console.log(err.response)
+      // console.log(err.response)
       this.setState({ errors: err.response.data.errors })
     }
   }

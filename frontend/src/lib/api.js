@@ -1,6 +1,13 @@
 import axios from 'axios'
 const baseUrl = '/api'
 
+const withHeaders = () => {
+  return {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  }
+}
 
 // BEANS API FUNCTIONS 
 export const getAllBeans = () => {
@@ -8,6 +15,9 @@ export const getAllBeans = () => {
 }
 export const getSingleBeans = beansId => {
   return axios.get(`${baseUrl}/beans/${beansId}`)
+}
+export const getRoast = (roastFilter) => {
+  return axios.get(`${baseUrl}/beans?roast=${roastFilter}`)
 }
 
 // ROASTERS API FUNCTIONS
@@ -28,4 +38,25 @@ export const registerUser = formData => {
 }
 export const loginUser = formData => {
   return axios.post(`${baseUrl}/login`, formData)
+}
+
+export const getSingleUser = (userId) => {
+  return axios.post(`${baseUrl}/users${userId}`)
+}
+
+// BASKET
+export const getUserBasket = () => {
+  return axios.get(`${baseUrl}/basket`, withHeaders())
+}
+
+export const addItemToBasket = () => {
+  return axios.post(`${baseUrl}/basket`)
+}
+
+export const removeItemFromBasket = basketItemId => {
+  return axios.put(`${baseUrl}/basket/${basketItemId}`)
+}
+
+export const clearBasket = () => {
+  return axios.delete(`${baseUrl}/basket`)
 }

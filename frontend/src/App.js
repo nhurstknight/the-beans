@@ -15,15 +15,9 @@ import Basket from './components/shop/basket'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
+import ProfilePage from './components/userprofile/ProfilePage'
+
 class App extends React.Component {
-  // async componentDidMount() {
-  //   try {
-  //     const response = await axios.get('/api/roasters')
-  //     console.log(response.data)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
   render() {
     return (
       <BrowserRouter>
@@ -37,6 +31,7 @@ class App extends React.Component {
           <Route path="/basket" component={Basket}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
+          <Route path="/profile" component={ProfilePage}/>
         </Switch>
         <Footer />
       </BrowserRouter>

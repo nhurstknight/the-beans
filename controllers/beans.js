@@ -14,7 +14,7 @@ async function beanIndex (req, res, next) {
 }
 
 // * Show single bean GET /beans/id
-async function beanShow (req, res, next) {
+async function beanShow(req, res, next) {
   try {
     const bean = await Beans.findById(req.params.id)
     if (!bean) throw new Error(notFound)
