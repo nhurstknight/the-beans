@@ -2,10 +2,12 @@ import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
 
 import { getSingleBeans } from '../../lib/api'
+// import CommentComp from '../comments/CommentComp'
 
 class BeansShow extends React.Component {
   state = {
     product: null
+    // comments: ['']
   }
 
   async componentDidMount() {
@@ -19,6 +21,7 @@ class BeansShow extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     const { product } = this.state
     if (!product) return <div>Loading...</div>
     return (
@@ -38,19 +41,28 @@ class BeansShow extends React.Component {
                 <ListGroup.Item>{`${product.weight[0]}g`}</ListGroup.Item>
                 <ListGroup.Item>{ product.origin }</ListGroup.Item>
                 <ListGroup.Item>{ product.roast }</ListGroup.Item>
-                <ListGroup.Item>
+                {/* <ListGroup.Item>
                   <ul>{ product.tastingNotes.map(note => (
                     <li>{ note }</li>
                   )) }
                   </ul>
-                </ListGroup.Item>
+                </ListGroup.Item> */}
               </ListGroup>
             </Card>
           </Col>
+          {/* <CommentComp /> */}
         </Container>
+        {/* <Container className="comment-container" fluid xl={16}>
+          <Row xs={4} md={4} xl={4} >
+            { this.state.product.comments.map(comment => (
+              <CommentComp key={ comment._id} { ...comment } /> ))}
+          </Row>
+        </Container> */}
       </>
     )
   }
 }
+
+
 
 export default BeansShow

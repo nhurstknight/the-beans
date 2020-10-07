@@ -11,10 +11,6 @@ const userSchema = new mongoose.Schema({
 })
 
 
-
-
-
-
 //// PASSWORD CONFIRMATION/ENCRYPTION ////
 
 // Delete JSON Version of Password
