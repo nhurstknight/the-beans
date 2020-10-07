@@ -13,7 +13,7 @@ class Login extends React.Component {
       email: '',
       password: ''
     }
-  }
+  } 
 
   handleChange = event => {
     const formData = {

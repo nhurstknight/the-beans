@@ -9,8 +9,7 @@ const withHeaders = () => {
   }
 }
 
-
-//// BEANS API FUNCTIONS ////
+// BEANS API FUNCTIONS 
 export const getAllBeans = () => {
   return axios.get(`${baseUrl}/beans`)
 }
@@ -20,8 +19,12 @@ export const getSingleBeans = beansId => {
 export const getRoast = (roastFilter) => {
   return axios.get(`${baseUrl}/beans?roast=${roastFilter}`)
 }
+export const addCommentToBean = (beansId, formData) => {
+  return axios.post(`${baseUrl}/beans/${beansId}/comments`, formData, withHeaders())
+}
 
-//// ROASTERS API FUNCTIONS ////
+
+// ROASTERS API FUNCTIONS
 export const getAllRoasters = () => {
   return axios.get(`${baseUrl}/roasters`)
 }
@@ -33,7 +36,7 @@ export const getRoasterProducts = ( roasterName ) => {
   return axios.get(`${baseUrl}/beans?roaster=${roasterName}`)
 }
 
-//// AUTHENTICATION // USERS ////
+// AUTHENTICATION 
 export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
