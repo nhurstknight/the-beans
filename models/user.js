@@ -6,19 +6,19 @@ const basketItemSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.ObjectId, ref: 'Beans', required: true },
   quantity: { type: Number, default: 1, min: 1 }
 })
-
-
-//I've kept them all strings/not required sometimes some people do not have house numbers/
-const profileSettingsSchema = new mongoose.Schema({
-  buildingNumber: { type: String, ref: '' },
-  streetName: { type: String, ref: ''   },
-  city: { type: String, ref: ''   },
-  county: { type: String, ref: ''   },
-  postcode: { type: String, ref: ''   }
-})
 const favouriteSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.ObjectId, ref: 'Favourites', required: true },
   quantity: { type: Number, default: 1, max: 1 }
+})
+
+//I've kept them all strings/not required sometimes some people do not have house numbers/
+const addressDetailsSchema = new mongoose.Schema({
+  // addressList: { type: mongoose.Schema.ObjectId, ref: 'AddressList' },
+  buildingNumber: { type: String },
+  streetName: { type: String },
+  city: { type: String },
+  county: { type: String },
+  postcode: { type: String }
 })
 
 const userSchema = new mongoose.Schema({
@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   profileImage: { type: String, required: false },
   password: { type: String, required: true },
   basket: [basketItemSchema],
-  profileSettings: [profileSettingsSchema],
+  addressDetails: [addressDetailsSchema],
   favourites: [favouriteSchema]
 })  
 

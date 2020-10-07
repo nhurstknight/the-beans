@@ -38,7 +38,6 @@ export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
 export const loginUser = formData => {
-  console.log(formData)
   return axios.post(`${baseUrl}/login`, formData)
 }
 export const getSingleUser = ( userId ) => {
@@ -46,13 +45,18 @@ export const getSingleUser = ( userId ) => {
 }
 // EDIT ACCOUNT DETAILS
 export const editAccount = ( formData ) => {
-  console.log(formData)
-  return axios.put(`${baseUrl}/profile/account/`, formData, withHeaders())
+  return axios.put(`${baseUrl}/profile/account`, formData, withHeaders())
+}
+// GET USERS ADDRESS INFORMATION
+export const addressDetails = () => {
+  return axios.get(`${baseUrl}/profile/checkout`, withHeaders())
 }
 // EDIT CHECKOUT DETAILS
 export const editCheckout = ( formData ) => {
-  return axios.put(`${baseUrl}/profile/checkout/`, formData, withHeaders())
+  return axios.put(`${baseUrl}/profile/checkout`, formData, withHeaders())
 }
+
+
 
 // BASKET
 export const getUserBasket = () => {
@@ -60,7 +64,6 @@ export const getUserBasket = () => {
 }
 
 export const addItem = product => {
-  console.log(product)
   return axios.post(`${baseUrl}/basket`, { product }, withHeaders())
 }
 

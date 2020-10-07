@@ -17,7 +17,7 @@ import Login from './components/auth/Login'
 
 import ProfilePage from './components/userprofile/ProfilePage'
 import AccountEdit from './components/userprofile/AccountEdit'
-import CheckoutEdit from './components/userprofile/CheckoutEdit'
+import CheckoutEdit from './components/userprofile/Address'
 
 class App extends React.Component {
   

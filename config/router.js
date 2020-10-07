@@ -57,13 +57,14 @@ router.route('/register')
 router.route('/login')
   .post(auth.login)
 
-//Update User Account Settings
+//ACCOUNT SETTINGS
 router.route('/profile/account')
   .put(secureRoute, users.update1)
 
-//Update User Checkout Settings
+//CHECKOUT SETTINGS
 router.route('/profile/checkout')
-  .put(users.update2)
+  .put(secureRoute, users.update2)
+  .get(secureRoute, users.addressDetails)
 
 router.route('/users')
   .get(users.index)

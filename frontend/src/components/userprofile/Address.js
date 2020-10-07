@@ -1,21 +1,22 @@
 import React from 'react'
 import { Container, Row, Card, ListGroup, Col, Form, Button } from 'react-bootstrap'
 import { getID } from '../../lib/auth'
-import { getSingleUser, editCheckout } from '../../lib/api'
+import { addressDetails, editCheckout } from '../../lib/api'
 
 class CheckoutEdit extends React.Component {
   state = {
-    profileDetails: null,
-    tempData: []
+    addressDetails: null
   }
 
   async componentDidMount() {
-    const userId = getID()
-    console.log(userId)
-    const response = await getSingleUser(userId)
+    const response = await addressDetails()
     console.log(response)
     this.setState({
-      profileDetails: response.data
+      addressDetails: response.data,
+      buildingNumber: response.data.[0].addressDetails.buildingNumber,
+      city: response.data.addressDetails.city,
+      county: response.data.addressDetails.county,
+      postcode: response.data.addressDetails.postcode
     })
   }
 
