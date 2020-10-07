@@ -99,6 +99,14 @@ $theme-colors: (
   justify-content: space-between;
 }
 
+.price-filter {
+  margin: 10px 20px;
+}
+
+.roast-filter {
+  margin: 10px 20px;
+}
+
 .beans-show-wrapper {
   display: flex;
   flex-direction: row;
@@ -227,4 +235,14 @@ $theme-colors: (
 
 .delete-basket-btn {
   width: 30%;
+}
+
+.checkout-btn {
+  margin: 50px auto;
+  width: 60%;
+}
+
+.payment-form {
+  width: 60%;
+  margin: 50px auto;
 }
