@@ -58,11 +58,11 @@ router.route('/login')
   .post(auth.login)
 
 //Update User Account Settings
-router.route('/profile/account/:id')
+router.route('/profile/account')
   .put(secureRoute, users.update1)
 
 //Update User Checkout Settings
-router.route('/profile/checkout/:id')
+router.route('/profile/checkout')
   .put(users.update2)
 
 router.route('/users')

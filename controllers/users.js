@@ -37,7 +37,7 @@ async function getSingleUser(req, res) {
 
 async function accountEdit (req, res, next) {
   try {
-    const accountToEdit = await User.findById(req.params.id)
+    const accountToEdit = await User.findById(req.currentUser._id)
     // if (!accountToEdit) throw new Error(notFound)
     // if (!accountToEdit.owner.equals(req.accountToEdit.id)) throw new Error(forbidden)
     Object.assign(accountToEdit, req.body)
@@ -50,7 +50,7 @@ async function accountEdit (req, res, next) {
 
 async function checkOutEdit (req, res, next) {
   try {
-    const accountToEdit = await User.findById(req.params.id)
+    const accountToEdit = await User.findById(req.currentUser._id)
     // if (!accountToEdit) throw new Error(notFound)
     // if (!accountToEdit.owner.equals(req.accountToEdit.id)) throw new Error(forbidden)
     Object.assign(accountToEdit, req.body)
