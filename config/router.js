@@ -17,6 +17,7 @@ router.route('/beans/:id')
 
 router.route('/beans/filter')
   .get(beans.index)
+
 // * PRODUCTS/BEANS/COMMENTS
 router.route('/beans/:id/comments')
   .post(secureRoute, beans.commentCreate)
@@ -42,6 +43,9 @@ router.route('/basket')
 
 router.route('/basket/:basketItemId')
   .put(secureRoute, basket.update)
+
+// router.route('/basket')
+//   .put(secureRoute, basket.update)
 
 router.route('/basket')
   .delete(secureRoute, basket.delete)

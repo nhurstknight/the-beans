@@ -16,6 +16,8 @@ import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
 class App extends React.Component {
+  
+
   render() {
     return (
       <BrowserRouter>

@@ -43,14 +43,14 @@ export const getUserBasket = () => {
   return axios.get(`${baseUrl}/basket`, withHeaders())
 }
 
-export const addItemToBasket = () => {
-  return axios.post(`${baseUrl}/basket`)
+export const addItem = product => {
+  return axios.post(`${baseUrl}/basket`, { product }, withHeaders())
 }
 
-export const removeItemFromBasket = basketItemId => {
-  return axios.put(`${baseUrl}/basket/${basketItemId}`)
+export const removeItem = product => {
+  return axios.put(`${baseUrl}/basket`, { product }, withHeaders())
 }
 
-export const clearBasket = () => {
-  return axios.delete(`${baseUrl}/basket`)
+export const deleteBasket = () => {
+  return axios.delete(`${baseUrl}/basket`, withHeaders())
 }

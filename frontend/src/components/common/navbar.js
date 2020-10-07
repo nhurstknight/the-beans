@@ -14,7 +14,7 @@ const NavBar = () => {
 
   return (
     <Navbar className="color-nav" expand="lg">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         {/* <img src="/public/beans-icon.png" />
         {' '} */}
         The Beans
