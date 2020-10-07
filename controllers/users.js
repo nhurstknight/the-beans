@@ -40,13 +40,11 @@ async function checkOutEdit(req, res, next) {
     console.log('user was ->', addressToEdit)
     const addressDetails = { ...req.body }
     if (!addressToEdit) throw new Error(notFound)
-    console.log('req params are', req.params)
     addressToEdit.addressDetails.push(addressDetails)
     console.log('item was', addressDetails)
     await addressToEdit.save()
     console.log('Saved')
     res.status(201).json(addressToEdit)
-
   } catch (err) {
     next(err)
   }

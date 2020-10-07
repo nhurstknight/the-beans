@@ -44,7 +44,7 @@ class BeansShow extends React.Component {
       text: '',
       rating: ''
     }
-    this.getData()
+    // this.getData()
     this.setState({ formData })
   }
 

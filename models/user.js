@@ -8,12 +8,11 @@ const basketItemSchema = new mongoose.Schema({
 })
 const favouriteSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.ObjectId, ref: 'Favourites', required: true },
-  quantity: { type: Number, default: 1, max: 1 }
+  quantity: { type: Number, default: 0, max: 1 }
 })
 
 //I've kept them all strings/not required sometimes some people do not have house numbers/
 const addressDetailsSchema = new mongoose.Schema({
-  // addressList: { type: mongoose.Schema.ObjectId, ref: 'AddressList' },
   buildingNumber: { type: String },
   streetName: { type: String },
   city: { type: String },
