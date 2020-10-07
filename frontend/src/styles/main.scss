@@ -202,3 +202,29 @@ $theme-colors: (
 .roaster-beans-index-grid {
   padding: 5%;
 }
+
+
+.user-basket {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.basket-item {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.basket-item .media-body {
+  text-align: right;
+  padding-right: 50px;
+}
+
+.media-body ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.delete-basket-btn {
+  width: 30%;
+}
