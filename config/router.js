@@ -17,6 +17,7 @@ router.route('/beans/:id')
 
 router.route('/beans/filter')
   .get(beans.index)
+
 // * PRODUCTS/BEANS/COMMENTS
 router.route('/beans/:id/comments')
   .post(secureRoute, beans.commentCreate)
@@ -43,6 +44,9 @@ router.route('/basket')
 router.route('/basket/:basketItemId')
   .put(secureRoute, basket.update)
 
+// router.route('/basket')
+//   .put(secureRoute, basket.update)
+
 router.route('/basket')
   .delete(secureRoute, basket.delete)
 
@@ -52,6 +56,14 @@ router.route('/register')
 
 router.route('/login')
   .post(auth.login)
+
+//Update User Account Settings
+router.route('/profile/account/:id')
+  .put(users.update)
+
+//Update User Checkout Settings
+router.route('/profile/checkout/:id')
+  .put(users.update)
 
 // router.route('/users/:id/address')
 //   .put(users.editAddress)
