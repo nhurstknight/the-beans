@@ -43,9 +43,16 @@ export const registerUser = formData => {
 export const loginUser = formData => {
   return axios.post(`${baseUrl}/login`, formData)
 }
-
-export const getSingleUser = (userId) => {
-  return axios.post(`${baseUrl}/users${userId}`)
+export const getSingleUser = ( userId ) => {
+  return axios.get(`${baseUrl}/users/${userId}`)
+}
+// EDIT ACCOUNT DETAILS
+export const editAccount = ( userId, formData) => {
+  return axios.put(`${baseUrl}/profile/account/${userId}`, formData)
+}
+// EDIT CHECKOUT DETAILS
+export const editCheckout = ( userId ) => {
+  return axios.put(`${baseUrl}/profile/checkout/${userId}`)
 }
 
 // BASKET
@@ -53,14 +60,14 @@ export const getUserBasket = () => {
   return axios.get(`${baseUrl}/basket`, withHeaders())
 }
 
-export const addItemToBasket = () => {
-  return axios.post(`${baseUrl}/basket`)
+export const addItem = product => {
+  return axios.post(`${baseUrl}/basket`, { product }, withHeaders())
 }
 
-export const removeItemFromBasket = basketItemId => {
-  return axios.put(`${baseUrl}/basket/${basketItemId}`)
+export const removeItem = product => {
+  return axios.put(`${baseUrl}/basket`, { product }, withHeaders())
 }
 
-export const clearBasket = () => {
-  return axios.delete(`${baseUrl}/basket`)
+export const deleteBasket = () => {
+  return axios.delete(`${baseUrl}/basket`, withHeaders())
 }

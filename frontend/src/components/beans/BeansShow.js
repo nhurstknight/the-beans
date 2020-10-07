@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
 
-import { getSingleBeans, addCommentToBean } from '../../lib/api'
-import CommentCard from '../comments/CommentCard'
-import CommentComponent from '../comments/CommentComponent'
+import AddItemButton from '../shop/AddItemButton'
+import { getSingleBeans } from '../../lib/api'
+
 
 class BeansShow extends React.Component {
   state = {
@@ -15,13 +15,9 @@ class BeansShow extends React.Component {
   }
 
   async componentDidMount() {
-    this.getData()
-  }
-
-  getData = async () => {
-    const beansId = this.props.match.params.id
+    const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
-    const response = await getSingleBeans(beansId)
+    const response = await getSingleBeans(productId)
     console.log(response)
     this.setState({
       product: response.data
@@ -77,6 +73,7 @@ class BeansShow extends React.Component {
                   </ul>
                 </ListGroup.Item> */}
               </ListGroup>
+              <AddItemButton product={ product._id }></AddItemButton>
             </Card>
           </Col>
         </Container>

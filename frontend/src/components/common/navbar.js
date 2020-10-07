@@ -3,13 +3,14 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
-import { logout, isAuthenticated } from '../../lib/auth'
+import { logoutID, logoutToken, isAuthenticated } from '../../lib/auth'
 
 const NavBar = () => {
   const basket = <FontAwesomeIcon icon={faShoppingBasket} />
 
   const handleLogout = () => {
-    logout()
+    logoutID()
+    logoutToken()
   }
 
   return (
