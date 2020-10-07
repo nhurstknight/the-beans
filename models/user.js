@@ -7,6 +7,20 @@ const basketItemSchema = new mongoose.Schema({
   quantity: { type: Number, default: 1, min: 1 }
 })
 
+
+//I've kept them all strings/not required sometimes some people do not have house numbers/
+const profileSettingsSchema = new mongoose.Schema({
+  buildingNumber: { type: String, ref: '' },
+  streetName: { type: String, ref: ''   },
+  city: { type: String, ref: ''   },
+  county: { type: String, ref: ''   },
+  postcode: { type: String, ref: ''   }
+})
+const favouriteSchema = new mongoose.Schema({
+  product: { type: mongoose.Schema.ObjectId, ref: 'Favourites', required: true },
+  quantity: { type: Number, default: 1, max: 1 }
+})
+
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, maxlength: 50, required: true },
   firstName: { type: String, required: true },
@@ -14,8 +28,10 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true, required: true },
   profileImage: { type: String, required: false },
   password: { type: String, required: true },
-  basket: [basketItemSchema]
-})
+  basket: [basketItemSchema],
+  profileSettings: [profileSettingsSchema],
+  favourites: [favouriteSchema]
+})  
 
 
 

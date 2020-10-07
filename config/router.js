@@ -57,9 +57,20 @@ router.route('/register')
 router.route('/login')
   .post(auth.login)
 
+//Update User Account Settings
+router.route('/profile/account/:id')
+  .put(users.update)
+
+//Update User Checkout Settings
+router.route('/profile/checkout/:id')
+  .put(users.update)
+
+// router.route('/users/:id/address')
+//   .put(users.editAddress)
+
 router.route('/users')
   .get(users.index)
-
+  
 router.route('/users/:id')
   .get(users.show)
 

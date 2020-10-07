@@ -17,6 +17,9 @@ export const getAllBeans = () => {
 export const getSingleBeans = beansId => {
   return axios.get(`${baseUrl}/beans/${beansId}`)
 }
+export const getRoast = (roastFilter) => {
+  return axios.get(`${baseUrl}/beans?roast=${roastFilter}`)
+}
 
 //// ROASTERS API FUNCTIONS ////
 export const getAllRoasters = () => {
@@ -30,12 +33,23 @@ export const getRoasterProducts = ( roasterName ) => {
   return axios.get(`${baseUrl}/beans?roaster=${roasterName}`)
 }
 
-//// AUTHENTICATION ////
+//// AUTHENTICATION // USERS ////
 export const registerUser = formData => {
   return axios.post(`${baseUrl}/register`, formData)
 }
 export const loginUser = formData => {
   return axios.post(`${baseUrl}/login`, formData)
+}
+export const getSingleUser = ( userId ) => {
+  return axios.get(`${baseUrl}/users/${userId}`)
+}
+// EDIT ACCOUNT DETAILS
+export const editAccount = ( userId, formData) => {
+  return axios.put(`${baseUrl}/profile/account/${userId}`, formData)
+}
+// EDIT CHECKOUT DETAILS
+export const editCheckout = ( userId ) => {
+  return axios.put(`${baseUrl}/profile/checkout/${userId}`)
 }
 
 // BASKET
