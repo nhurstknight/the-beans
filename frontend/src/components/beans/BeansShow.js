@@ -2,7 +2,9 @@ import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
 
 import AddItemButton from '../shop/AddItemButton'
-import { getSingleBeans } from '../../lib/api'
+import { getSingleBeans, addCommentToBean } from '../../lib/api'
+import CommentCard from '../comments/CommentCard'
+import CommentComponent from '../comments/CommentComponent'
 
 
 class BeansShow extends React.Component {
@@ -15,6 +17,17 @@ class BeansShow extends React.Component {
   }
 
   async componentDidMount() {
+    const productId = this.props.match.params.id
+    // console.log(this.props.match.params.id)
+    const response = await getSingleBeans(productId)
+    console.log(response)
+    this.setState({
+      product: response.data
+    })
+  }
+
+  getData = async event => {
+    event.preventDefault()
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
