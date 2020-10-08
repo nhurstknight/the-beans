@@ -11,10 +11,8 @@ const secureRoute = require('../lib/secureRoute')
 router.route('/beans')
   .post(secureRoute, beans.create) // UnusedFunction on the frontend
   .get(beans.index)
-
 router.route('/beans/:id')
   .get(beans.show)
-
 router.route('/beans/filter')
   .get(beans.index)
 

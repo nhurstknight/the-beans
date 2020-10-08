@@ -82,7 +82,7 @@ module.exports = [
     price: [21.00],
     weight: [250],
     origin: 'Colombia',
-    roast: 'Medium-Light',
+    roast: 'Medium Light',
     tastingNotes: ['Guava', 'Mango', 'Violet', 'Vanilla'],
     fairTrade: true,
     roaster: 'Hermanos'

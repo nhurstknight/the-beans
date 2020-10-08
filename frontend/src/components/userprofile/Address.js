@@ -19,13 +19,14 @@ class CheckoutEdit extends React.Component {
     console.log(response)
     if (response.data.addressDetails.length === 0) {
       return console.log('ADD ERROR MESSAGE (REQUIRES NEW ADDRESS/SOMTHING)')
-    } else { 
+    } else {
+      const objectMinusOne = response.data.addressDetails.length - 1
       this.setState({
-        buildingNumber: response.data.addressDetails[0].buildingNumber,
-        streetName: response.data.addressDetails[0].streetName,
-        city: response.data.addressDetails[0].city,
-        county: response.data.addressDetails[0].county,
-        postcode: response.data.addressDetails[0].postcode
+        buildingNumber: response.data.addressDetails[objectMinusOne].buildingNumber,
+        streetName: response.data.addressDetails[objectMinusOne].streetName,
+        city: response.data.addressDetails[objectMinusOne].city,
+        county: response.data.addressDetails[objectMinusOne].county,
+        postcode: response.data.addressDetails[objectMinusOne].postcode
       })
     }
   }
