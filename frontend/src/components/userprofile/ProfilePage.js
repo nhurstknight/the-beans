@@ -23,8 +23,8 @@ class ProfilePage extends React.Component {
         <Container fluid className="beans-banner">
           <h1>Your profile page</h1>
         </Container>
-        <Container className="beans-index-main">
-          <Container className="filter-wrapper" xl={2}>
+        <Container className="user-profile">
+          <Container className="account-sidebar" xl={2}>
             <Card style={{ width: '12rem' }}>
               <Card.Body>
                 <Card.Title>Profile Navigation</Card.Title>
