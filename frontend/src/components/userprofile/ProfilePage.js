@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Row, Card, ListGroup } from 'react-bootstrap'
 
 import { getAllFavs } from '../../lib/api'
-// import BeansCard from '../beans/BeansCard'
 import FavouriteCard from './FavouriteCard'
 
 class ProfilePage extends React.Component {
@@ -19,7 +18,6 @@ class ProfilePage extends React.Component {
   }
 
   render() {
-    // const favourites = this.state
     return (
       <>
         <Container fluid className="beans-banner">

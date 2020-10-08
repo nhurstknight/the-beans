@@ -31,7 +31,7 @@ class RoasterIndex extends React.Component {
           <h1>Check out the Roasters</h1>
         </Container>
         <Container className="roaster-index-main">
-          <Container className="filter-wrapper" xl={2}>
+          <Container className="roaster-wrapper" xl={2}>
             <Card style={{ width: '12rem' }}>
             </Card>
           </Container>
