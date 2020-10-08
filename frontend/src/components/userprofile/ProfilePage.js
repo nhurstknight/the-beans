@@ -1,28 +1,25 @@
 import React from 'react'
 import { Container, Row, Card, ListGroup } from 'react-bootstrap'
 
-import { getID } from '../../lib/auth'
-import { getSingleUser, getAllBeans } from '../../lib/api'
-import BeansCard from '../beans/BeansCard'
+import { getAllFavs } from '../../lib/api'
+// import BeansCard from '../beans/BeansCard'
+import FavouriteCard from './FavouriteCard'
 
 class ProfilePage extends React.Component {
   state = {
-    profileDetails: null,
-    tempData: []
+    favourites: []
   }
 
   async componentDidMount() {
-    const userId = getID()
-    const response = await getSingleUser(userId)
-    const tempData = await getAllBeans()
+    const getData = await getAllFavs()
+    console.log(getData)
     this.setState({
-      profileDetails: response.data,
-      tempData: tempData.data
+      favourites: getData.data.favourites
     })
   }
 
   render() {
-    const { tempData } = this.state
+    // const favourites = this.state
     return (
       <>
         <Container fluid className="beans-banner">
@@ -43,11 +40,11 @@ class ProfilePage extends React.Component {
           </Container>
           <Container className="beans-index-grid" fluid xl={10}>
             <Row xs={1} md={3} xl={4} >
-              {tempData.map(bean => (
-                <BeansCard
-                  key={bean._id}
-                  {...bean} />
-              ))}
+            { this.state.favourites.map(item => (
+                <FavouriteCard
+                  key={item._id}
+                  {...item} />
+              )) }
             </Row>
           </Container>
         </Container>

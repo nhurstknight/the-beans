@@ -48,6 +48,7 @@ router.route('/basket/:basketItemId')
 router.route('/basket')
   .delete(secureRoute, basket.delete)
 
+
 // USERS 
 router.route('/register')
   .post(auth.register)
@@ -64,9 +65,16 @@ router.route('/profile/checkout')
   .put(secureRoute, users.update2)
   .get(secureRoute, users.addressDetails)
 
+//FAVOURITES
+router.route('/profile')
+  .get(secureRoute, users.index1)
+  .post(secureRoute, users.favouriteAdd)
+router.route('/profile/:favItemId')
+  .put(secureRoute, users.favouriteRemove)
+
 router.route('/users')
   .get(users.index)
-  
+
 router.route('/users/:id')
   .get(users.show)
 

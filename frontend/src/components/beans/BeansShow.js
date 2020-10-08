@@ -2,9 +2,11 @@ import React from 'react'
 import { Container, Col,  Image, Card, ListGroup, Spinner } from 'react-bootstrap'
 
 import AddItemButton from '../shop/AddItemButton'
-import { getSingleBeans, addCommentToBean } from '../../lib/api'
 import CommentCard from '../comments/CommentCard'
 import CommentComponent from '../comments/CommentComponent'
+
+import { getSingleBeans, addCommentToBean } from '../../lib/api'
+
 
 class BeansShow extends React.Component {
   state = {
@@ -25,7 +27,12 @@ class BeansShow extends React.Component {
     })
   }
 
+<<<<<<< HEAD
   getData = async () => {
+=======
+  getData = async event => {
+    console.log(event)
+>>>>>>> development
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
