@@ -12,12 +12,15 @@ import RoasterShow from './components/roasters/RoasterShow'
 import RoasterIndex from './components/roasters/RoasterIndex'
 
 import Basket from './components/shop/basket'
+import Checkout from './components/shop/Checkout'
+import Payment from './components/shop/Payment'
+
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
 import ProfilePage from './components/userprofile/ProfilePage'
 import AccountEdit from './components/userprofile/AccountEdit'
-import CheckoutEdit from './components/userprofile/CheckoutEdit'
+import CheckoutEdit from './components/userprofile/Address'
 
 class App extends React.Component {
   
@@ -32,6 +35,8 @@ class App extends React.Component {
           <Route path="/beans" component={BeansIndex}/>
           <Route path="/roasters/:id" component={RoasterShow}/>
           <Route path="/roasters" component={RoasterIndex}/>
+          <Route path="/basket/checkout/payment" component={Payment}/>
+          <Route path="/basket/checkout" component={Checkout}/>
           <Route path="/basket" component={Basket}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>

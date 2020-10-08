@@ -27,7 +27,7 @@ class Login extends React.Component {
     event.preventDefault()
     try { 
       const response = await loginUser(this.state.formData)
-      // console.log(response)
+      console.log(response)
       setToken(response.data.token)
       setUserId(response.data.userID)
       this.props.history.push('/beans')

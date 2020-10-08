@@ -71,7 +71,6 @@ module.exports = {
   index: beanIndex,
   show: beanShow,
   create: beansCreate,
-
   commentCreate: beansCommentCreate,
   commentDelete: beansCommentDelete
 }

@@ -82,7 +82,7 @@ module.exports = [
     price: [21.00],
     weight: [250],
     origin: 'Colombia',
-    roast: 'Medium-Light Roast',
+    roast: 'Medium Light',
     tastingNotes: ['Guava', 'Mango', 'Violet', 'Vanilla'],
     fairTrade: true,
     roaster: 'Hermanos'
@@ -93,7 +93,7 @@ module.exports = [
     price: [10.50],
     weight: [250],
     origin: 'Colombia',
-    roast: 'Medium-Light Roast',
+    roast: 'Medium-Light',
     tastingNotes: ['Nutty coffee', 'hazelnut', 'chocolate with hints of orange', 'sweet honey'],
     fairTrade: true,
     roaster: 'Hermanos'
@@ -104,7 +104,7 @@ module.exports = [
     price: [17.00],
     weight: [250],
     origin: 'Colombia',
-    roast: 'Medium-Light Roast',
+    roast: 'Medium-Light',
     tastingNotes: ['Red Apple', 'Malt', 'Orange'],
     fairTrade: true,
     roaster: 'Hermanos'

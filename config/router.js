@@ -11,10 +11,8 @@ const secureRoute = require('../lib/secureRoute')
 router.route('/beans')
   .post(secureRoute, beans.create) // UnusedFunction on the frontend
   .get(beans.index)
-
 router.route('/beans/:id')
   .get(beans.show)
-
 router.route('/beans/filter')
   .get(beans.index)
 
@@ -50,6 +48,7 @@ router.route('/basket/:basketItemId')
 router.route('/basket')
   .delete(secureRoute, basket.delete)
 
+
 // USERS 
 router.route('/register')
   .post(auth.register)
@@ -57,20 +56,25 @@ router.route('/register')
 router.route('/login')
   .post(auth.login)
 
-//Update User Account Settings
-router.route('/profile/account/:id')
-  .put(users.update)
+//ACCOUNT SETTINGS
+router.route('/profile/account')
+  .put(secureRoute, users.update1)
 
-//Update User Checkout Settings
-router.route('/profile/checkout/:id')
-  .put(users.update)
+//CHECKOUT SETTINGS
+router.route('/profile/checkout')
+  .put(secureRoute, users.update2)
+  .get(secureRoute, users.addressDetails)
 
-// router.route('/users/:id/address')
-//   .put(users.editAddress)
+//FAVOURITES
+router.route('/profile')
+  .get(secureRoute, users.index1)
+  .post(secureRoute, users.favouriteAdd)
+router.route('/profile/:favItemId')
+  .put(secureRoute, users.favouriteRemove)
 
 router.route('/users')
   .get(users.index)
-  
+
 router.route('/users/:id')
   .get(users.show)
 

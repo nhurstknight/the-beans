@@ -1,5 +1,4 @@
 const Roasters = require('../models/roaster')
-const Beans = require('../models/beans')
 const { notFound } = require('../lib/errorMessage')
 
 // * Index GET /roasters

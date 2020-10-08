@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, ListGroupItem, Form } from 'react-bootstrap'
+import { Container, Row, Card, ListGroup, ListGroupItem, Form, Spinner } from 'react-bootstrap'
 import BeansCard from './BeansCard'
 import { getAllBeans, getRoast } from '../../lib/api'
 
@@ -57,7 +57,11 @@ class BeansIndex extends React.Component {
 
   render() {
     const { sliderValue } = this.state
-    if (!this.state.beans) return <div>Loading...</div>
+    if (!this.state.beans) return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
     console.log('this.state', this.state)
     return (
       <>
@@ -67,13 +71,11 @@ class BeansIndex extends React.Component {
         <Container className="beans-index-main">
           <Container className="filter-wrapper" xl={2}>
             <Card style={{ width: '12rem' }}>
-              <Card.Body>
-                <Card.Title>Filter</Card.Title>
-              </Card.Body>
+              <Card.Title>Filter</Card.Title>
               <ListGroup className="list-group-flush">
-                <Form>
+                <Form className="price-filter">
                   <Form.Group controlId="formBasicRange">
-                    <Form.Label>Price: £{sliderValue}</Form.Label>
+                    <Form.Label>Price: <span>£{sliderValue}</span></Form.Label>
                     <Form.Control type="range"
                       min="0"
                       max="20"
@@ -84,19 +86,19 @@ class BeansIndex extends React.Component {
                       }}/>
                   </Form.Group>
                 </Form>
-                <ListGroupItem>Roaster name</ListGroupItem>
-                {/* <Select
+                {/* <ListGroupItem>Roaster name</ListGroupItem>
+                <Select
                   defaultValue='Test'
                   isMulti
                   name="filterRoasters"
                   options={[this.state.beans.roaster]}
                   className="basic-multi-select"
                   classNamePrefix="select"
-                /> */}
-                <ListGroupItem>Roast</ListGroupItem>
+                />
+                <ListGroupItem>Roast</ListGroupItem> */}
                 <Form>
                   {['radio'].map((type) => (
-                    <div key='1' className="mb-3">
+                    <div key='1' className="roast-filter">
                       <Form.Check 
                         type={type}
                         id='All'
@@ -112,6 +114,15 @@ class BeansIndex extends React.Component {
                         label='Light'
                         value='Light'
                         checked={this.state.roastType === 'Light'}
+                        onChange={(e) => {
+                          this.handleChangeRoast(e)
+                        }}/>
+                      <Form.Check 
+                        type={type}
+                        id='Medium-Light'
+                        label='Medium-Light'
+                        value='Medium-Light'
+                        checked={this.state.roastType === 'Medium-Light'}
                         onChange={(e) => {
                           this.handleChangeRoast(e)
                         }}/>

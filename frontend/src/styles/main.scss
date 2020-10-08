@@ -1,5 +1,6 @@
 $theme-colors: (
-    "primary": #b2967d
+    "primary": #b2967d,
+    "danger" : #e03137
 );
 
 @import "~bootstrap/scss/bootstrap";
@@ -97,6 +98,14 @@ $theme-colors: (
 .beans-index-grid {
   // flex-grow: 2;
   justify-content: space-between;
+}
+
+.price-filter {
+  margin: 10px 20px;
+}
+
+.roast-filter {
+  margin: 10px 20px;
 }
 
 .beans-show-wrapper {
@@ -227,4 +236,21 @@ $theme-colors: (
 
 .delete-basket-btn {
   width: 30%;
+}
+
+.checkout-btn {
+  margin: 50px auto;
+  width: 60%;
+}
+
+.payment-form {
+  width: 60%;
+  margin: 50px auto;
+}
+
+// Favourites
+
+.fav-card {
+  display: flex;
+  flex-direction: column;
 }
