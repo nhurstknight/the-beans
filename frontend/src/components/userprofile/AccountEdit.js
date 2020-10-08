@@ -42,7 +42,7 @@ class AccountEdit extends React.Component {
   handleSubmit = async event => {
     event.preventDefault()
     try { 
-      const response = await editAccount(this.state.formData)
+      await editAccount(this.state.formData)
       this.props.history.push('/profile')
     } catch (err) {
       this.setState({ errors: err.response.data.errors })

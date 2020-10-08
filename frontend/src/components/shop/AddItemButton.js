@@ -41,7 +41,7 @@ class AddItemButton extends React.Component {
             onClick={this.handleClick}
             variant="primary"
             type="submit"
-            className="basket-btns">
+            className="add-btn basket-btns">
             { basket }
           </Button>
         }
