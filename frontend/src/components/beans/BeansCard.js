@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { addFav } from '../../lib/api'
 
 
 import AddItemButton from '../../components/shop/AddItemButton'
