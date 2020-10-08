@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import AddItemButton from '../shop/AddItemButton'
+import AddFavButton from '../userprofile/AddFavButton'
 import CommentCard from '../comments/CommentCard'
 import CommentComponent from '../comments/CommentComponent'
 
@@ -14,6 +15,7 @@ const fav = <FontAwesomeIcon icon={ faHeart } />
 class BeansShow extends React.Component {
   state = {
     product: null,
+    productData: null,
     formData: {
       text: '',
       rating: ''
@@ -26,7 +28,8 @@ class BeansShow extends React.Component {
     const response = await getSingleBeans(productId)
     // console.log(response)
     this.setState({
-      product: response.data
+      product: productId,
+      productData: response.data
     })
   }
 
@@ -36,7 +39,7 @@ class BeansShow extends React.Component {
     const response = await getSingleBeans(productId)
     console.log(response)
     this.setState({
-      product: response.data
+      productData: response.data
     })
   }
 
@@ -63,8 +66,8 @@ class BeansShow extends React.Component {
   
   render() {
     console.log(this.state.formData)
-    const { product } = this.state
-    if (!product) return (
+    const { productData, product } = this.state
+    if (!productData) return (
       <Jumbotron>
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
@@ -78,30 +81,30 @@ class BeansShow extends React.Component {
         </Container>
         <Container className="beans-show-wrapper">
           <Col xl={6}>
-            <Image className="beans-show-img" src={ product.image }/>
+            <Image className="beans-show-img" src={ productData.image }/>
           </Col>
           <Col xl={6}>
             <div className="beans-show-title">
-              <h4>{ product.name }</h4>
+              <h4>{ productData.name }</h4>
               <span>
-              </span><p>{`£${product.price[0]}`}</p>
+              </span><p>{`£${productData.price[0]}`}</p>
             </div>
             <div className="beans-show-subtitle">
-              <h3>{ product.roasterName }</h3>
-              <p>{`${product.weight[0]}g`}</p>
+              <h3>{ productData.roasterName }</h3>
+              <p>{`${productData.weight[0]}g`}</p>
             </div>
 
             <div>
-              <p>{ product.origin }</p>
-              <p>{ product.roast }</p>
-              <ul>{ product.tastingNotes.map(note => (
+              <p>{ productData.origin }</p>
+              <p>{ productData.roast }</p>
+              <ul>{ productData.tastingNotes.map(note => (
                 <li>{ note }</li>
               )) }
               </ul>
             </div>
 
-            <AddItemButton product={ product._id }></AddItemButton>
-            <Button className="fav-btn">{ fav }</Button>
+            <AddItemButton product={ productData._id }></AddItemButton>
+            <AddFavButton className="fav-btn" product={ product }>{ fav }</AddFavButton>
           </Col>
         </Container>
         
@@ -114,7 +117,7 @@ class BeansShow extends React.Component {
         </Container>
 
         <Container className="comment-view-container">
-          <ListGroup.Item> {this.state.product.comments.map(comment => (
+          <ListGroup.Item> {this.state.productData.comments.map(comment => (
             <CommentCard key={ comment._id }{ ...comment }/>
           ))} </ListGroup.Item>
         </Container>

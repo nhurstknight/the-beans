@@ -63,13 +63,14 @@ export const getAllFavs = () => {
   return axios.get(`${baseUrl}/profile`, withHeaders())
 }
 // ADD FAVOURITE
-export const addFav = () => {
-  return axios.post(`${baseUrl}/profile`, withHeaders())
+export const addFav = ( product ) => {
+  console.log(product)
+  return axios.post(`${baseUrl}/profile`, { product }, withHeaders())
 }
-// // DELETE FAVOURITE
-// export const deleteFav = () => {
-//   return axios.put(`${baseUrl}/profile/${favItemId}`, withHeaders())
-// }
+// DELETE FAVOURITE
+export const removeFav = (product) => {
+  return axios.put(`${baseUrl}/profile/${product}`, withHeaders())
+}
 
 
 // BASKET

@@ -1,9 +1,8 @@
 import React from 'react'
 
-// import RemoveItemButton from './RemoveItemButton'
+import RemoveFavButton from './RemoveFavButton'
 
 const FavouriteCard = ({ product: { _id, image, name } }) => {
-  console.log(_id)
   return (
     <>
       <div className="fav-card">
@@ -15,6 +14,7 @@ const FavouriteCard = ({ product: { _id, image, name } }) => {
           alt={ name }
         />
         <h5>{ name }</h5>
+        <RemoveFavButton></RemoveFavButton>
       </div>
     </>
   )

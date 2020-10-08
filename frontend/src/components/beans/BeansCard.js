@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { Card, Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { addFav } from '../../lib/api'
 
 
+import AddFavButton from '../userprofile/AddFavButton'
 import AddItemButton from '../../components/shop/AddItemButton'
 
 const fav = <FontAwesomeIcon icon={ faHeart } />
@@ -26,8 +26,9 @@ const BeansCard = ({ _id, image, name, price }) => {
         <AddItemButton 
           className="beans-show-add-item-btn" 
           product={_id}>
+          {/* // onClick={handleChange}> */}
         </AddItemButton>
-        <Button className="fav-btn">{ fav }</Button>
+        <AddFavButton className="fav-btn" product={_id}>{ fav }</AddFavButton>
       </Card.Body>
     </Card>
   )
