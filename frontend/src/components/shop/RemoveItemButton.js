@@ -31,7 +31,7 @@ class DeleteItemButton extends React.Component {
           :
           <Button
             onClick={this.handleClick}
-            variant="primary"
+            variant="danger"
             type="submit">
             Delete item
           </Button>

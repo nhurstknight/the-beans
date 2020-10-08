@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, ListGroupItem, Form } from 'react-bootstrap'
+import { Container, Row, Card, ListGroup, ListGroupItem, Form, Spinner } from 'react-bootstrap'
 import BeansCard from './BeansCard'
 import { getAllBeans, getRoast } from '../../lib/api'
 
@@ -57,7 +57,11 @@ class BeansIndex extends React.Component {
 
   render() {
     const { sliderValue } = this.state
-    if (!this.state.beans) return <div>Loading...</div>
+    if (!this.state.beans) return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
     console.log('this.state', this.state)
     return (
       <>
