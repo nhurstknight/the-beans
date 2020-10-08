@@ -58,7 +58,7 @@ class Basket extends React.Component {
               <Button
                 onClick={this.handleClick}
                 className="delete-basket-btn"
-                variant="primary" 
+                variant="danger" 
                 type="submit">
                 Remove all items
               </Button>
