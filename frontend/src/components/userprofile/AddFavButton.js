@@ -9,27 +9,15 @@ const fav = <FontAwesomeIcon icon={ faHeart } />
 
 
 class AddFavButton extends React.Component {
-  // state = {
-  //   isConfirming: false
-  // }
-
-  // handleClick = () => {
-  //   this.setState({ isConfirming: true })
-  // }
-
-  // cancel = () => {
-  //   this.setState({ isConfirming: false })
-  // }
 
   sendRequest = async () => {
     await addFav(this.props.product)
-    // this.setState({ isConfirming: false })
   }
 
   render() {
     return (
       <>
-        <Button className="fav-btns" onClick={this.sendRequest}>{ fav }</Button>
+        <Button className="fav-btn" onClick={this.sendRequest}>{ fav }</Button>
       </>
     )
   }

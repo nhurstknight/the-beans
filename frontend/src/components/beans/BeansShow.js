@@ -65,8 +65,8 @@ class BeansShow extends React.Component {
   }
   
   render() {
-    const { product } = this.state
-    if (!product) return (
+    const { productData } = this.state
+    if (!productData) return (
       <Jumbotron>
         <Spinner animation="border" role="status">
           <span className="sr-only">Loading...</span>
@@ -85,22 +85,22 @@ class BeansShow extends React.Component {
           <Col xl={6}>
             <div className="beans-show-info">
               <div className="beans-show-title">
-                <h2>{ product.name }</h2>
+                <h2>{ productData.name }</h2>
                 <span>
-                  <p>{`£${product.price[0]}`}</p>
+                  <p>{`£${productData.price[0]}`}</p>
                 </span>
               </div>
               <div className="beans-show-subtitle">
-                <h4>{ product.roaster }</h4>
+                <h4>{ productData.roaster }</h4>
                 <span>
-                  <p>{`${product.weight[0]}g`}</p> 
+                  <p>{`${productData.weight[0]}g`}</p> 
                 </span>
               </div>
 
               <div>
-                <p>{ product.origin }</p>
-                <p>{ product.roast }</p>
-                <ul>{ product.tastingNotes.map(note => (
+                <p>{ productData.origin }</p>
+                <p>{ productData.roast }</p>
+                <ul>{ productData.tastingNotes.map(note => (
                   <li>{ note }</li>
                 )) }
                 </ul>
@@ -108,7 +108,7 @@ class BeansShow extends React.Component {
             </div>
 
             <AddItemButton product={ productData._id }></AddItemButton>
-            <AddFavButton className="fav-btn" product={ product }>{ fav }</AddFavButton>
+            <AddFavButton className="fav-btn" product={ this.state.product }>{ fav }</AddFavButton>
           </Col>
         </Container>
         <Container className="comments">
@@ -123,7 +123,7 @@ class BeansShow extends React.Component {
 
           <Container className="comment-view-container">
             <h2>Customer Reviews</h2>
-            {this.state.product.comments.map(comment => (
+            {this.state.productData.comments.map(comment => (
               <CommentCard className="comment" key={ comment._id }{ ...comment }/>
             ))} 
           </Container>

@@ -28,7 +28,10 @@ const BeansCard = ({ _id, image, name, price }) => {
             className="beans-card-add-item-btn" 
             product={_id}>
           </AddItemButton>
-          <Button className="fav-btn">{ fav }</Button>
+          <AddFavButton 
+            className="fav-btn"
+            product={_id}>{ fav }
+          </AddFavButton>
         </div>
       </Card.Body>
     </Card>
