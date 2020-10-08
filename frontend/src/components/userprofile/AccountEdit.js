@@ -62,10 +62,10 @@ class AccountEdit extends React.Component {
               <Card.Body>
                 <Card.Title>Profile Navigation</Card.Title>
               </Card.Body>
-              <ListGroup as="ul">
+              <ListGroup variant="flush" as="ul">
                 <ListGroup.Item action href="/profile"> Favourites</ListGroup.Item>
                 <ListGroup.Item action href="/profile/account" active>Account Details</ListGroup.Item>
-                <ListGroup.Item action href="/profile/checkout">Checkout Details</ListGroup.Item>
+                <ListGroup.Item action href="/profile/checkout">Address Details</ListGroup.Item>
               </ListGroup>
             </Card>
           </Container>

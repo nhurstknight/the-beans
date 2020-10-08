@@ -140,7 +140,7 @@ class BeansIndex extends React.Component {
           </Container>  
 
           <Container className="beans-index-grid">
-            <Row xs={1} m={3} xl={4}>
+            <Row xs={1} xl={3}>
               {(this.state.filteredBeans ? this.state.filteredBeans : this.state.beans).map(bean => (
                 <BeansCard
                   key={bean._id}

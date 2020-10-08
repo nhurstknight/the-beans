@@ -29,10 +29,10 @@ class ProfilePage extends React.Component {
               <Card.Body>
                 <Card.Title>Profile Navigation</Card.Title>
               </Card.Body>
-              <ListGroup as="ul">
+              <ListGroup variant="flush" as="ul">
                 <ListGroup.Item action href="/profile" active> Favourites</ListGroup.Item>
                 <ListGroup.Item action href="/profile/account">Account Details</ListGroup.Item>
-                <ListGroup.Item action href="/profile/checkout">Checkout Details</ListGroup.Item>
+                <ListGroup.Item action href="/profile/checkout">Address Details</ListGroup.Item>
               </ListGroup>
             </Card>
           </Container>
