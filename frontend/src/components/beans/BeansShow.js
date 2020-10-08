@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
+import { Container, Col,  Image, Card, ListGroup, Spinner } from 'react-bootstrap'
 
 import AddItemButton from '../shop/AddItemButton'
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
@@ -21,7 +21,7 @@ class BeansShow extends React.Component {
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
-    console.log(response)
+    // console.log(response)
     this.setState({
       product: response.data
     })
@@ -51,7 +51,11 @@ class BeansShow extends React.Component {
   render() {
     console.log(this.state.formData)
     const { product } = this.state
-    if (!product) return <div>Loading...</div>
+    if (!product) return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
     return (
       <>
         <Container fluid className="beans-banner">
@@ -62,19 +66,19 @@ class BeansShow extends React.Component {
             <Image src={ product.image } fluid />
           </Col>
           <Col xl={6}>
-            <Card style={{ width: '28rem' }}>
+            <Card style={{ width: '40rem' }}>
               <ListGroup variant="flush">
                 <ListGroup.Item>{ product.name }</ListGroup.Item>
                 <ListGroup.Item>{`£${product.price[0]}`}</ListGroup.Item>
                 <ListGroup.Item>{`${product.weight[0]}g`}</ListGroup.Item>
                 <ListGroup.Item>{ product.origin }</ListGroup.Item>
                 <ListGroup.Item>{ product.roast }</ListGroup.Item>
-                {/* <ListGroup.Item>
+                <ListGroup.Item>
                   <ul>{ product.tastingNotes.map(note => (
                     <li>{ note }</li>
                   )) }
                   </ul>
-                </ListGroup.Item> */}
+                </ListGroup.Item>
               </ListGroup>
               <AddItemButton product={ product._id }></AddItemButton>
             </Card>
