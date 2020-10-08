@@ -1,9 +1,9 @@
 import React from 'react'
 import {  Media } from 'react-bootstrap'
 
-// import RemoveItemButton from './RemoveItemButton'
+import RemoveItemButton from './RemoveItemButton'
 
-const BasketItem = ({ product: { _id, image, name, price, weight } }) => {
+const BasketItem = ({ _id, product: { image, name, price, weight } }) => {
   return (
     <Media className="basket-item">
       <img
@@ -19,10 +19,10 @@ const BasketItem = ({ product: { _id, image, name, price, weight } }) => {
           <li>{`£${price[0]}`}</li>
           <li>{`${weight[0]}g`}</li>
         </ul>
-        {/* <RemoveItemButton
+        <RemoveItemButton
           className="delete-item-button"
           product={ _id }> 
-        </RemoveItemButton> */}
+        </RemoveItemButton>
       </Media.Body>
 
     </Media>

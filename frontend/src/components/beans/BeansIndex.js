@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, ListGroupItem, Form, Spinner } from 'react-bootstrap'
+import { Container, Row, Card, Form, Spinner, Accordion } from 'react-bootstrap'
 import BeansCard from './BeansCard'
 import { getAllBeans, getRoast } from '../../lib/api'
 
@@ -62,12 +62,12 @@ class BeansIndex extends React.Component {
         <span className="sr-only">Loading...</span>
       </Spinner>
     )
-    console.log('this.state', this.state)
     return (
       <>
         <Container fluid className="beans-banner">
           <h1>Shop with us</h1>
         </Container>
+
         <Container className="beans-index-main">
           <Container className="filter-wrapper">
             <Card style={{ width: '12rem' }}>

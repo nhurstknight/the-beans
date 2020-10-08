@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container,  Image, Card, Accordion, Button, Carousel, Row } from 'react-bootstrap'
+import { Container,  Image, Card, Row } from 'react-bootstrap'
 
 import { getSingleRoaster, getRoasterProducts } from '../../lib/api'
 import BeansCard from '../beans/BeansCard'

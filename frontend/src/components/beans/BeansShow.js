@@ -1,5 +1,7 @@
 import React from 'react'
-import { Container, Col,  Image, Card, ListGroup, Spinner } from 'react-bootstrap'
+import { Container, Col,  Image, ListGroup, Spinner, Jumbotron, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import AddItemButton from '../shop/AddItemButton'
 import CommentCard from '../comments/CommentCard'
@@ -7,6 +9,7 @@ import CommentComponent from '../comments/CommentComponent'
 
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
 
+const fav = <FontAwesomeIcon icon={ faHeart } />
 
 class BeansShow extends React.Component {
   state = {
@@ -62,9 +65,11 @@ class BeansShow extends React.Component {
     console.log(this.state.formData)
     const { product } = this.state
     if (!product) return (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+      <Jumbotron>
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </Jumbotron>
     )
     return (
       <>
@@ -73,27 +78,33 @@ class BeansShow extends React.Component {
         </Container>
         <Container className="beans-show-wrapper">
           <Col xl={6}>
-            <Image src={ product.image }/>
+            <Image className="beans-show-img" src={ product.image }/>
           </Col>
           <Col xl={6}>
-            <Card style={{ width: '40rem' }}>
-              <ListGroup variant="flush">
-                <ListGroup.Item>{ product.name }</ListGroup.Item>
-                <ListGroup.Item>{`£${product.price[0]}`}</ListGroup.Item>
-                <ListGroup.Item>{`${product.weight[0]}g`}</ListGroup.Item>
-                <ListGroup.Item>{ product.origin }</ListGroup.Item>
-                <ListGroup.Item>{ product.roast }</ListGroup.Item>
-                <ListGroup.Item>
-                  <ul>{ product.tastingNotes.map(note => (
-                    <li>{ note }</li>
-                  )) }
-                  </ul>
-                </ListGroup.Item>
-              </ListGroup>
-              <AddItemButton product={ product._id }></AddItemButton>
-            </Card>
+            <div className="beans-show-title">
+              <h4>{ product.name }</h4>
+              <span>
+              </span><p>{`£${product.price[0]}`}</p>
+            </div>
+            <div className="beans-show-subtitle">
+              <h3>{ product.roasterName }</h3>
+              <p>{`${product.weight[0]}g`}</p>
+            </div>
+
+            <div>
+              <p>{ product.origin }</p>
+              <p>{ product.roast }</p>
+              <ul>{ product.tastingNotes.map(note => (
+                <li>{ note }</li>
+              )) }
+              </ul>
+            </div>
+
+            <AddItemButton product={ product._id }></AddItemButton>
+            <Button className="fav-btn">{ fav }</Button>
           </Col>
         </Container>
+        
         <Container className="comment-submit-container">
           <CommentComponent 
             value={this.state.formData}
@@ -101,6 +112,7 @@ class BeansShow extends React.Component {
             handleSubmit={this.handleSubmit}
           />
         </Container>
+
         <Container className="comment-view-container">
           <ListGroup.Item> {this.state.product.comments.map(comment => (
             <CommentCard key={ comment._id }{ ...comment }/>
