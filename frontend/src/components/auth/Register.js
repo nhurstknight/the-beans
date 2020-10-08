@@ -19,6 +19,10 @@ class Register extends React.Component {
     errors: {}
   }
 
+  formValidation = () => {
+
+  }
+
   handleChange = event => {
     const formData = {
       ...this.state.formData,
