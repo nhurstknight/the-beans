@@ -317,8 +317,23 @@ hr {
   padding: 2.5%;
   background-color: rgb(219, 102, 24);
   height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .RoasterImages {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// RoasterShow BeansShow
+.row.row-cols-xl-4.row-cols-md-3.row-cols-1 {
+  display: flex;
+  justify-content: center;
+}
+// 
+.roaster-logo-and-bio.card {
+  background-color: rgb(219, 102, 24);
 }

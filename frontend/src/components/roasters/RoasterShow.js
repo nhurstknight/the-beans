@@ -52,16 +52,14 @@ class RoasterShow extends React.Component {
             {roaster.bio}
           </Card>
         </Container>
-        <Container>
-          <Container className="roaster-beans-index-grid" fluid xl={10}>
-            <Row xs={1} md={3} xl={4} >
-              { this.state.beans.map(bean => (
-                <BeansCard
-                  key={bean._id}
-                  {...bean} />
-              ))}
-            </Row>
-          </Container>
+        <Container className="roaster-beans-index-grid" fluid xl={10}>
+          <Row xs={1} md={3} xl={4} >
+            { this.state.beans.map(bean => (
+              <BeansCard
+                key={bean._id}
+                {...bean} />
+            ))}
+          </Row>
         </Container>
       </>
     )
