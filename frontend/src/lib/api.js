@@ -58,6 +58,10 @@ export const addressDetails = () => {
 export const editCheckout = ( formData ) => {
   return axios.put(`${baseUrl}/profile/checkout`, formData, withHeaders())
 }
+// GET FAVOURITE
+export const getAllFavs = () => {
+  return axios.get(`${baseUrl}/profile`, withHeaders())
+}
 
 
 

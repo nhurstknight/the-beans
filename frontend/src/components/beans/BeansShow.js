@@ -76,12 +76,12 @@ class BeansShow extends React.Component {
                 <ListGroup.Item>{`${product.weight[0]}g`}</ListGroup.Item>
                 <ListGroup.Item>{ product.origin }</ListGroup.Item>
                 <ListGroup.Item>{ product.roast }</ListGroup.Item>
-                {/* <ListGroup.Item>
+                <ListGroup.Item>
                   <ul>{ product.tastingNotes.map(note => (
                     <li>{ note }</li>
                   )) }
                   </ul>
-                </ListGroup.Item> */}
+                </ListGroup.Item>
               </ListGroup>
               <AddItemButton product={ product._id }></AddItemButton>
             </Card>

@@ -6,9 +6,10 @@ const basketItemSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.ObjectId, ref: 'Beans', required: true },
   quantity: { type: Number, default: 1, min: 1 }
 })
+
 const favouriteSchema = new mongoose.Schema({
-  product: { type: mongoose.Schema.ObjectId, ref: 'Favourites', required: true },
-  quantity: { type: Number, default: 0, max: 1 }
+  product: { type: mongoose.Schema.ObjectId, ref: 'Beans', required: true },
+  quantity: { type: Number, default: 1, max: 1 }
 })
 
 //I've kept them all strings/not required sometimes some people do not have house numbers/

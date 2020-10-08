@@ -75,7 +75,7 @@ class AccountEdit extends React.Component {
                 <h3>Account Details</h3>
                 <div className='loginForm'>
 
-                  <Form.Group controlId="formBasicPassword">
+                  <Form.Group controlId="formBasicUserName">
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
                       type="username" 

@@ -20,6 +20,7 @@ async function getSingleUser(req, res) {
   }
 }
 
+//EDIT ACCOUNT DETAILS
 async function accountEdit (req, res, next) {
   try {
     const accountToEdit = await User.findById(req.currentUser._id)
@@ -63,11 +64,65 @@ async function addressDetails(req, res, next) {
   }
 }
 
+
+// FAVOURITES
+
+// POST add item  /basket
+async function favouriteAdd(req, res, next) {
+  try {
+    const userFavList = await User.findById(req.currentUser._id)
+    console.log('user was ->', userFavList)
+    const favItem = { ...req.body }
+    if (!userFavList) throw new Error(notFound)
+    console.log('req params are', req.params)
+    userFavList.favourites.push(favItem)
+    console.log('item was', favItem)
+    await userFavList.save()
+    console.log('Saved')
+    res.status(201).json(userFavList)
+    
+  } catch (err) {
+    next(err)
+  }
+}
+
+// GET get fav items  /profile
+async function favouritesIndex(req, res, next) {
+  try {
+    const userFavs = await User.findById(req.currentUser._id)
+      .populate('favourites.product')
+    console.log(userFavs)
+    if (!userFavs) throw new Error(notFound)
+    res.status(200).json(userFavs)
+  } catch (err) {
+    next(err)
+  }
+}
+
+// PUT//DELETE FAVOURITE 
+async function favouriteRemove(req, res, next) {
+  try {
+    const userFavList = await User.findById(req.currentUser._id)
+    if (!userFavList) throw new Error(notFound)
+    const removefavItem = userFavList.favourites.id(req.params.favItemId)
+    if (!removefavItem) throw new Error(notFound)
+    await removefavItem.remove()
+    await userFavList.save()
+    res.sendStatus(204)
+
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
   index: getAllUsers,
   show: getSingleUser,
   update1: accountEdit,
   update2: checkOutEdit,
-  addressDetails: addressDetails
+  addressDetails: addressDetails,
+  index1: favouritesIndex,
+  favouriteAdd: favouriteAdd,
+  favouriteRemove: favouriteRemove
 }
 // editAddress: editAddress

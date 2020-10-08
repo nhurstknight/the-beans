@@ -6,12 +6,18 @@ class Payment extends React.Component {
   render () {
     return (
       <Form className="payment-form">
-        <Form.Group as={Row} controlId="formPlaintextEmail">
+        <Form.Group as={Row} controlId="formPlaintextNumber">
           <Form.Label column sm="2">
             Card number
           </Form.Label>
           <Col sm="10">
-            <Form.Control placeholder="XXXX-XXXX-XXXX-XXXX" />
+            <Form.Control 
+              placeholder="XXXX-XXXX-XXXX-XXXX"
+              min="16"
+              max="16"
+              type="number"
+              name="number"
+            />
           </Col>
         </Form.Group>
 
