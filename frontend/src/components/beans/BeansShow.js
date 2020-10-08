@@ -27,8 +27,12 @@ class BeansShow extends React.Component {
     })
   }
 
+<<<<<<< HEAD
+  getData = async () => {
+=======
   getData = async event => {
     console.log(event)
+>>>>>>> development
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
@@ -74,7 +78,7 @@ class BeansShow extends React.Component {
         </Container>
         <Container className="beans-show-wrapper">
           <Col xl={6}>
-            <Image src={ product.image } fluid />
+            <Image src={ product.image }/>
           </Col>
           <Col xl={6}>
             <Card style={{ width: '40rem' }}>
@@ -95,17 +99,17 @@ class BeansShow extends React.Component {
             </Card>
           </Col>
         </Container>
-        <Container className="comment-view-container">
-          <ListGroup.Item> {this.state.product.comments.map(comment => (
-            <CommentCard key={ comment._id }{ ...comment }/>
-          ))} </ListGroup.Item>
-        </Container>
         <Container className="comment-submit-container">
           <CommentComponent 
             value={this.state.formData}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
+        </Container>
+        <Container className="comment-view-container">
+          <ListGroup.Item> {this.state.product.comments.map(comment => (
+            <CommentCard key={ comment._id }{ ...comment }/>
+          ))} </ListGroup.Item>
         </Container>
       </>
     )

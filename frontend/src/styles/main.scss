@@ -1,23 +1,28 @@
 $theme-colors: (
-    "primary": #b2967d,
+    "primary": #e97e04,
     "danger" : #e03137
 );
 
 @import "~bootstrap/scss/bootstrap";
 
+
+// * {
+//   outline: solid 1px black;
+// }
+// COMMON
 .navbar-light a.navbar-brand {
   font-weight: bold;
-  color: #3b2210;
+  // color: #3b2210;
 } 
 
 .navbar-light .navbar-nav .nav-link {
-  color: #3b2210;
+  // color: #3b2210;
   font-weight: bold;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .hero-text .btn:hover{
-  color: #b2967d;
+  color: #fb8500;
 }
 
 // is there an alternative way to remove imported style?
@@ -25,6 +30,44 @@ $theme-colors: (
   border-color: transparent;
 }
 
+.beans-banner {
+  width: 100%;
+  height: 150px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-bean-banner.jpeg');
+  background-size: auto;
+  background-position: bottom;
+  position: relative;
+  text-align: center;
+}
+
+.beans-banner h1 {
+  color: white;
+  padding-top: 45px;
+}
+
+.footer {
+  height: 20vh,;
+  color: #3b2210;
+  text-align: center;
+  position: relative;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer a {
+  text-decoration: none; 
+  color:  #3b2210;
+}
+
+// HOME
 .jumbotron {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/coffee-bean-hero.jpg');
   background-size: cover;
@@ -59,44 +102,24 @@ $theme-colors: (
 
 }
 
-.footer {
-  height: 20vh,;
-  color: #3b2210;
-  text-align: center;
-  position: relative;
-}
-
-.footer ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.footer a {
-  text-decoration: none; 
-  color:  #3b2210;
-}
-
+// BEANS
 .beans-index-main {
-  margin: 50px 0px;
+  margin: 50px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 95%;
+}
+
+.filter-wrapper {
+  width: 35%;
 }
 
 .filter-wrapper.container {
-  width:40%;
-  margin: 0, auto;
-  // flex-shrink: 1;
+  padding: 20px;
 }
 
 .beans-index-grid {
-  // flex-grow: 2;
+  flex-grow: 3;
   justify-content: space-between;
 }
 
@@ -114,37 +137,39 @@ $theme-colors: (
   margin: 70px 30px;
 }
 
-.RoasterImages {
+.beans-card.card {
+  margin: 1%
+}
+.card-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.beans-card .card-body{
+  padding: 1rem;
+}
+
+
+// ROASTER
+.roaster-img {
   height: 200px;
   object-fit: scale-down;
   margin: 5%;
   }
 
-.roasterCard {
+.roaster-card{
   display: flex;
   margin: 5%;
 }
 
-.roasterCardButton {
+.roaster-card-btn {
   margin-bottom: 5%;
   // background-color: rgba(206, 75, 14, 0.774);
   // color: black;
 }
 
-.beans-banner {
-  width: 100%;
-  height: 150px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/coffee-bean-banner.jpeg');
-  background-size: auto;
-  background-position: bottom;
-  position: relative;
-  text-align: center;
-}
 
-.beans-banner h1 {
-  color: white;
-  padding-top: 45px;
-}
 
 .login-reg-banner {
   text-align: center;
@@ -171,7 +196,7 @@ $theme-colors: (
   width: 280px;
 }
 
-.form-label {
+.form-label, .form-check-label {
   font-size: 0.8em;
   margin-bottom: 0.2em;
   margin-top: 0.3em;
@@ -248,9 +273,43 @@ $theme-colors: (
   margin: 50px auto;
 }
 
+<<<<<<< HEAD
+
+// BEANS CARD
+
+.beans-card-btns-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.basket-btns,
+.fav-btn {
+  margin: 4px;
+}
+
+.fav-btn {
+  position: absolute; 
+  margin-right: 1rem;
+  right: 0;
+}
+
+.card-text a {
+  color: #000;
+}
+
+.card-text a:hover{
+  color: #fb8500;
+  text-decoration: none;
+}
+
+hr {
+  margin: auto;
+=======
 // Favourites
 
 .fav-card {
   display: flex;
   flex-direction: column;
+>>>>>>> development
 }
