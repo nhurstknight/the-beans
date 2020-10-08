@@ -1,12 +1,9 @@
 import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
-
-import AddItemButton from '../shop/AddItemButton'
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
-
+import AddItemButton from '../shop/AddItemButton'
 import CommentCard from '../comments/CommentCard'
 import CommentComponent from '../comments/CommentComponent'
-
 
 class BeansShow extends React.Component {
   state = {
@@ -18,6 +15,16 @@ class BeansShow extends React.Component {
   }
 
   async componentDidMount() {
+    const productId = this.props.match.params.id
+    // console.log(this.props.match.params.id)
+    const response = await getSingleBeans(productId)
+    console.log(response)
+    this.setState({
+      product: response.data
+    })
+  }
+
+  getData = async event => {
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
@@ -44,10 +51,10 @@ class BeansShow extends React.Component {
       text: '',
       rating: ''
     }
-    // this.getData()
+    this.getData()
     this.setState({ formData })
   }
-
+  
   render() {
     console.log(this.state.formData)
     const { product } = this.state
@@ -96,7 +103,4 @@ class BeansShow extends React.Component {
     )
   }
 }
-
-
-
 export default BeansShow

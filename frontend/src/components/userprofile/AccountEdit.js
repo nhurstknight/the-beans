@@ -6,14 +6,15 @@ import { getSingleUser, editAccount } from '../../lib/api'
 class AccountEdit extends React.Component {
   state = {
     userId: null,
+    errors: null,
     formData: {
-      username: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      profileImage: '',
-      password: '',
-      passwordConfirmation: ''
+      username: null,
+      firstName: null,
+      lastName: null,
+      email: null,
+      profileImage: null,
+      password: null,
+      passwordConfirmation: null
     }
   }
 
