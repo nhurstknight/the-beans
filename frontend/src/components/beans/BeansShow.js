@@ -27,12 +27,7 @@ class BeansShow extends React.Component {
     })
   }
 
-<<<<<<< HEAD
   getData = async () => {
-=======
-  getData = async event => {
-    console.log(event)
->>>>>>> development
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
