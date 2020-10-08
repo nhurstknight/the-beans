@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
 import AddItemButton from '../shop/AddItemButton'
-import { getSingleBeans, addCommentToBean } from '../../lib/api'
 import CommentCard from '../comments/CommentCard'
 import CommentComponent from '../comments/CommentComponent'
 
@@ -27,7 +26,7 @@ class BeansShow extends React.Component {
   }
 
   getData = async event => {
-    event.preventDefault()
+    console.log(event)
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
@@ -38,6 +37,9 @@ class BeansShow extends React.Component {
   }
 
   handleChange = event => {
+    console.log(event.target.name)
+    console.log(event.target.value)
+    console.log(event.target.value.rating)
     const formData = {
       ...this.state.formData,
       [event.target.name]: event.target.value
