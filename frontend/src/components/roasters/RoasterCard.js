@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom'
 const RoasterCard = ({ _id, logo }) => {
   return (
     <>
-      <Card className="beans-card">
+            <Link to={`/roaster/${_id}`}>
+      <Card className="roaster-card">
         <Card.Img className="RoasterImages" variant="top" src={ logo } alt={ logo } />
         <Card.Body>
           <div className="card-text">
-            <Link to={`/roaster/${_id}`}>
-            </Link>
           </div>
         </Card.Body>
       </Card>
-      </>
+            </Link>
+    </>
   )
 
 
