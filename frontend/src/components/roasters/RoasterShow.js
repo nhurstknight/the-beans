@@ -44,7 +44,6 @@ class RoasterShow extends React.Component {
           <Container xs={6} md={4}>        
             <Card className="roaster-logo-and-bio">
               <Image className="roaster-logo" src={roaster.logo} fluid/>
-              <Button className="roaster-button">See their products</Button>
             </Card>
           </Container>
           <Card className="roaster-bio">
@@ -54,29 +53,6 @@ class RoasterShow extends React.Component {
           </Card>
         </Container>
         <Container>
-          <Accordion className="roaster-accordion-customer-reviews" xs={6} md={4}>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                Customer Reviews
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>Placeholder</Card.Body>
-            </Accordion.Collapse>
-          </Accordion>
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="beans-banner"
-                src="https://images.photowall.com/products/49771/coffee-beans.jpg?h=699&q=85"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>Placeholder Title</h3>
-                <p>Will fill once I can sort out the filter method >:(</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
           <Container className="roaster-beans-index-grid" fluid xl={10}>
             <Row xs={1} md={3} xl={4} >
               { this.state.beans.map(bean => (

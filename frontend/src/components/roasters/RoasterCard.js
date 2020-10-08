@@ -1,19 +1,24 @@
 import React from 'react'
-import { Button, Card, Image } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
 const RoasterCard = ({ _id, logo }) => {
   return (
-    <Card
-      className="roasterCard text-center bg-dark text-white"
-    >
-      <Image className="RoasterImages" src={logo} fluid/>
-      <Link to={`/roasters/${_id}`}>
-        <Button className="roasterCardButton" variant="primary">Company Page</Button>
-      </Link>
-    </Card>
+    <>
+            <Link to={`/roaster/${_id}`}>
+      <Card className="roaster-card">
+        <Card.Img className="RoasterImages" variant="top" src={ logo } alt={ logo } />
+        <Card.Body>
+          <div className="card-text">
+          </div>
+        </Card.Body>
+      </Card>
+            </Link>
+    </>
   )
+
+
 }
 
 export default RoasterCard
