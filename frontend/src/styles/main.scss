@@ -110,17 +110,17 @@ $theme-colors: (
   justify-content: space-between;
 }
 
+.beans-index-grid {
+  flex-grow: 3;
+  justify-content: space-between;
+}
+
 .filter-wrapper {
   width: 35%;
 }
 
 .filter-wrapper.container {
   padding: 20px;
-}
-
-.beans-index-grid {
-  flex-grow: 3;
-  justify-content: space-between;
 }
 
 .price-filter {
@@ -133,13 +133,28 @@ $theme-colors: (
 
 .beans-show-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-wrap: row wrap;
   margin: 70px 30px;
 }
 
-.beans-card.card {
-  margin: 1%
+.beans-show-img {
+  width: 30rem;
 }
+
+.product-key-info {
+  display: flex;
+  // flex-direction: ;
+}
+.beans-card {
+  border: none;
+}
+
+.card-img-top {
+  
+  width: 90%;
+  margin: auto;
+}
+
 .card-text {
   display: flex;
   flex-direction: row;
@@ -148,6 +163,23 @@ $theme-colors: (
 
 .beans-card .card-body{
   padding: 1rem;
+}
+
+.card-text {
+  align-items: baseline
+}
+
+.card-text a h5, 
+.card-text p {
+  font-size: 0.8rem;
+}
+.card-text a {
+  color: #000;
+}
+
+.card-text a:hover{
+  color: #fb8500;
+  text-decoration: none;
 }
 
 
@@ -169,15 +201,36 @@ $theme-colors: (
   // color: black;
 }
 
+.roaster-logo {
+  height: 200px;
+  object-fit: scale-down;
+  margin: 5%;
+}
 
+.roaster-bio {
+  padding: 2.5%;
+}
 
+.roaster-show-main {
+  display: flex;
+  padding: 0.75rem 1.25rem;
+}
+
+.roaster-button {
+  width: 75%;
+  margin: 5%;
+}
+
+.roaster-beans-index-grid {
+  padding: 5%;
+}
+
+// LOGIN / REGISTER SECTION
 .login-reg-banner {
   text-align: center;
 }
 
-//consider making the form responsive, 
 .login-reg-wrapper {
-  // background-color: pink;
   margin-top: 40px;
 }
 
@@ -207,37 +260,7 @@ $theme-colors: (
   border-radius: 2px;
 }
 
-
-// .placeholder {
-//   font-size: 6px;
-// }
-
-
-.roaster-logo {
-  height: 200px;
-  object-fit: scale-down;
-  margin: 5%;
-}
-
-.roaster-bio {
-  padding: 2.5%;
-}
-
-.roaster-show-main {
-  display: flex;
-  padding: 0.75rem 1.25rem;
-}
-
-.roaster-button {
-  width: 75%;
-  margin: 5%;
-}
-
-.roaster-beans-index-grid {
-  padding: 5%;
-}
-
-
+// BASKET
 .user-basket {
   display: flex;
   flex-direction: column;
@@ -293,14 +316,7 @@ $theme-colors: (
   right: 0;
 }
 
-.card-text a {
-  color: #000;
-}
 
-.card-text a:hover{
-  color: #fb8500;
-  text-decoration: none;
-}
 
 hr {
   margin: auto;

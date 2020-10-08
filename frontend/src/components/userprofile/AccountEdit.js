@@ -56,7 +56,7 @@ class AccountEdit extends React.Component {
         <Container fluid className="beans-banner">
           <h1>Edit Account Details</h1>
         </Container>
-        <Container className="beans-index-main">
+        <Container className="account-sidebar">
           <Container className="filter-wrapper" xl={2}>
             <Card style={{ width: '12rem' }}>
               <Card.Body>
