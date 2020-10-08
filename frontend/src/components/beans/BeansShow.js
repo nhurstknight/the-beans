@@ -1,9 +1,10 @@
 import React from 'react'
-import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
-import { getSingleBeans, addCommentToBean } from '../../lib/api'
+import { Container, Col,  Image, Card, ListGroup, Spinner } from 'react-bootstrap'
+
 import AddItemButton from '../shop/AddItemButton'
 import CommentCard from '../comments/CommentCard'
 import CommentComponent from '../comments/CommentComponent'
+
 
 class BeansShow extends React.Component {
   state = {
@@ -18,13 +19,14 @@ class BeansShow extends React.Component {
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
-    console.log(response)
+    // console.log(response)
     this.setState({
       product: response.data
     })
   }
 
   getData = async event => {
+    console.log(event)
     const productId = this.props.match.params.id
     // console.log(this.props.match.params.id)
     const response = await getSingleBeans(productId)
@@ -35,6 +37,9 @@ class BeansShow extends React.Component {
   }
 
   handleChange = event => {
+    console.log(event.target.name)
+    console.log(event.target.value)
+    console.log(event.target.value.rating)
     const formData = {
       ...this.state.formData,
       [event.target.name]: event.target.value
@@ -58,7 +63,11 @@ class BeansShow extends React.Component {
   render() {
     console.log(this.state.formData)
     const { product } = this.state
-    if (!product) return <div>Loading...</div>
+    if (!product) return (
+      <Spinner animation="border" role="status">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    )
     return (
       <>
         <Container fluid className="beans-banner">
@@ -69,7 +78,7 @@ class BeansShow extends React.Component {
             <Image src={ product.image } fluid />
           </Col>
           <Col xl={6}>
-            <Card style={{ width: '28rem' }}>
+            <Card style={{ width: '40rem' }}>
               <ListGroup variant="flush">
                 <ListGroup.Item>{ product.name }</ListGroup.Item>
                 <ListGroup.Item>{`£${product.price[0]}`}</ListGroup.Item>
