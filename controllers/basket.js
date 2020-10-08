@@ -35,12 +35,15 @@ async function basketCreate(req, res, next) {
     next(err)
   }
 }
+
 // PUT /basket/basketItemId
 async function basketUpdate(req, res, next) {
   try {
     const userBasket = await User.findById(req.currentUser._id)
+    console.log('user was ->', userBasket)
     if (!userBasket) throw new Error(notFound)
     const removeBasketItem = userBasket.basket.id(req.params.basketItemId)
+    console.log('req params are', req.params)
     if (!removeBasketItem) throw new Error(notFound)
     await removeBasketItem.remove()
     await userBasket.save()
@@ -55,12 +58,13 @@ async function basketUpdate(req, res, next) {
 //     const userBasket = await User.findById(req.currentUser._id)
 //     console.log('user was ->', userBasket)
 //     const basketItem = { ...req.body }
+//     console.log(...req.body)
 //     if (!userBasket) throw new Error(notFound)
 //     console.log('req params are', req.params)
-//     // const removeBasketItem = userBasket.basket.id(req.params.id)
-//     // console.log('item was', removeBasketItem)
-//     // if (!removeBasketItem) throw new Error(notFound)
-//     // console.log('This happened')
+//     const removeBasketItem = userBasket.basket.id(req.params.id)
+//     console.log('item was', removeBasketItem)
+//     if (!removeBasketItem) throw new Error(notFound)
+//     console.log('This happened')
 //     await userBasket.basket.remove(basketItem)
 //     console.log('Removed item was', basketItem)
 //     await userBasket.save()
@@ -70,6 +74,7 @@ async function basketUpdate(req, res, next) {
 //     next(err)
 //   }
 // }
+
 // DELETE clear basket  /basket
 async function basketDelete(req, res, next) {
   try {
