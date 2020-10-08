@@ -20,7 +20,6 @@ const BeansCard = ({ _id, image, name, price }) => {
           <Link to={`/beans/${_id}`}>
             <h5>{ name }</h5>
           </Link>
-          {/* display multiple prices? */}
           <p>{`£${price[0]}`}</p>
         </div>
         <div className="beans-card-btns-div"></div>  

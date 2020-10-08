@@ -38,7 +38,7 @@ class ProfilePage extends React.Component {
           </Container>
           <Container className="beans-index-grid" fluid xl={10}>
             <Row xs={1} md={3} xl={4} >
-            { this.state.favourites.map(item => (
+              { this.state.favourites.map(item => (
                 <FavouriteCard
                   key={item._id}
                   {...item} />

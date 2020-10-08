@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBasket, faWindowClose, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+
 import { addItem } from '../../lib/api'
 
 const basket = <FontAwesomeIcon icon={faShoppingBasket} />
@@ -13,8 +14,6 @@ class AddItemButton extends React.Component {
   state = {
     isConfirming: false
   }
-
-  
 
   handleClick = () => {
     this.setState({ isConfirming: true })

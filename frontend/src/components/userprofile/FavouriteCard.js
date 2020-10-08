@@ -1,9 +1,8 @@
 import React from 'react'
-import {  Media } from 'react-bootstrap'
 
 // import RemoveItemButton from './RemoveItemButton'
 
-const FavouriteCard = ({ product: { _id, image, name, price, weight } }) => {
+const FavouriteCard = ({ product: { _id, image, name } }) => {
   console.log(_id)
   return (
     <>
