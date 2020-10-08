@@ -5,8 +5,8 @@ const { notFound } = require('../lib/errorMessage')
 async function basketIndex(req, res, next) {
   try {
     const userBasket = await User.findById(req.currentUser._id)
-      .populate('basket.product') // returns null
-    console.log(userBasket)
+      .populate('basket.product')
+    // console.log(userBasket)
     if (!userBasket) throw new Error(notFound)
     res.status(200).json(userBasket)
   } catch (err) {

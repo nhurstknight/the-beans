@@ -62,6 +62,18 @@ class Basket extends React.Component {
                 type="submit">
                 Remove all items
               </Button>
+              <Container className="checkout">
+                <Link to="/basket/checkout">
+                  <Button
+                    // onClick={this.handleClick}
+                    className="checkout-btn"
+                    variant="primary" 
+                    type="submit"
+                    block>
+                    Proceed to checkout
+                  </Button>
+                </Link>
+              </Container>
             </Container>
           </>
         }

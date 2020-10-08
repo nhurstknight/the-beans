@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Col,  Image, Card, ListGroup } from 'react-bootstrap'
-
+import { getSingleBeans, addCommentToBean } from '../../lib/api'
 import AddItemButton from '../shop/AddItemButton'
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
 import CommentCard from '../comments/CommentCard'
@@ -57,7 +57,7 @@ class BeansShow extends React.Component {
     this.getData()
     this.setState({ formData })
   }
-
+  
   render() {
     console.log(this.state.formData)
     const { product } = this.state
@@ -106,7 +106,4 @@ class BeansShow extends React.Component {
     )
   }
 }
-
-
-
 export default BeansShow
