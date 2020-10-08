@@ -145,12 +145,12 @@ $theme-colors: (
   display: flex;
   // flex-direction: ;
 }
-.beans-card {
+.beans-card, 
+.roaster-card {
   border: none;
 }
 
 .card-img-top {
-  
   width: 90%;
   margin: auto;
 }
