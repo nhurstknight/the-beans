@@ -47,7 +47,7 @@ class RoasterShow extends React.Component {
             </Card>
           </Container>
           <Card className="roaster-bio">
-            <h1>Roaster's Biography</h1>
+            <h4>Roaster's Biography</h4>
             <br></br>
             {roaster.bio}
           </Card>

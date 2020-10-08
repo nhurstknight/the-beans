@@ -22,13 +22,14 @@ const BeansCard = ({ _id, image, name, price }) => {
           </Link>
           <p>{`£${price[0]}`}</p>
         </div>
-        <div className="beans-card-btns-div"></div>  
-        <AddItemButton 
-          className="beans-show-add-item-btn" 
-          product={_id}>
-          {/* // onClick={handleChange}> */}
-        </AddItemButton>
-        <AddFavButton className="fav-btn" product={_id}>{ fav }</AddFavButton>
+        <div className="beans-card-btns-div"></div> 
+        <div className="bean-show-btns">
+          <AddItemButton 
+            className="beans-card-add-item-btn" 
+            product={_id}>
+          </AddItemButton>
+          <Button className="fav-btn">{ fav }</Button>
+        </div>
       </Card.Body>
     </Card>
   )

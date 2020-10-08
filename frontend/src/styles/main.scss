@@ -4,11 +4,31 @@ $theme-colors: (
 );
 
 @import "~bootstrap/scss/bootstrap";
-
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500;600;700&display=swap');
 
 // * {
 //   outline: solid 1px black;
 // }
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  // font-family: 'Lato', sans-serif; // also sainsburys like
+}
+
+h1 {
+  font-family: 'Special Elite', cursive;
+}
+
+h2, h3, h4 {
+  color: #e97e04;
+  font-family: 'Special Elite', cursive;
+
+  // font-family: 'Abril Fatface', cursive; // sainsburys font
+}
 // COMMON
 .navbar-light a.navbar-brand {
   font-weight: bold;
@@ -103,7 +123,11 @@ $theme-colors: (
 }
 
 // BEANS
-.beans-index-main {
+
+
+
+.beans-index-main,
+.user-profile {
   margin: 50px auto;
   display: flex;
   flex-direction: row;
@@ -111,7 +135,6 @@ $theme-colors: (
 }
 
 .beans-index-grid {
-  flex-grow: 3;
   justify-content: space-between;
 }
 
@@ -141,10 +164,23 @@ $theme-colors: (
   width: 30rem;
 }
 
+.beans-show-info {
+  padding-top: 40px;
+}
+
+.beans-show-title,
+.beans-show-subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .product-key-info {
   display: flex;
   // flex-direction: ;
 }
+
 .beans-card, 
 .roaster-card {
   border: none;
@@ -249,11 +285,12 @@ $theme-colors: (
   width: 280px;
 }
 
-.form-label, .form-check-label {
-  font-size: 0.8em;
-  margin-bottom: 0.2em;
-  margin-top: 0.3em;
-}
+// .form-label, 
+// .form-check-label {
+//   font-size: 0.8em;
+//   margin-bottom: 0.2em;
+//   margin-top: 0.3em;
+// }
 
 .form-control, 
 .btn {
@@ -282,14 +319,26 @@ $theme-colors: (
   padding: 0;
 }
 
-.delete-basket-btn {
-  width: 30%;
+.bean-show-btns {
+  display: flex;
+  flex-direction: row;
 }
 
-.checkout-btn {
-  margin: 50px auto;
-  width: 60%;
+.basket-item {
+  display: flex;
+  flex-direction: row;
 }
+
+.delete-basket-btn, 
+.checkout-btn {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.delete-basket-btn {
+  margin-top: 0.5em;
+}
+
 
 .payment-form {
   width: 60%;
@@ -314,6 +363,9 @@ $theme-colors: (
   position: absolute; 
   margin-right: 1rem;
   right: 0;
+  background-color: #fff;
+  border: none;
+  color: #e97e04;
 }
 
 
@@ -331,7 +383,7 @@ hr {
 // ROASTER CARD
 .roaster-card {
   padding: 2.5%;
-  background-color: rgb(219, 102, 24);
+  background-color:#e97e04;
   height: 95%;
   display: flex;
   align-items: center;
@@ -351,5 +403,20 @@ hr {
 }
 // 
 .roaster-logo-and-bio.card {
-  background-color: rgb(219, 102, 24);
+  background-color:#e97e04;
 }
+
+.comment-submit-container {
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.comment-view-card {
+  margin: 10px;
+}
+
+.review-labels {
+  font-family: 'Lato', sans-serif;
+}
+
+// this is a test 
