@@ -21,6 +21,11 @@ async function basketCreate(req, res, next) {
     console.log('user was ->', userBasket)
     const basketItem = { ...req.body }
     if (!userBasket) throw new Error(notFound)
+
+    // map through basket, 
+    // if product.id is not found increase qty by 1 
+    // if no product match found, add new item to array
+
     console.log('req params are', req.params)
     // if req.body._id ===
     userBasket.basket.push(basketItem)
