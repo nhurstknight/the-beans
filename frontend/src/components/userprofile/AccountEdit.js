@@ -46,14 +46,11 @@ class AccountEdit extends React.Component {
     event.preventDefault()
     try { 
       await editAccount(this.state.formData)
-      this.props.history.push('/profile')
+      toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
+      toast.error('Error! Ensure all fields are correct!', { position: toast.POSITION.BOTTOM_CENTER })
     }
-  }
-  
-  submitAccountInfoToast = () => {
-    toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
   }
 
   render() {
@@ -193,8 +190,8 @@ class AccountEdit extends React.Component {
               </Button>
             </Form>
           </Container>
-
-        </Container>
+          <Button variant="primary" type="submit" block>Submit</Button>
+        </Container> 
       </>
     )
   }

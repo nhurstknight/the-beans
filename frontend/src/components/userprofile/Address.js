@@ -47,14 +47,11 @@ class CheckoutEdit extends React.Component {
     try { 
       const response = await editCheckout(this.state.formData)
       console.log(response)
-      this.props.history.push('/profile')
+      toast.success('Address Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
+      toast.error('Error! Ensure all fields are correct!', { position: toast.POSITION.BOTTOM_CENTER })
     }
-  }
-
-  submitAddressInfoToast = () => {
-    toast.success('Address Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
   }
 
   render() {
