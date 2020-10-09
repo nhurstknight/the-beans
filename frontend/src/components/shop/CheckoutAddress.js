@@ -1,6 +1,8 @@
 import React from 'react'
-
 import Address from '../userprofile/Address'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+toast.configure()
 
 const CheckoutAddress = () => {
   return (

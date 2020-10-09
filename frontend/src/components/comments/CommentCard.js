@@ -5,11 +5,11 @@ const CommentCard = ({ text, rating, owner }) => {
   return (
     <Card className='comment-view-card'>
       <Card.Body>
-        <Card.Title> { owner.username } </Card.Title>
+        <Card.Title> { owner.username }: </Card.Title>
         <br />
         <Card.Subtitle> { text } </Card.Subtitle>
         <br />
-        <p> {`${rating}/5`} </p>
+        <p> {`${rating}/5 ⭐️`} </p>
       </Card.Body>
     </Card>
   )

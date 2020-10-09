@@ -5,10 +5,18 @@ import { faShoppingBasket, faWindowClose, faCheckCircle } from '@fortawesome/fre
 
 
 import { removeItem } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-const basket = <FontAwesomeIcon icon={faShoppingBasket} />
+toast.configure()
+
+// const basket = <FontAwesomeIcon icon={faShoppingBasket} />
 const confirm = <FontAwesomeIcon icon={faCheckCircle} />
 const cancel = <FontAwesomeIcon icon={faWindowClose} />
+
+// // const basket = <FontAwesomeIcon icon={faShoppingBasket} />
+// const confirm = <FontAwesomeIcon icon={faCheckCircle} />
+// const cancel = <FontAwesomeIcon icon={faWindowClose} />
 
 class DeleteItemButton extends React.Component {
   state = {
@@ -26,6 +34,7 @@ class DeleteItemButton extends React.Component {
   sendRequest = async () => {
     await removeItem(this.props.product)
     this.setState({ isConfirming: false })
+    toast.success('Item Removed!', { position: toast.POSITION.BOTTOM_RIGHT })
   }
 
   render() {

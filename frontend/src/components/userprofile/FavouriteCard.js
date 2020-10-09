@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 
 import RemoveFavButton from './RemoveFavButton'
 
-const FavouriteCard = ({ _id, product: { image, name, price, id } }) => {
+const FavouriteCard = ({ _id, product: { image, name, price } }) => {
   return (
 
     <Card className="beans-card fav-item">

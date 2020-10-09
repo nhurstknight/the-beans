@@ -38,7 +38,7 @@ class RoasterIndex extends React.Component {
           <Container className="roaster-index-grid" fluid xl={10}>
             <Row xs={1} md={3} xl={2.25} >
               {roasters && roasters.map(roaster => (
-                <RoasterCard key={roaster._id} {...roaster} />
+                <RoasterCard key={ roaster._id } { ...roaster } />
               ))}
             </Row>
           </Container>
