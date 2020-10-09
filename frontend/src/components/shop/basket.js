@@ -11,7 +11,7 @@ toast.configure()
 class Basket extends React.Component {
   state = {
     basket: []
-  }
+  } 
 
   removeItemsToast = () => {
     toast.warn('Removed all items!', { position: toast.POSITION.BOTTOM_RIGHT })
