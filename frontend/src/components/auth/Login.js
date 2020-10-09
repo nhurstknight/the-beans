@@ -51,29 +51,32 @@ class Login extends React.Component {
               <h3>Sign in</h3>
               <div className='loginForm'>
                 <Form onSubmit={this.handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                      type="email" 
-                      placeholder="Email"
-                      name="email"
-                      value={email}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                      {/* We'll never share your email with anyone else. */}
-                    </Form.Text>
+                  <Form.Group as={Row} controlId="formBasicEmail">
+                    <Form.Label column sm={4}>
+                      Email Address
+                    </Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        type="email" 
+                        placeholder="Email" 
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}/>
+                    </Col>
                   </Form.Group>
-                
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control 
-                      type="password" 
-                      placeholder="Password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleChange}
-                    />
+
+                  <Form.Group as={Row} controlId="formBasicPassword">
+                    <Form.Label column sm={4}>
+                      Password
+                    </Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        type="password" 
+                        placeholder="Password"                       
+                        name="password"
+                        value={password}
+                        onChange={this.handleChange} />
+                    </Col>
                   </Form.Group>
                   <Button variant="primary" type="submit" block>Login</Button>
                 </Form>
@@ -82,9 +85,11 @@ class Login extends React.Component {
             
             <Col className="login-reg-section">
               <h3>New to The Beans?</h3>
-              <Link to="/register">
-                <Button variant="outline-primary" size="lg" >Create an account</Button>
-              </Link>
+              <div className="login-reg-btn-wrapper">
+                <Link to="/register">
+                  <Button variant="outline-primary" size="lg" >Create an account</Button>
+                </Link>
+              </div>
             </Col>
           </Row>
         </Container> 

@@ -20,7 +20,7 @@ class ProfilePage extends React.Component {
   render() {
     return (
       <>
-        <Container fluid className="beans-banner">
+          <Container fluid className="beans-banner">
           <h1>Your profile page</h1>
         </Container>
         <Container className="user-profile">
