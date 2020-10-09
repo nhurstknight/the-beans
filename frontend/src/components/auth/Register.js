@@ -64,42 +64,46 @@ class Register extends React.Component {
           <Row>
             <Col className="login-reg-section">
               <h3>Sign in</h3>
-              <Link to="/login">
-                <Button variant="outline-primary" size="lg">I have an account</Button>
-              </Link>
+              <div className="login-reg-btn-wrapper">
+                <Link to="/login">
+                  <Button variant="outline-primary" size="lg">I have an account</Button>
+                </Link>
+              </div>
             </Col>
 
             <Col className="login-reg-section">
               <h3>New to The Beans?</h3>
               <div className="registerForm">
                 <Form onSubmit={ this.handleSubmit }>
-                  <Form.Group controlId="formBasicUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control 
-                      className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
-                      type="username" 
-                      name="username"
-                      placeholder="Username"
-                      value={username}
-                      onChange={this.handleChange}
-                    />
+                  <Form.Group as={Row} controlId="formBasicUsername">
+                    <Form.Label column sm={4}>Username</Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        className={`input ${this.state.errors.username ? 'is-danger' : ''}`}
+                        type="username" 
+                        name="username"
+                        placeholder="Username"
+                        value={username}
+                        onChange={this.handleChange}
+                      />
+                    </Col>
                     <Form.Text className="text-muted">
                     </Form.Text>
                   </Form.Group>
-
-                  
-                  <Form.Row>
-                    <Col> 
-                      <Form.Label>First name</Form.Label>
-                      <Form.Control
+                  <Form.Group as={Row} controlId="formBasicFname">
+                    <Form.Label column sm={4}>First name</Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
                         type="firstName" 
                         placeholder="First Name"
                         name="firstName"
                         value={firstName}
                         onChange={this.handleChange}/>
                     </Col>
-                    <Col>
-                      <Form.Label>Last name</Form.Label>
+                  </Form.Group>
+                  <Form.Group as={Row} controlId="formBasicLname">
+                    <Form.Label column sm={4}>Last name</Form.Label>
+                    <Col sm={8}>
                       <Form.Control 
                         type="lastName" 
                         placeholder="Last Name"
@@ -107,63 +111,47 @@ class Register extends React.Component {
                         value={lastName}
                         onChange={this.handleChange}/>
                     </Col>
-                  </Form.Row>
-                
-
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                      type="Username" 
-                      placeholder="Email"
-                      name="email"
-                      value={email}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                      {/* We'll never share your email with anyone else. */}
-                    </Form.Text>
                   </Form.Group>
-
-                  {/* <Form.Group controlId="formBasicUrl">
-                    <Form.Label>Profile Picture</Form.Label>
-                    <Form.Control 
-                      className={`input ${this.state.errors.profileImage ? 'is-danger' : ''}`}
-                      type="profileImage" 
-                      name="profileImage"
-                      placeholder="PLACEHOLDER URL LINK "
-                      value={profileImage}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                  </Form.Group> */}
-
-
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control 
-                      type="password" 
-                      placeholder="Password"
-                      name="password"
-                      value={password}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                      {/* Your password is protected in our database with bcrypt technology. */}
-                    </Form.Text>
+                  <Form.Group as={Row} controlId="formBasicEmail">
+                    <Form.Label column sm={4}>Email address</Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        type="email" 
+                        placeholder="Email"
+                        name="email"
+                        value={email}
+                        onChange={this.handleChange}/>
+                      <Form.Text className="text-muted">
+                      </Form.Text>
+                    </Col>
                   </Form.Group>
-
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control 
-                      type="password" 
-                      placeholder="Password Confirmation"
-                      name="passwordConfirmation"
-                      value={passwordConfirmation}
-                      onChange={this.handleChange}
-                    />
+                  <Form.Group as={Row} controlId="formBasicPassword">
+                    <Form.Label column sm={4}>Password</Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        type="password" 
+                        placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={this.handleChange}/>
+                      <Form.Text className="text-muted">
+                      </Form.Text>
+                    </Col>
                   </Form.Group>
-                  <Button className="switch-btn" variant="primary" type="submit" block> Register </Button>
+                  <Form.Group as={Row} controlId="formBasicPassword">
+                    <Form.Label column sm={4}>Confirm Password</Form.Label>
+                    <Col sm={8}>
+                      <Form.Control 
+                        type="password" 
+                        placeholder="Password Confirmation"
+                        name="passwordConfirmation"
+                        value={passwordConfirmation}
+                        onChange={this.handleChange}/>
+                      <Form.Text className="text-muted">
+                      </Form.Text>
+                    </Col>
+                  </Form.Group>
+                  <Button className="switch-btn" variant="primary" type="submit" block> Register</Button>
                 </Form>
               </div>
             </Col>

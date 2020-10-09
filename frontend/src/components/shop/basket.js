@@ -72,11 +72,11 @@ class Basket extends React.Component {
                 </Button>
                 <Button
                   className="checkout-btn"
-                  // variant="primary" 
+                  variant="primary"
                   type="submit"
                   block>
                   Proceed to checkout
-                  <Link to="/basket/checkout">
+                  <Link to="/checkout">
                   </Link>
                 </Button>
               </Container>

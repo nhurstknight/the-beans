@@ -35,8 +35,8 @@ class App extends React.Component {
           <Route path="/beans" component={BeansIndex}/>
           <Route path="/roasters/:id" component={RoasterShow}/>
           <Route path="/roasters" component={RoasterIndex}/>
-          <Route path="/basket/checkout/payment" component={Payment}/>
-          <Route path="/basket/checkout" component={Checkout}/>
+          <Route path="/payment" component={Payment}/>
+          <Route path="/checkout" component={Checkout}/>
           <Route path="/basket" component={Basket}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
