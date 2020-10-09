@@ -1,7 +1,10 @@
 import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { addressDetails, editCheckout } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 class CheckoutAddress extends React.Component {
   state = {
     emptyArray: null,
@@ -44,9 +47,12 @@ class CheckoutAddress extends React.Component {
     event.preventDefault()
     try { 
       const response = await editCheckout(this.state.formData)
+      toast.success('Address Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
+      console.log(response)
       window.location.reload()
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
+      toast.error('Error! Ensure all fields are correct!', { position: toast.POSITION.BOTTOM_CENTER })
     }
   }
 
@@ -125,7 +131,7 @@ class CheckoutAddress extends React.Component {
                       />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" block>Submit Edit Address</Button>
+                    <Button variant="primary" type="submit" block>Submit Address</Button>
                   </Form>
                 </div>
               </Col>

@@ -1,6 +1,10 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { removeItem } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+toast.configure()
 
 class DeleteItemButton extends React.Component {
   state = {
@@ -18,6 +22,7 @@ class DeleteItemButton extends React.Component {
   sendRequest = async () => {
     await removeItem(this.props.product)
     this.setState({ isConfirming: false })
+    toast.success('Item Removed!', { position: toast.POSITION.BOTTOM_RIGHT })
   }
 
   render() {

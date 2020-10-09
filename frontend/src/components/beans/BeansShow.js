@@ -10,8 +10,12 @@ import CommentComponent from '../comments/CommentComponent'
 
 import { getSingleBeans, addCommentToBean } from '../../lib/api'
 
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const fav = <FontAwesomeIcon icon={ faHeart } />
 
+toast.configure()
 class BeansShow extends React.Component {
   state = {
     product: null,
@@ -58,10 +62,11 @@ class BeansShow extends React.Component {
     console.log(response)
     const formData = {
       text: '',
-      rating: ''
+      rating: '⭐️'
     }
     this.getData()
     this.setState({ formData })
+    toast.success('Thank you for leaving a review!', { position: toast.POSITION.BOTTOM_CENTER })
   }
   
   render() {

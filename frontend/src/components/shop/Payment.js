@@ -1,6 +1,9 @@
 import React from 'react'
 import { Form, Button, Row, Col } from 'react-bootstrap'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 class Payment extends React.Component {
 
   render () {
