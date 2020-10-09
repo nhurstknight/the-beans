@@ -67,7 +67,8 @@ h2, h3, h4 {
 
 .footer {
   height: 20vh,;
-  color: #3b2210;
+  color:rgba(0, 0, 0, 0.5);
+  font-weight: 700;
   text-align: center;
   position: relative;
 }
@@ -84,7 +85,7 @@ h2, h3, h4 {
 
 .footer a {
   text-decoration: none; 
-  color:  #3b2210;
+  color:  #e97e04;
 }
 
 // HOME
@@ -206,8 +207,10 @@ h2, h3, h4 {
 }
 
 .card-text a h5, 
-.card-text p {
+.card-text p,
+.card-text h5 {
   font-size: 0.8rem;
+  font-weight: 700;
 }
 .card-text a {
   color: #000;
@@ -272,12 +275,12 @@ h2, h3, h4 {
 
 .login-reg-section {
   width: 50%;
-  height: 70vh;
+  height: 100vh;
   // margin: 50px 70px;
 }
 
 .login-reg-section h3 {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
   text-align: center;
 
   
@@ -385,10 +388,10 @@ hr {
 }
 // Favourites
 
-.fav-card {
-  display: flex;
-  flex-direction: column;
-}
+// .fav-card {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 // ROASTER CARD
 .roaster-card {
@@ -429,4 +432,18 @@ hr {
   font-family: 'Lato', sans-serif;
 }
 
-// this is a test 
+// USER PROFILE
+
+.account-sidebar.container {
+  width: 35%;
+}
+
+.beans-card.fav-item {
+  margin-bottom: 50px;
+}
+
+.fav-delete-btn {
+  position: absolute;
+  // bottom:   0;
+  font-size: 0.8rem;
+}

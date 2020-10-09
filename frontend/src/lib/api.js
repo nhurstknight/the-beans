@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { O_DIRECT } from 'constants'
 const baseUrl = '/api'
 
 const withHeaders = () => {

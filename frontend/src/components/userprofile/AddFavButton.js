@@ -22,7 +22,7 @@ class AddFavButton extends React.Component {
   render() {
     return (
       <>
-        <Button className="fav-btn" onClick={ this.sendRequest}>{ fav }</Button>
+        <Button className="fav-btn" onClick={this.sendRequest}>{ fav }</Button>
       </>
     )
   }

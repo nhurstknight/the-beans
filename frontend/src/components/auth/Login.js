@@ -6,6 +6,8 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap'
 import { loginUser } from '../../lib/api'
 import { setToken, setUserId } from '../../lib/auth'
 
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 class Login extends React.Component {
   state = {
@@ -31,9 +33,11 @@ class Login extends React.Component {
       setToken(response.data.token)
       setUserId(response.data.userID)
       this.props.history.push('/beans')
+      // toast.success('Success!', { position: toast.POSITION.BOTTOM_CENTER })
     } catch (err) {
       // console.log(err.response)
       this.setState({ errors: err.response.data.errors })
+      toast.error('Error! Invalid username or password!', { position: toast.POSITION.BOTTOM_CENTER })
     }
   }
 

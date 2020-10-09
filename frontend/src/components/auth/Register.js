@@ -44,9 +44,11 @@ class Register extends React.Component {
     try {
       const response = await registerUser(this.state.formData)
       console.log(response)
+      toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
     } catch (err) {
       console.log(err.response)
       this.setState({ errors: err.response.data.errors })
+      toast.error('Error! Ensure all fields are correct!', { position: toast.POSITION.BOTTOM_CENTER })
     }
   }
 
