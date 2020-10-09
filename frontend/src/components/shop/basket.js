@@ -64,15 +64,15 @@ class Basket extends React.Component {
                   block>
                   Remove all items
                 </Button>
-                <Button
-                  className="checkout-btn"
-                  variant="primary"
-                  type="submit"
-                  block>
-                  Proceed to checkout
-                  <Link to="/checkout">
-                  </Link>
-                </Button>
+                <Link to="/checkout">
+                  <Button
+                    className="checkout-btn"
+                    variant="primary"
+                    type="submit"
+                    block>
+                    Proceed to checkout
+                  </Button>
+                </Link>
               </Container>
             </Container>
           </>
