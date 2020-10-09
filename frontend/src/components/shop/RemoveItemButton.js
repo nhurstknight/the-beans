@@ -1,10 +1,18 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingBasket, faWindowClose, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+
+
 import { removeItem } from '../../lib/api'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
+
+const basket = <FontAwesomeIcon icon={faShoppingBasket} />
+const confirm = <FontAwesomeIcon icon={faCheckCircle} />
+const cancel = <FontAwesomeIcon icon={faWindowClose} />
 
 class DeleteItemButton extends React.Component {
   state = {
@@ -30,8 +38,8 @@ class DeleteItemButton extends React.Component {
       <>
         {this.state.isConfirming ?
           <>
-            <Button onClick={this.sendRequest}> Confirm</Button>
-            <Button onClick={this.cancel}>Cancel</Button>
+            <Button variant="success" className="basket-btns" onClick={this.sendRequest}>{confirm}</Button>
+            <Button variant="danger" className="basket-btns" onClick={this.cancel}>{cancel}</Button>
           </>
           :
           <Button
