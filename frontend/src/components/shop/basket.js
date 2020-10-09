@@ -49,30 +49,30 @@ class Basket extends React.Component {
               <h1>Your basket</h1>
             </Container>
             <Container className="user-basket">
-              <h3>Basket Summary</h3>
+              <h4>Basket Summary</h4>
               { this.state.basket.map(item => (
                 <BasketItem
                   key={item._id}
                   {...item} />
               )) }
-              <Button
-                onClick={this.handleClick}
-                className="delete-basket-btn"
-                variant="danger" 
-                type="submit">
-                Remove all items
-              </Button>
-              <Container className="checkout">
-                <Link to="/basket/checkout">
-                  <Button
-                    // onClick={this.handleClick}
-                    className="checkout-btn"
-                    variant="primary" 
-                    type="submit"
-                    block>
-                    Proceed to checkout
-                  </Button>
-                </Link>
+              <Container fluid className="basket-btns">
+                <Button
+                  onClick={this.handleClick}
+                  className="delete-basket-btn"
+                  variant="danger" 
+                  type="submit"
+                  block>
+                  Remove all items
+                </Button>
+                <Button
+                  className="checkout-btn"
+                  // variant="primary" 
+                  type="submit"
+                  block>
+                  Proceed to checkout
+                  <Link to="/basket/checkout">
+                  </Link>
+                </Button>
               </Container>
             </Container>
           </>

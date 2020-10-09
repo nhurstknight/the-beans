@@ -62,7 +62,15 @@ export const editCheckout = ( formData ) => {
 export const getAllFavs = () => {
   return axios.get(`${baseUrl}/profile`, withHeaders())
 }
-
+// ADD FAVOURITE
+export const addFav = ( product ) => {
+  console.log(product)
+  return axios.post(`${baseUrl}/profile`, { product }, withHeaders())
+}
+// DELETE FAVOURITE
+export const removeFav = (product) => {
+  return axios.put(`${baseUrl}/profile/${product}`, withHeaders())
+}
 
 
 // BASKET
@@ -74,8 +82,8 @@ export const addItem = product => {
   return axios.post(`${baseUrl}/basket`, { product }, withHeaders())
 }
 
-export const removeItem = product => {
-  return axios.put(`${baseUrl}/basket`, { product }, withHeaders())
+export const removeItem = _id => {
+  return axios.put(`${baseUrl}/basket`, { _id }, withHeaders())
 }
 
 export const deleteBasket = () => {

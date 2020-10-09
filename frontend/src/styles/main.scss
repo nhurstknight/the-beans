@@ -4,11 +4,31 @@ $theme-colors: (
 );
 
 @import "~bootstrap/scss/bootstrap";
-
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500;600;700&display=swap');
 
 // * {
 //   outline: solid 1px black;
 // }
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  // font-family: 'Lato', sans-serif; // also sainsburys like
+}
+
+h1 {
+  font-family: 'Special Elite', cursive;
+}
+
+h2, h3, h4 {
+  color: #e97e04;
+  font-family: 'Special Elite', cursive;
+
+  // font-family: 'Abril Fatface', cursive; // sainsburys font
+}
 // COMMON
 .navbar-light a.navbar-brand {
   font-weight: bold;
@@ -103,10 +123,18 @@ $theme-colors: (
 }
 
 // BEANS
-.beans-index-main {
+
+
+
+.beans-index-main,
+.user-profile {
   margin: 50px auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.beans-index-grid {
   justify-content: space-between;
 }
 
@@ -116,11 +144,6 @@ $theme-colors: (
 
 .filter-wrapper.container {
   padding: 20px;
-}
-
-.beans-index-grid {
-  flex-grow: 3;
-  justify-content: space-between;
 }
 
 .price-filter {
@@ -133,21 +156,66 @@ $theme-colors: (
 
 .beans-show-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-wrap: row wrap;
   margin: 70px 30px;
 }
 
-.beans-card.card {
-  margin: 1%
+.beans-show-img {
+  width: 30rem;
 }
-.card-text {
+
+.beans-show-info {
+  padding-top: 40px;
+}
+
+.beans-show-title,
+.beans-show-subtitle {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
 }
 
+.product-key-info {
+  display: flex;
+  // flex-direction: ;
+}
+
+.beans-card, 
+.roaster-card {
+  border: none;
+}
+
+.card-img-top {
+  width: 90%;
+  margin: auto;
+}
+
+// .card-text {
+//   // display: flex;
+//   // flex-direction: row;
+//   // justify-content: space-between;
+// }
+
 .beans-card .card-body{
   padding: 1rem;
+}
+
+.card-text {
+  align-items: baseline
+}
+
+.card-text a h5, 
+.card-text p {
+  font-size: 0.8rem;
+}
+.card-text a {
+  color: #000;
+}
+
+.card-text a:hover{
+  color: #fb8500;
+  text-decoration: none;
 }
 
 
@@ -168,50 +236,6 @@ $theme-colors: (
   // background-color: rgba(206, 75, 14, 0.774);
   // color: black;
 }
-
-
-
-.login-reg-banner {
-  text-align: center;
-}
-
-//consider making the form responsive, 
-.login-reg-wrapper {
-  // background-color: pink;
-  margin-top: 40px;
-}
-
-.login-reg-section {
-  width: 50%;
-  margin: 50px 70px;
-}
-
-.login-reg-section h3 {
-  margin-bottom: 1em;
-}
-
-.loginForm,
-.registerForm {
-  box-sizing: border-box;
-  width: 280px;
-}
-
-.form-label, .form-check-label {
-  font-size: 0.8em;
-  margin-bottom: 0.2em;
-  margin-top: 0.3em;
-}
-
-.form-control, 
-.btn {
-  border-radius: 2px;
-}
-
-
-// .placeholder {
-//   font-size: 6px;
-// }
-
 
 .roaster-logo {
   height: 200px;
@@ -237,7 +261,43 @@ $theme-colors: (
   padding: 5%;
 }
 
+// LOGIN / REGISTER SECTION
+.login-reg-banner {
+  text-align: center;
+}
 
+.login-reg-wrapper {
+  margin-top: 40px;
+}
+
+.login-reg-section {
+  width: 50%;
+  margin: 50px 70px;
+}
+
+.login-reg-section h3 {
+  margin-bottom: 1em;
+}
+
+.loginForm,
+.registerForm {
+  box-sizing: border-box;
+  width: 280px;
+}
+
+// .form-label, 
+// .form-check-label {
+//   font-size: 0.8em;
+//   margin-bottom: 0.2em;
+//   margin-top: 0.3em;
+// }
+
+.form-control, 
+.btn {
+  border-radius: 2px;
+}
+
+// BASKET
 .user-basket {
   display: flex;
   flex-direction: column;
@@ -259,14 +319,26 @@ $theme-colors: (
   padding: 0;
 }
 
-.delete-basket-btn {
-  width: 30%;
+.bean-show-btns {
+  display: flex;
+  flex-direction: row;
 }
 
-.checkout-btn {
-  margin: 50px auto;
-  width: 60%;
+.basket-item {
+  display: flex;
+  flex-direction: row;
 }
+
+.delete-basket-btn, 
+.checkout-btn {
+  width: 50%;
+  margin: 0.5em;
+}
+
+.delete-basket-btn {
+  margin-top: 0.5em;
+}
+
 
 .payment-form {
   width: 60%;
@@ -291,16 +363,12 @@ $theme-colors: (
   position: absolute; 
   margin-right: 1rem;
   right: 0;
+  background-color: #fff;
+  border: none;
+  color: #e97e04;
 }
 
-.card-text a {
-  color: #000;
-}
 
-.card-text a:hover{
-  color: #fb8500;
-  text-decoration: none;
-}
 
 hr {
   margin: auto;
@@ -315,10 +383,40 @@ hr {
 // ROASTER CARD
 .roaster-card {
   padding: 2.5%;
-  background-color: rgb(219, 102, 24);
+  background-color:#e97e04;
   height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .RoasterImages {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+// RoasterShow BeansShow
+.row.row-cols-xl-4.row-cols-md-3.row-cols-1 {
+  display: flex;
+  justify-content: center;
+}
+// 
+.roaster-logo-and-bio.card {
+  background-color:#e97e04;
+}
+
+.comment-submit-container {
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.comment-view-card {
+  margin: 10px;
+}
+
+.review-labels {
+  font-family: 'Lato', sans-serif;
+}
+
+// this is a test 

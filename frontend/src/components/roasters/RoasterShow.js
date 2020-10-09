@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container,  Image, Card, Accordion, Button, Carousel, Row } from 'react-bootstrap'
+import { Container,  Image, Card, Row } from 'react-bootstrap'
 
 import { getSingleRoaster, getRoasterProducts } from '../../lib/api'
 import BeansCard from '../beans/BeansCard'
@@ -47,21 +47,19 @@ class RoasterShow extends React.Component {
             </Card>
           </Container>
           <Card className="roaster-bio">
-            <h1>Roaster's Biography</h1>
+            <h4>Roaster's Biography</h4>
             <br></br>
             {roaster.bio}
           </Card>
         </Container>
-        <Container>
-          <Container className="roaster-beans-index-grid" fluid xl={10}>
-            <Row xs={1} md={3} xl={4} >
-              { this.state.beans.map(bean => (
-                <BeansCard
-                  key={bean._id}
-                  {...bean} />
-              ))}
-            </Row>
-          </Container>
+        <Container className="roaster-beans-index-grid" fluid xl={10}>
+          <Row xs={1} md={3} xl={4} >
+            { this.state.beans.map(bean => (
+              <BeansCard
+                key={bean._id}
+                {...bean} />
+            ))}
+          </Row>
         </Container>
       </>
     )

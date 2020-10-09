@@ -23,22 +23,22 @@ class ProfilePage extends React.Component {
         <Container fluid className="beans-banner">
           <h1>Your profile page</h1>
         </Container>
-        <Container className="beans-index-main">
-          <Container className="filter-wrapper" xl={2}>
+        <Container className="user-profile">
+          <Container className="account-sidebar" xl={2}>
             <Card style={{ width: '12rem' }}>
               <Card.Body>
                 <Card.Title>Profile Navigation</Card.Title>
               </Card.Body>
-              <ListGroup as="ul">
+              <ListGroup variant="flush" as="ul">
                 <ListGroup.Item action href="/profile" active> Favourites</ListGroup.Item>
                 <ListGroup.Item action href="/profile/account">Account Details</ListGroup.Item>
-                <ListGroup.Item action href="/profile/checkout">Checkout Details</ListGroup.Item>
+                <ListGroup.Item action href="/profile/checkout">Address Details</ListGroup.Item>
               </ListGroup>
             </Card>
           </Container>
           <Container className="beans-index-grid" fluid xl={10}>
             <Row xs={1} md={3} xl={4} >
-            { this.state.favourites.map(item => (
+              { this.state.favourites.map(item => (
                 <FavouriteCard
                   key={item._id}
                   {...item} />

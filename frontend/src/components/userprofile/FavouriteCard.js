@@ -1,23 +1,33 @@
 import React from 'react'
-import {  Media } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
 
-// import RemoveItemButton from './RemoveItemButton'
+import RemoveFavButton from './RemoveFavButton'
 
-const FavouriteCard = ({ product: { _id, image, name, price, weight } }) => {
-  console.log(_id)
+const FavouriteCard = ({ product: { _id, image, name } }) => {
   return (
-    <>
-      <div className="fav-card">
-        <img
-          width={120}
-          height={120}
-          className="mr-3"
-          src={ image }
-          alt={ name }
-        />
-        <h5>{ name }</h5>
-      </div>
-    </>
+    <Card className="beans-card">
+      <Card.Img variant="top" src={ image } alt={ name } />
+      <Card.Body>
+        <div className="card-text">
+          <h5>{ name }</h5>
+        </div>
+        <div className="beans-card-btns-div"></div> 
+        <RemoveFavButton>{ _id }</RemoveFavButton>
+      </Card.Body>
+    </Card>
+    // <>
+    //   <div className="fav-card">
+    //     <img
+    //       width={120}
+    //       height={120}
+    //       className="mr-3"
+    //       src={ image }
+    //       alt={ name }
+    //     />
+    //     <h5>{ name }</h5>
+    //     <RemoveFavButton></RemoveFavButton>
+    //   </div>
+    // </>
   )
 }
 

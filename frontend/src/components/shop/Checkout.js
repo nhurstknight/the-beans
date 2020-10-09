@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import { Button, Container } from 'react-bootstrap'
 // import BasketItem from './BasketItem'
 
-import Payment from './Payment'
-
-
 // import { getUserBasket } from '../../lib/api'
 
 
