@@ -5,11 +5,14 @@ import { faShoppingBasket, faWindowClose, faCheckCircle } from '@fortawesome/fre
 
 import { addItem } from '../../lib/api'
 
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 const basket = <FontAwesomeIcon icon={faShoppingBasket} />
 const confirm = <FontAwesomeIcon icon={faCheckCircle} />
 const cancel = <FontAwesomeIcon icon={faWindowClose} />
 
-
+toast.configure()
 class AddItemButton extends React.Component {
   state = {
     isConfirming: false
@@ -28,12 +31,16 @@ class AddItemButton extends React.Component {
     this.setState({ isConfirming: false })
   }
 
+  confirmAddToBasketToast = () => {
+    toast.success('Added to basket!', { position: toast.POSITION.BOTTOM_LEFT })
+  }
+
   render() {
     return (
       <>
         {this.state.isConfirming ?
           <>
-            <Button className="basket-btns" onClick={this.sendRequest}>{confirm}</Button>
+            <Button className="basket-btns" onClick={this.sendRequest, this.confirmAddToBasketToast}>{confirm}</Button>
             <Button className="basket-btns" onClick={this.cancel}>{cancel}</Button>
           </>
           :

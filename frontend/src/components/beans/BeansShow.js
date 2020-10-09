@@ -101,7 +101,7 @@ class BeansShow extends React.Component {
                 <p>{ productData.origin }</p>
                 <p>{ productData.roast }</p>
                 <ul>{ productData.tastingNotes.map(note => (
-                  <li>{ note }</li>
+                  <li key="note">{ note }</li>
                 )) }
                 </ul>
               </div>
