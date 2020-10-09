@@ -18,6 +18,7 @@ class AddFavButton extends React.Component {
     toast.success('Added to favourites!', { position: toast.POSITION.BOTTOM_LEFT })
   }
 
+
   render() {
     return (
       <>

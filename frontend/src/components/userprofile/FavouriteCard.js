@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 
 import RemoveFavButton from './RemoveFavButton'
 
-const FavouriteCard = ({ product: { _id, image, name, price  } }) => {
+const FavouriteCard = ({ _id, product: { image, name, price, id } }) => {
   return (
 
     <Card className="beans-card fav-item">
@@ -13,7 +13,8 @@ const FavouriteCard = ({ product: { _id, image, name, price  } }) => {
           <h5>{ name }</h5>
           <p>{`£${price[0]}`}</p>
         </div>
-        <RemoveFavButton>{ _id }</RemoveFavButton>
+        <div className="beans-card-btns-div"></div> 
+        <RemoveFavButton _id={_id} >{ _id }</RemoveFavButton>
       </Card.Body>
     </Card>
   )

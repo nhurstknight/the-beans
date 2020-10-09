@@ -52,6 +52,27 @@ async function basketUpdate(req, res, next) {
     next(err)
   }
 }
+
+// PUT NEW /basket/
+async function basketUpdate1(req, res, next) {
+  try {
+    const userBasket = await User.findById(req.currentUser._id)
+    console.log('user was ->', userBasket)
+    if (!userBasket) throw new Error(notFound)
+    const removeBasketItem = userBasket.basket.id(req.params._id)
+    console.log('req params are', req.params)
+    const basketItemID = { ...req.body }
+    console.log(basketItemID)
+    if (!removeBasketItem) throw new Error(notFound)
+    await removeBasketItem.remove()
+    await userBasket.save()
+    res.sendStatus(204)
+  } catch (err) {
+    next(err)
+  }
+}
+
+
 // // PUT remmove item  /basket/basketItemId
 // async function basketUpdate(req, res, next) {
 //   try {
@@ -92,5 +113,6 @@ module.exports = {
   index: basketIndex,
   create: basketCreate,
   update: basketUpdate,
-  delete: basketDelete
+  delete: basketDelete,
+  update1: basketUpdate1
 }
