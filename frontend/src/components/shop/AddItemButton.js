@@ -37,8 +37,8 @@ class AddItemButton extends React.Component {
       <>
         {this.state.isConfirming ?
           <>
-            <Button className="basket-btns" onClick={this.sendRequest}>{confirm}</Button>
-            <Button className="basket-btns" onClick={this.cancel}>{cancel}</Button>
+            <Button variant="success" className="basket-btns" onClick={this.sendRequest}>{confirm}</Button>
+            <Button variant="danger" className="basket-btns" onClick={this.cancel}>{cancel}</Button>
           </>
           :
           <Button
