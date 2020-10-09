@@ -38,6 +38,7 @@ router.route('/basket')
 
 router.route('/basket')
   .post(secureRoute, basket.create)
+  .put(secureRoute, basket.update1)
 
 router.route('/basket/:basketItemId')
   .put(secureRoute, basket.update)
