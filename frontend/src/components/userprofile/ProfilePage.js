@@ -21,13 +21,13 @@ class ProfilePage extends React.Component {
     return (
       <>
         <Container fluid className="beans-banner">
-          <h1>Your profile page</h1>
+          <h1>Your favourites</h1>
         </Container>
         <Container className="user-profile">
           <Container className="account-sidebar" xl={2}>
             <Card style={{ width: '12rem' }}>
               <Card.Body>
-                <Card.Title>Profile Navigation</Card.Title>
+                <h4>Profile Navigation</h4>
               </Card.Body>
               <ListGroup variant="flush" as="ul">
                 <ListGroup.Item action href="/profile" active> Favourites</ListGroup.Item>

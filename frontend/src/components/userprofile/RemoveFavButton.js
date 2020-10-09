@@ -18,7 +18,7 @@ class RemoveFavButton extends React.Component {
   render() {
     return (
       <>
-        <Button variant="danger" className="fav-delete-btn" onClick={this.sendRequest}>Remove Favourite</Button>
+        <Button variant="danger" className="fav-delete-btn" onClick={this.sendRequest}>Remove item</Button>
       </>
     )
   }

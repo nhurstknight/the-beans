@@ -7,8 +7,8 @@ const BasketItem = ({ _id, product: { image, name, price, weight } }) => {
   return (
     <Media className="basket-item">
       <img
-        // width={120}
-        // height={120}
+        width={120}
+        height={120}
         className="mr-3"
         src={ image }
         alt={ name }

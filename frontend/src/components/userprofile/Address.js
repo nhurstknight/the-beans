@@ -61,7 +61,7 @@ class CheckoutEdit extends React.Component {
           <Container className="account-sidebar" xl={2}>
             <Card style={{ width: '12rem' }}>
               <Card.Body>
-                <Card.Title>Profile Navigation</Card.Title>
+                <h4>Profile Navigation</h4>
               </Card.Body>
               <ListGroup variant="flush" as="ul">
                 <ListGroup.Item action href="/profile"> Favourites</ListGroup.Item>
