@@ -157,8 +157,7 @@ h2, h3, h4 {
 
 .beans-show-wrapper {
   display: flex;
-  flex-wrap: row wrap;
-  margin: 70px 30px;
+  margin: 50px auto;
 }
 
 .beans-show-img {
@@ -424,8 +423,14 @@ hr {
   margin-bottom: 25px;
 }
 
-.comment-view-card {
+.comment-view-card.card {
   margin: 10px;
+  border: #e97e04 1px, solid;
+}
+
+.comment-submit-container.container, 
+.comment-view-container.container {
+padding-bottom: 50px;
 }
 
 .review-labels {

@@ -77,78 +77,79 @@ class CheckoutEdit extends React.Component {
               </ListGroup>
             </Card>
           </Container>
-          <Container className="login-reg-wrapper">
-            <Row>
-              <Col className="login-reg-section">
-                <h3>Address Details</h3>
-                <div className='loginForm'>
+          <Container>
+            <Form className="edit-account-form" onSubmit={ this.handleSubmit } m={8}>
+              <Form.Group as={Row} controlId="formBuildingNumber">
+                <Form.Label column sm={4}>Building Number</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="buildingNumber" 
+                    placeholder={buildingNumber}
+                    name="buildingNumber"
+                    value={this.state.formData.buildingNumber}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formStreetName">
+                <Form.Label column sm={4}>Street Name</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="streetName" 
+                    placeholder={streetName}
+                    name="streetName"
+                    value={this.state.formData.streetName}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formBasicCity">
+                <Form.Label column sm={4}>City</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="city" 
+                    placeholder={city}
+                    name="city"
+                    value={this.state.formData.city}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formBasicCounty">
+                <Form.Label column sm={4}>County</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="county" 
+                    placeholder={county}
+                    name="county" 
+                    value={this.state.formData.county}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
+              <Form.Group as={Row} controlId="formBasicpostcode">
+                <Form.Label column sm={4}>Postcode</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="postcode" 
+                    placeholder={postcode}
+                    name="postcode"
+                    value={this.state.formData.postcode}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
 
-                  <Form.Group controlId="formBuildingNumber">
-                    <Form.Label>Building Number</Form.Label>
-                    <Form.Control 
-                      type="buildingNumber" 
-                      placeholder={buildingNumber}
-                      name="buildingNumber"
-                      value={this.state.formData.buildingNumber}
-                      onChange={this.handleChange}
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formStreetName">
-                    <Form.Label>Street Name</Form.Label>
-                    <Form.Control 
-                      type="streetName" 
-                      placeholder={streetName}
-                      name="streetName"
-                      value={this.state.formData.streetName}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                  </Form.Group>
-
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="formBasicCity">
-                      <Form.Label>City</Form.Label>
-                      <Form.Control 
-                        type="city" 
-                        placeholder={city}
-                        name="city"
-                        value={this.state.formData.city}
-                        onChange={this.handleChange}
-                      />
-                      <Form.Text className="text-muted">
-                      </Form.Text>
-                    </Form.Group>
-                  
-
-                    <Form.Group controlId="formBasicCounty">
-                      <Form.Label>County</Form.Label>
-                      <Form.Control 
-                        type="county" 
-                        placeholder={county}
-                        name="county" 
-                        value={this.state.formData.county}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicpostcode">
-                      <Form.Label>Postcode</Form.Label>
-                      <Form.Control 
-                        type="postcode" 
-                        placeholder={postcode}
-                        name="postcode"
-                        value={this.state.formData.postcode}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-
-                    <Button onclick={this.submitAddressInfoToast} variant="primary" type="submit" block>Submit</Button>
-                  </Form>
-                </div>
-              </Col>
-            </Row>
+              <Button onclick={this.submitAddressInfoToast} variant="primary" type="submit" block>Submit</Button>
+            </Form>
           </Container> 
         </Container>
       </>

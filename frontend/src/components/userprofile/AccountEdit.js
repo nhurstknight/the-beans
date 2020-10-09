@@ -80,19 +80,19 @@ class AccountEdit extends React.Component {
 
             <Form className="edit-account-form" onSubmit={ this.handleSubmit } m={8}>
               <Form.Group as={Row} controlId="formBasicUserName">
-                  <Form.Label column sm={4}>Username</Form.Label>
-                  <Col sm={8}>
-                    <Form.Control 
-                      type="username" 
-                      placeholder={username}
-                      name="username"
-                      value={this.state.formData.username}
-                      onChange={this.handleChange}
-                    />
-                  </Col>
-                  <Form.Text className="text-muted">
-                  </Form.Text>
-                </Form.Group>
+                <Form.Label column sm={4}>Username</Form.Label>
+                <Col sm={8}>
+                  <Form.Control 
+                    type="username" 
+                    placeholder={username}
+                    name="username"
+                    value={this.state.formData.username}
+                    onChange={this.handleChange}
+                  />
+                </Col>
+                <Form.Text className="text-muted">
+                </Form.Text>
+              </Form.Group>
 
               {/* should below say formEmail */}
               <Form.Group as={Row} controlId="formUsername"> 
