@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col,  Image, Spinner, Jumbotron, Button } from 'react-bootstrap'
+import { Container, Col,  Image, Spinner, Jumbotron } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
