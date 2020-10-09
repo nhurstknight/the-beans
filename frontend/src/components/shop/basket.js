@@ -31,6 +31,7 @@ class Basket extends React.Component {
     this.setState({
       basket: []
     })
+    toast.success('Successfully removed all items from basket!', { position: toast.POSITION.BOTTOM_RIGHT })
     console.log(this.state.basket)
   }
 
@@ -63,7 +64,7 @@ class Basket extends React.Component {
               )) }
               <Container fluid className="basket-btns">
                 <Button
-                  onClick={this.handleClick, this.removeItemsToast}
+                  onClick={this.handleClick}
                   className="delete-basket-btn"
                   variant="danger" 
                   type="submit"

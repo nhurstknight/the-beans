@@ -11,18 +11,19 @@ class RemoveFavButton extends React.Component {
     product: this.props._id
   }
 
-  removeFavouriteToast = () => {
-    toast.info('Item removed from favourites', { position: toast.POSITION.BOTTOM_RIGHT })
-  }
+  // removeFavouriteToast = () => {
+  //   toast.info('Item removed from favourites', { position: toast.POSITION.BOTTOM_RIGHT })
+  // }
 
   sendRequest = async () => {
     await removeFav(this.state.product)
+    toast.success('Succesfully removed from favourites', { position: toast.POSITION.BOTTOM_RIGHT })
   }
 
   render() {
     return (
       <>
-        <Button variant="danger" className="fav-delete-btn" onClick={this.sendRequest, this.removeFavouriteToast}>Remove Favourite</Button>
+        <Button variant="danger" className="fav-delete-btn" onClick={this.sendRequest}>Remove Favourite</Button>
       </>
     )
   }

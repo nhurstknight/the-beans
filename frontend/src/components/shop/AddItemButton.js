@@ -29,9 +29,6 @@ class AddItemButton extends React.Component {
   sendRequest = async () => {
     await addItem(this.props.product)
     this.setState({ isConfirming: false })
-  }
-
-  confirmAddToBasketToast = () => {
     toast.success('Added to basket!', { position: toast.POSITION.BOTTOM_LEFT })
   }
 
@@ -40,7 +37,7 @@ class AddItemButton extends React.Component {
       <>
         {this.state.isConfirming ?
           <>
-            <Button className="basket-btns" onClick={this.sendRequest, this.confirmAddToBasketToast}>{confirm}</Button>
+            <Button className="basket-btns" onClick={this.sendRequest}>{confirm}</Button>
             <Button className="basket-btns" onClick={this.cancel}>{cancel}</Button>
           </>
           :
