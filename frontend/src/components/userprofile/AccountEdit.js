@@ -2,7 +2,10 @@ import React from 'react'
 import { Container, Row, Card, ListGroup, Col, Form, Button } from 'react-bootstrap'
 import { getID } from '../../lib/auth'
 import { getSingleUser, editAccount } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 class AccountEdit extends React.Component {
   state = {
     userId: null,
@@ -49,6 +52,10 @@ class AccountEdit extends React.Component {
     }
   }
   
+  submitAccountInfoToast = () => {
+    toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
+  }
+
   render() {
     const { username, email, firstName, lastName, profileImage } = this.state
     return (
@@ -157,7 +164,7 @@ class AccountEdit extends React.Component {
                       />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" block>Submit</Button>
+                    <Button onClick={this.submitAccountInfoToast} variant="primary" type="submit" block>Submit</Button>
                   </Form>
                 </div>
               </Col>

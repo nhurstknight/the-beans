@@ -2,14 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Button } from 'react-bootstrap'
 import { getUserBasket, deleteBasket } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import BasketItem from './BasketItem'
 
+toast.configure()
 class Basket extends React.Component {
   state = {
     basket: []
   }
 
+  removeItemsToast = () => {
+    toast.warn('Removed all items!', { position: toast.POSITION.BOTTOM_RIGHT })
+  }
   
   async componentDidMount() {
     const response = await getUserBasket()
@@ -57,7 +63,7 @@ class Basket extends React.Component {
               )) }
               <Container fluid className="basket-btns">
                 <Button
-                  onClick={this.handleClick}
+                  onClick={this.handleClick, this.removeItemsToast}
                   className="delete-basket-btn"
                   variant="danger" 
                   type="submit"
