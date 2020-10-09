@@ -15,8 +15,19 @@ class Checkout extends React.Component {
     return (
       <>
         <CheckoutAddress></CheckoutAddress>
-        <Container fluid>
-          <Button block>
+        <Container classname="checkout-btn-group">
+          <Button 
+            className="back-btn"
+            variant="danger"
+            block>
+            <Link to="/basket">
+              Back to basket
+            </Link>
+          </Button>     
+          <Button 
+            className="proceed-btn"
+            variant="success"
+            block>
             <Link to="/payment">
               Proceed to payment
             </Link>

@@ -20,7 +20,8 @@ import Login from './components/auth/Login'
 
 import ProfilePage from './components/userprofile/ProfilePage'
 import AccountEdit from './components/userprofile/AccountEdit'
-import CheckoutEdit from './components/userprofile/Address'
+import AddressEdit from './components/userprofile/AddressEdit'
+import OrderConfirmation from './components/shop/OrderConfirmation'
 
 class App extends React.Component {
   
@@ -35,13 +36,14 @@ class App extends React.Component {
           <Route path="/beans" component={BeansIndex}/>
           <Route path="/roasters/:id" component={RoasterShow}/>
           <Route path="/roasters" component={RoasterIndex}/>
-          <Route path="/payment" component={Payment}/>
-          <Route path="/checkout" component={Checkout}/>
           <Route path="/basket" component={Basket}/>
+          <Route path="/shipping" component={Checkout}/>
+          <Route path="/payment" component={Payment}/>
+          <Route path="/order" component={OrderConfirmation}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
           <Route path="/profile/account" component={AccountEdit}/>
-          <Route path="/profile/checkout" component={CheckoutEdit}/>
+          <Route path="/profile/address" component={AddressEdit}/>
           <Route path="/profile" component={ProfilePage}/>
         </Switch>
         <Footer />

@@ -62,7 +62,7 @@ class Basket extends React.Component {
                   key={item._id}
                   {...item} />
               )) }
-              <Container fluid className="basket-btns">
+              <Container fluid className="checkout-btn-group">
                 <Button
                   onClick={this.handleClick}
                   className="delete-basket-btn"
@@ -73,10 +73,10 @@ class Basket extends React.Component {
                 </Button>
                 <Button
                   className="checkout-btn"
-                  variant="primary"
+                  variant="success"
                   type="submit"
                   block>
-                  <Link to="/checkout">
+                  <Link to="/shipping">
                   Proceed to checkout
                   </Link> 
                 </Button>

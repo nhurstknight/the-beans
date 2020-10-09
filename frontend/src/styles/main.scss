@@ -32,11 +32,9 @@ h2, h3, h4 {
 // COMMON
 .navbar-light a.navbar-brand {
   font-weight: bold;
-  // color: #3b2210;
 } 
 
 .navbar-light .navbar-nav .nav-link {
-  // color: #3b2210;
   font-weight: bold;
 }
 
@@ -119,8 +117,8 @@ h2, h3, h4 {
 .hero-text button{
   text-align: center;
   background-color: #fff;
-  color: #3b2210;
-
+  color: #e97e04;
+  font-weight: 700;
 }
 
 // BEANS
@@ -316,6 +314,11 @@ h2, h3, h4 {
   padding-top: 50px;
 }
 
+.user-basket.container {
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
 .basket-item {
   margin: 20px auto;
   width: 90%;
@@ -346,6 +349,18 @@ h2, h3, h4 {
   width: 50%;
   margin: 0.5em;
 }
+
+.checkout-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.checkout-btn-group a {
+  color: #fff;
+  text-decoration: none;
+  display: inline;
+}
+
 
 .delete-basket-btn {
   margin-top: 0.5em;
@@ -450,4 +465,28 @@ padding-bottom: 50px;
   position: absolute;
   // bottom:   0;
   font-size: 0.8rem;
+}
+
+.edit-account-form {
+  padding-bottom: 25px;
+}
+
+.checkout-btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-btn a,
+.proceed-btn a {
+  color: #fff;
+  text-decoration: none;
+  // display: inline;
+}
+
+.back-btn,
+.proceed-btn{
+  width: 50%;
+  margin: 10px;
 }
