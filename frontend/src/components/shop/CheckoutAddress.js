@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { addressDetails, editCheckout } from '../../lib/api'
 
 class CheckoutAddress extends React.Component {
   state = {
     emptyArray: null,
+    errors: null,
     formData: {
       buildingNumber: '',
       streetName: '',
@@ -43,8 +44,7 @@ class CheckoutAddress extends React.Component {
     event.preventDefault()
     try { 
       const response = await editCheckout(this.state.formData)
-      console.log(response)
-      this.props.history.push('/profile')
+      window.location.reload()
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }
@@ -125,7 +125,7 @@ class CheckoutAddress extends React.Component {
                       />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" block>Submit</Button>
+                    <Button variant="primary" type="submit" block>Submit Edit Address</Button>
                   </Form>
                 </div>
               </Col>
