@@ -6,8 +6,10 @@ const CommentCard = ({ text, rating, owner }) => {
     <Card className='comment-view-card'>
       <Card.Body>
         <Card.Title> { owner.username } </Card.Title>
+        <br />
         <Card.Subtitle> { text } </Card.Subtitle>
-        <p> {`I give this a ${rating} star rating!`} </p>
+        <br />
+        <p> {`${rating}/5`} </p>
       </Card.Body>
     </Card>
   )

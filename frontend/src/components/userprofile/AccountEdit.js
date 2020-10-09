@@ -2,7 +2,10 @@ import React from 'react'
 import { Container, Row, Card, ListGroup, Col, Form, Button } from 'react-bootstrap'
 import { getID } from '../../lib/auth'
 import { getSingleUser, editAccount } from '../../lib/api'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
+toast.configure()
 class AccountEdit extends React.Component {
   state = {
     userId: null,
@@ -49,6 +52,10 @@ class AccountEdit extends React.Component {
     }
   }
   
+  submitAccountInfoToast = () => {
+    toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
+  }
+
   render() {
     const { username, email, firstName, lastName, profileImage } = this.state
     return (
@@ -176,7 +183,14 @@ class AccountEdit extends React.Component {
                 <Form.Text className="text-muted">
                 </Form.Text>
               </Form.Group>
-              <Button className="acct-btns" variant="primary" type="submit" block>Update details</Button>
+              <Button 
+                onClick={this.submitAccountInfoToast}
+                className="acct-btns" 
+                variant="primary" 
+                type="submit" 
+                block>
+                Update details
+              </Button>
             </Form>
           </Container>
 
@@ -187,81 +201,3 @@ class AccountEdit extends React.Component {
 }
 
 export default AccountEdit
-
-                  {/* <Form.Group controlId="formBasicUserName">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control 
-                      type="username" 
-                      placeholder={username}
-                      name="username"
-                      value={this.state.formData.username}
-                      onChange={this.handleChange}
-                    />
-                  </Form.Group>
-                  <Form.Group controlId="formUsername">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                      type="email" 
-                      placeholder={email}
-                      name="email"
-                      value={this.state.formData.email}
-                      onChange={this.handleChange}
-                    />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                  </Form.Group>
-                  <Form onSubmit={this.handleSubmit}>
-                    <Form.Group controlId="formBasicFirstName">
-                      <Form.Label>First Name</Form.Label>
-                      <Form.Control 
-                        type="firstName" 
-                        placeholder={firstName}
-                        name="firstName"
-                        value={this.state.formData.firstName}
-                        onChange={this.handleChange}
-                      />
-                      <Form.Text className="text-muted">
-                      </Form.Text>
-                    </Form.Group>
-                    <Form.Group controlId="formBasicLastName">
-                      <Form.Label>Last Name</Form.Label>
-                      <Form.Control 
-                        type="lastName" 
-                        placeholder={lastName}
-                        name="lastName"
-                        value={this.state.formData.lastName}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicprofileImage">
-                      <Form.Label>Profile Image URL</Form.Label>
-                      <Form.Control 
-                        type="profileImage" 
-                        placeholder={profileImage}
-                        name="profileImage" 
-                        value={this.state.formData.profileImage}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control 
-                        type="password" 
-                        placeholder="Password"
-                        name="password"
-                        value={this.state.formData.password}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
-                      <Form.Label>Password Confirmation</Form.Label>
-                      <Form.Control 
-                        type="password" 
-                        placeholder="Password Confirmation"
-                        name="passwordConfirmation"
-                        value={this.state.formData.passwordConfirmation}
-                        onChange={this.handleChange}
-                      />
-                    </Form.Group>
-                    <Button variant="primary" type="submit" block>Submit</Button>
-                  </Form> */}

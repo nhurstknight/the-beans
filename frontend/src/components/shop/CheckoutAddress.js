@@ -1,13 +1,11 @@
 import React from 'react'
-import { Container, Row, Card, ListGroup, Col, Form, Button } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { addressDetails, editCheckout } from '../../lib/api'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
-toast.configure()
-class CheckoutEdit extends React.Component {
+class CheckoutAddress extends React.Component {
   state = {
     emptyArray: null,
+    errors: null,
     formData: {
       buildingNumber: '',
       streetName: '',
@@ -46,15 +44,10 @@ class CheckoutEdit extends React.Component {
     event.preventDefault()
     try { 
       const response = await editCheckout(this.state.formData)
-      console.log(response)
-      this.props.history.push('/profile')
+      window.location.reload()
     } catch (err) {
       this.setState({ errors: err.response.data.errors })
     }
-  }
-
-  submitAddressInfoToast = () => {
-    toast.success('Address Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
   }
 
   render() {
@@ -62,21 +55,9 @@ class CheckoutEdit extends React.Component {
     return (
       <>
         <Container fluid className="beans-banner">
-          <h1>Edit Account Details</h1>
+          <h1>Checkout Address</h1>
         </Container>
         <Container className="user-profile">
-          <Container className="account-sidebar" xl={2}>
-            <Card style={{ width: '12rem' }}>
-              <Card.Body>
-                <h4>Profile Navigation</h4>
-              </Card.Body>
-              <ListGroup variant="flush" as="ul">
-                <ListGroup.Item action href="/profile"> Favourites</ListGroup.Item>
-                <ListGroup.Item action href="/profile/account" >Account Details</ListGroup.Item>
-                <ListGroup.Item action href="/profile/checkout" active>Address Details</ListGroup.Item>
-              </ListGroup>
-            </Card>
-          </Container>
           <Container className="login-reg-wrapper">
             <Row>
               <Col className="login-reg-section">
@@ -144,7 +125,7 @@ class CheckoutEdit extends React.Component {
                       />
                     </Form.Group>
 
-                    <Button onclick={this.submitAddressInfoToast} variant="primary" type="submit" block>Submit</Button>
+                    <Button variant="primary" type="submit" block>Submit Edit Address</Button>
                   </Form>
                 </div>
               </Col>
@@ -156,4 +137,4 @@ class CheckoutEdit extends React.Component {
   }
 }
 
-export default CheckoutEdit
+export default CheckoutAddress

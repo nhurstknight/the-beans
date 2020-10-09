@@ -2,9 +2,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 import { registerUser } from '../../lib/api'
 
+toast.configure()
 class Register extends React.Component {
   state = {
     formData: {
@@ -17,6 +21,10 @@ class Register extends React.Component {
       passwordConfirmation: ''
     },
     errors: {}
+  }
+
+  formValidation = () => {
+
   }
 
   handleChange = event => {
@@ -41,6 +49,8 @@ class Register extends React.Component {
       this.setState({ errors: err.response.data.errors })
     }
   }
+
+  
 
   render() {
     const { username, firstName, lastName, email, password, passwordConfirmation } = this.state.formData
