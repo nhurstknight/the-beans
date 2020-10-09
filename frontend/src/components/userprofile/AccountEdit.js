@@ -190,7 +190,6 @@ class AccountEdit extends React.Component {
               </Button>
             </Form>
           </Container>
-          <Button variant="primary" type="submit" block>Submit</Button>
         </Container> 
       </>
     )
