@@ -15,16 +15,14 @@ class AddFavButton extends React.Component {
 
   sendRequest = async () => {
     await addFav(this.props.product)
-  }
-
-  addFavToast = () => {
     toast.success('Added to favourites!', { position: toast.POSITION.BOTTOM_LEFT })
   }
+
 
   render() {
     return (
       <>
-        <Button className="fav-btn" onClick={this.sendRequest, this.addFavToast}>{ fav }</Button>
+        <Button className="fav-btn" onClick={ this.sendRequest}>{ fav }</Button>
       </>
     )
   }

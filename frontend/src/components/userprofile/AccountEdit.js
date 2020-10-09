@@ -51,7 +51,7 @@ class AccountEdit extends React.Component {
       this.setState({ errors: err.response.data.errors })
     }
   }
-  
+
   submitAccountInfoToast = () => {
     toast.success('Account Information Submitted!', { position: toast.POSITION.BOTTOM_CENTER })
   }
