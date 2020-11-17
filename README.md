@@ -10,7 +10,6 @@ The technical requirements were as follows:
 - Use an Express API to serve your data from a Mongo database
 - Consume your API with a separate front-end built with React
 - Be a complete product  with multiple relationships and CRUD functionality for at least 2 models
-- Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut
 - Have a visually impressive design
 - Be deployed online
 
