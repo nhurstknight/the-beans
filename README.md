@@ -2,6 +2,8 @@
 
 Due to technical issues with the deployment of this site has been delayed, a link will be available shortly.
 
+![The Beans homepage](/homepage.png)
+
 ## Brief
 The brief for this project was to build a full-stack MERN application.
 
@@ -31,18 +33,25 @@ Due to the scale of the project, myself and my course mates felt it was vital th
 
 Communication during the project was key, so we agreed in the early stages to use Trello for our planning. This proved to be a very effective project management tool as we could easily track the progress of our project in real time, add any ideas we had during the build and note down any bugs that we needed to fix. We also felt it was vital to have wireframes to follow so we had a clear direction for the user journey when building the application.
 
-
-
 ### Build
 Once we were happy with our plan and had signed it off with our course instructors, we moved onto setting up the repo and boilerplate for the project as a team. We also set up our models for beans and roasters as team so that we could each spend time populating seed data for our database.
 
 After the group planning and set-up was complete, we divided the workload so that we could each work on the core functionality of the website, my responsibilities included:
 
-- Writing the controllers for the products (beans)
-- Setting up the front-end React
-- Writing the back-end models, views and controllers for the basket
-- Implementing the front-end API RESTful functions for the basket
-- Overall styling of The Beans
+- Writing the back-end controllers for the products.
+- Setting up the front-end React.
+- writing the code for product components (BeansIndex, BeansCard, BeansShow).
+- Writing the back-end models, views and controllers for the basket.
+- Implementing the front-end API RESTful functions for the basket.
+- Writing code for shop components.
+- Refactoring code for all forms on The Beans to ensure a consistent front end layout.
+- Implementing styling across The Beans.
+
+**Examples of the finished website**
+
+![The Beans shop with us page](/beans-index.png)
+
+![The Beans product details page](/beans-show.png)
 
 ## Wins & Challenges
 On this project the biggest challenge and win for me was writing the code for the basket functionality. Initially we had planned to use a plugin for this feature, however, after researching documentation and trying to implement a plugin we went back to the drawing board. Following a discussion with the course instructors we decided to write the code for this section.
@@ -55,7 +64,6 @@ async function basketIndex(req, res, next) {
   try {
     const userBasket = await User.findById(req.currentUser._id)
       .populate('basket.product')
-    // console.log(userBasket)
     if (!userBasket) throw new Error(notFound)
     res.status(200).json(userBasket)
   } catch (err) {
@@ -66,7 +74,6 @@ async function basketCreate(req, res, next) {
     const userBasket = await User.findById(req.currentUser._id)
     const basketItem = { ...req.body }
     if (!userBasket) throw new Error(notFound)
-    // if req.body._id ===
     userBasket.basket.push(basketItem)
     await userBasket.save()
     res.status(201).json(userBasket)
@@ -83,16 +90,13 @@ Once that was complete I wrote the front-end API requests, which could be called
 export const getUserBasket = () => {
   return axios.get(`${baseUrl}/basket`, withHeaders())
 }
-
 export const addItem = product => {
   return axios.post(`${baseUrl}/basket`, { product }, withHeaders())
 }
-
 export const removeItem = (_id) => {
   console.log(_id)
   return axios.put(`${baseUrl}/basket/${_id}`, null, withHeaders())
 }
-
 export const deleteBasket = () => {
   return axios.delete(`${baseUrl}/basket`, withHeaders())
 }
