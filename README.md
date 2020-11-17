@@ -1,6 +1,6 @@
 #  SEI-project-3 - The Beans
 
-Due to techincal issues with the deployment of this site has been delayed, a link will be avialable shortly.
+Due to technical issues with the deployment of this site has been delayed, a link will be available shortly.
 
 ## Brief
 The brief for this project was to build a full-stack MERN application.
