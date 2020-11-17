@@ -14,18 +14,11 @@ The technical requirements were as follows:
 - Have a visually impressive design
 - Be deployed online
 
-## Technologies
-- React
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- React-router-dom
-- Axios
-- NPM
-- React-tostify
-- Sass
-- React-Bootstrap
+## Technologies & Tools
+
+**Tech:** React, JavaScript, Node.js, Express, MongoDB, Mongoose, Sass, React-tostify, React-Bootstrap, Axios, React-router-dom
+
+**Tools:** VSCode,Eslint, Git & GitHub, npm
 
 ## Contributors & Timeline
 This was a group project with 2 additional contributors; [Lewis Jones](https://github.com/LewisJones0) and [Shahab Khan](https://github.com/izzleshab). We were given 9 days in total to plan and build the application.
@@ -37,12 +30,9 @@ The beans is an e-commerce application that connects coffee bean roasters to con
 ### Planning
 Due to the scale of the project, myself and my course mates felt it was vital that we spent time planning the project. Once we had bounced a few ideas for the application, we settled on The Beans as we felt it would be a challenging whilst exciting project to build.
 
-Communication during the project was key, so we agreed in the early stages to use Trello for our planning. This proved to be a very effective project management tool as we could easily track the progress of our project in real time, add any ideas we had during the build and note down any bugs that we needed to fix. 
-[image:FB0452CF-32B8-4718-BC37-A5A1EBAF8794-56756-0000DE31FB4EDBD1/Screenshot 2020-11-17 at 11.16.59.png]
+Communication during the project was key, so we agreed in the early stages to use Trello for our planning. This proved to be a very effective project management tool as we could easily track the progress of our project in real time, add any ideas we had during the build and note down any bugs that we needed to fix. We also felt it was vital to have wireframes to follow so we had a clear direction for the user journey when building the application.
 
-We also felt it was vital to have wireframes to follow so we had a clear direction for the user journey when building the application.
 
-INSERT EXAMPLE WIREFRAME
 
 ### Build
 Once we were happy with our plan and had signed it off with our course instructors, we moved onto setting up the repo and boilerplate for the project as a team. We also set up our models for beans and roasters as team so that we could each spend time populating seed data for our database.
@@ -61,10 +51,7 @@ On this project the biggest challenge and win for me was writing the code for th
 I started this process by building the back-end functionality:
 
 **Code snippet of back-end controllers**
-```
-const User = require('../models/user')
-const { notFound } = require('../lib/errorMessage')
-// GET get basket items  /basket
+```js
 async function basketIndex(req, res, next) {
   try {
     const userBasket = await User.findById(req.currentUser._id)
@@ -75,8 +62,6 @@ async function basketIndex(req, res, next) {
   } catch (err) {
     next(err)
   }
-}
-// POST add item  /basket
 async function basketCreate(req, res, next) {
   try {
     const userBasket = await User.findById(req.currentUser._id)
@@ -90,63 +75,12 @@ async function basketCreate(req, res, next) {
     next(err)
   }
 }
-
-// PUT /basket/basketItemId
-async function basketUpdate(req, res, next) {
-  try {
-    const userBasket = await User.findById(req.currentUser._id)
-    if (!userBasket) throw new Error(notFound)
-    const removeBasketItem = userBasket.basket.id(req.params.basketItemId)
-    if (!removeBasketItem) throw new Error(notFound)
-    await removeBasketItem.remove()
-    await userBasket.save()
-    res.sendStatus(204)
-  } catch (err) {
-    next(err)
-  }
-}
-
-// PUT NEW /basket/
-async function basketUpdate1(req, res, next) {
-  try {
-    const userBasket = await User.findById(req.currentUser._id)
-    if (!userBasket) throw new Error(notFound)
-    const removeBasketItem = userBasket.basket.id(req.params._id)
-    const basketItemID = { ...req.body }
-    if (!removeBasketItem) throw new Error(notFound)
-    await removeBasketItem.remove()
-    await userBasket.save()
-    res.sendStatus(204)
-  } catch (err) {
-    next(err)
-  }
-}
-
-// DELETE clear basket  /basket
-async function basketDelete(req, res, next) {
-  try {
-    const userBasket = await User.findById(req.currentUser._id)
-    if (!userBasket) throw new Error(notFound)
-    userBasket.basket = []
-    await userBasket.save()
-    res.sendStatus(204)
-  } catch (err) {
-    next(err)
-  }
-}
-module.exports = {
-  index: basketIndex,
-  create: basketCreate,
-  update: basketUpdate,
-  delete: basketDelete,
-  update1: basketUpdate1
-}
 ```
 
 Once that was complete I wrote the front-end API requests, which could be called in the different components of the front-end as required.
 
 **Code snippet of front-end API requests**
-```
+```js
 export const getUserBasket = () => {
   return axios.get(`${baseUrl}/basket`, withHeaders())
 }
@@ -162,20 +96,11 @@ export const removeItem = (_id) => {
 
 export const deleteBasket = () => {
   return axios.delete(`${baseUrl}/basket`, withHeaders())
+}
 ```
 
 **Code snippet of basket component**
-```
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Container, Button } from 'react-bootstrap'
-import { getUserBasket, deleteBasket } from '../../lib/api'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-
-import BasketItem from './BasketItem'
-
-toast.configure()
+```js,xml
 class Basket extends React.Component {
   state = {
     basket: []
@@ -263,22 +188,7 @@ export default Basket
 I also built reusuable components for the basket functionality such as the AddItemButton so that could be used in muitple places on the site.
 
 **Code snippet of AddItemButton**
-```
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingBasket, faWindowClose, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-
-import { addItem } from '../../lib/api'
-
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-
-const basket = <FontAwesomeIcon icon={faShoppingBasket} />
-const confirm = <FontAwesomeIcon icon={faCheckCircle} />
-const cancel = <FontAwesomeIcon icon={faWindowClose} />
-
-toast.configure()
+```js,xml
 class AddItemButton extends React.Component {
   state = {
     isConfirming: false
