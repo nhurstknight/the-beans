@@ -8,35 +8,41 @@ Due to technical issues with the deployment of this site has been delayed, a lin
 The brief for this project was to build a full-stack MERN application.
 
 The technical requirements were as follows:
-- Build a full-stack application
-- Use an Express API to serve your data from a Mongo database
-- Consume your API with a separate front-end built with React
-- Be a complete product  with multiple relationships and CRUD functionality for at least 2 models
-- Have a visually impressive design
-- Be deployed online
+- Build a full-stack application.
+- Use an Express API to serve your data from a Mongo database.
+- Consume your API with a separate front-end built with React.
+- Be a complete product  with multiple relationships and CRUD functionality for at least 2 models.
+- Have a visually impressive design.
+- Be deployed online.
 
 ## Technologies & Tools
 
 **Tech:** React, JavaScript, Node.js, Express, MongoDB, Mongoose, Sass, React-tostify, React-Bootstrap, Axios, React-router-dom
 
-**Tools:** VSCode,Eslint, Git & GitHub, npm
+**Tools:** VSCode, Eslint, Git & GitHub, npm
 
 ## Contributors & Timeline
-This was a group project with 2 additional contributors; [Lewis Jones](https://github.com/LewisJones0) and [Shahab Khan](https://github.com/izzleshab). We were given 9 days in total to plan and build the application.
+This was a group project that I developed with [Lewis Jones](https://github.com/LewisJones0) and [Shahab Khan](https://github.com/izzleshab). We were given 9 days in total to plan and build the application.
 
 ## Overview 
 The beans is an e-commerce application that connects coffee bean roasters to consumers. The site allowed consumers to shop products sourced from multiple roasters based in London. It also allowed consumers to view the profiles of roasters to learn more about their profile and background.
 
+**Examples of the finished website**
+
+![The Beans shop with us page](/beans-index.png)
+
+![The Beans product details page](/beans-show.png)
+
 ## Process
 ### Planning
-Due to the scale of the project, myself and my course mates felt it was vital that we spent time planning the project. Once we had bounced a few ideas for the application, we settled on The Beans as we felt it would be a challenging whilst exciting project to build.
+Due to the scale of the project, myself and my course mates felt it was vital that we spent time planning the project. Once we had bounced a few ideas for the application, we settled on The Beans as we felt it would be a challenging and exciting project to build.
 
 Communication during the project was key, so we agreed in the early stages to use Trello for our planning. This proved to be a very effective project management tool as we could easily track the progress of our project in real time, add any ideas we had during the build and note down any bugs that we needed to fix. We also felt it was vital to have wireframes to follow so we had a clear direction for the user journey when building the application.
 
 ### Build
 Once we were happy with our plan and had signed it off with our course instructors, we moved onto setting up the repo and boilerplate for the project as a team. We also set up our models for beans and roasters as team so that we could each spend time populating seed data for our database.
 
-After the group planning and set-up was complete, we divided the workload so that we could each work on the core functionality of the website, my responsibilities included:
+After the group planning and set-up was complete, we divided the workload so that we could each work on the core functionality of the website on the front-end and back-end. The features that I built included:
 
 - Writing the back-end controllers for the products.
 - Setting up the front-end React.
@@ -46,12 +52,6 @@ After the group planning and set-up was complete, we divided the workload so tha
 - Writing code for shop components.
 - Refactoring code for all forms on The Beans to ensure a consistent front end layout.
 - Implementing styling across The Beans.
-
-**Examples of the finished website**
-
-![The Beans shop with us page](/beans-index.png)
-
-![The Beans product details page](/beans-show.png)
 
 ## Wins & Challenges
 On this project the biggest challenge and win for me was writing the code for the basket functionality. Initially we had planned to use a plugin for this feature, however, after researching documentation and trying to implement a plugin we went back to the drawing board. Following a discussion with the course instructors we decided to write the code for this section.
@@ -243,6 +243,6 @@ The process of building this was really beneficial as it helped me to grasp the 
 - Add search functionality on the nabber to search products and roasters.
 - Update the UI for the shopping basket to a modal.
 - Implement a media management service such as Cloudinary to manage image uploads.
-- Implement maps using a service such as Mapbox on the roaster profile page
+- Implement maps using a service such as Mapbox on the roaster profile page.
 - Display user profile image on user comments.
 - Create an admin user profile with admin rights to Create, Update and Delete roasters and products from the website.
