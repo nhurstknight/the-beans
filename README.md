@@ -42,7 +42,7 @@ Communication during the project was key, so we agreed in the early stages to us
 ### Build
 Once we were happy with our plan and had signed it off with our course instructors, we moved onto setting up the repo and boilerplate for the project as a team. We also set up our models for beans and roasters as team so that we could each spend time populating seed data for our database.
 
-After the group planning and set-up was complete, we divided the workload so that we could each work on the core functionality of the website on the front-end and back-end. The features that I built included:
+After the group planning and set-up was complete, we divided the workload so that we could each had the opportunity to implement functionality of the website on the front-end and back-end. The features that I built included:
 
 - Writing the back-end controllers for the products.
 - Setting up the front-end React.
@@ -54,7 +54,7 @@ After the group planning and set-up was complete, we divided the workload so tha
 - Implementing styling across The Beans.
 
 ## Wins & Challenges
-On this project the biggest challenge and win for me was writing the code for the basket functionality. Initially we had planned to use a plugin for this feature, however, after researching documentation and trying to implement a plugin we went back to the drawing board. Following a discussion with the course instructors we decided to write the code for this section.
+On this project the biggest challenge and win for me was writing the code for the basket functionality. Initially we had planned to use a plugin for this feature, however, after researching documentation and trying to implement a plugin we went back to the drawing board. Following a discussion with the course instructors we decided to write the code for this section rather than using a plugin.
 
 I started this process by building the back-end functionality:
 
@@ -246,3 +246,11 @@ The process of building this was really beneficial as it helped me to grasp the 
 - Implement maps using a service such as Mapbox on the roaster profile page.
 - Display user profile image on user comments.
 - Create an admin user profile with admin rights to Create, Update and Delete roasters and products from the website.
+
+## Key Learnings
+- Maintaining effective communication whilst colloborating on a group project.
+- Building a back-end using a RESTful API framework.
+- How to organise my codebase using the Model-View-Controller Pattern.
+- Data modelling in MongoDB and the difference between embedded and referenced data. 
+- How to utilise API endpoints to render the required data on the front-end.
+-
