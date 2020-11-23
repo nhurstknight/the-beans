@@ -1,4 +1,4 @@
-#  SEI-project-3 - The Beans
+# SEI-project-3 - The Beans
 
 Due to technical issues with the deployment of this site has been delayed, a link will be available shortly.
 
@@ -11,7 +11,7 @@ The technical requirements were as follows:
 - Build a full-stack application.
 - Use an Express API to serve your data from a Mongo database.
 - Consume your API with a separate front-end built with React.
-- Be a complete product  with multiple relationships and CRUD functionality for at least 2 models.
+- Be a complete product with multiple relationships and CRUD functionality for at least 2 models.
 - Have a visually impressive design.
 - Be deployed online.
 
@@ -253,4 +253,3 @@ The process of building this was really beneficial as it helped me to grasp the 
 - How to organise my codebase using the Model-View-Controller Pattern.
 - Data modelling in MongoDB and the difference between embedded and referenced data. 
 - How to utilise API endpoints to render the required data on the front-end.
--
